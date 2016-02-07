@@ -116,6 +116,7 @@ elseif opt.model == 'convnet' then
       model:add(c)
 
       -- stage 3 : standard 2-layer neural network
+      model:add(nn.SpatialSubtractiveNormalization(nstates[1], normkernel))
       model:add(nn.Reshape(nstates[2]*filtsize*filtsize))
       model:add(nn.Linear(nstates[2]*filtsize*filtsize, nstates[3]))
       model:add(nn.Tanh())
