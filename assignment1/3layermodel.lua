@@ -1,5 +1,16 @@
 ----------------------------------------------------------------------
--- Need comment
+-- This script demonstrates how to define a couple of different
+-- models:
+--   + linear
+--   + 2-layer neural network (MLP)
+--   + convolutional network (ConvNet)
+--
+-- It's a good idea to run this script with the interactive mode:
+-- $ th -i 2_model.lua
+-- this will give you a Torch interpreter at the end, that you
+-- can use to play with the model.
+--
+-- Clement Farabet
 ----------------------------------------------------------------------
 
 require 'torch'   -- torch
@@ -37,7 +48,7 @@ ninputs = nfeats*width*height
 nhiddens = ninputs / 2
 
 -- hidden units, filter sizes (for ConvNet only):
-nstates = {64,64,128}
+nstates = {32,64,128,256}
 filtsize = 5
 poolsize = 2
 normkernel = image.gaussian1D(7)
@@ -84,43 +95,41 @@ elseif opt.model == 'convnet' then
       model:add(nn.Linear(nstates[3], noutputs))
 
    else
-      -- regarding to fig3 in http://arxiv.org/abs/1204.3968
-      -- construct stage1-->stage2 plus stage1 that fed to classifier together
+      -- a typical convolutional network, with locally-normalized hidden
+      -- units, and L2-pooling
 
-      model1 = nn.Sequential() 
-      model2 = nn.Sequential()
-      c = nn.Parallel(1,2)
-      model = nn.Sequential();
+      -- Note: the architecture of this convnet is loosely based on Pierre Sermanet's
+      -- work on the SVHN dataset (http://arxiv.org/abs/1204.3968). In particular
+      -- the use of LP-pooling (with P=2) has a very positive impact on
+      -- generalization. Normalization is not done exactly as proposed in
+      -- the paper, and low-level (first layer) features are not fed to
+      -- the classifier.
 
-      -- model1 stage 1 : filter bank -> squashing -> L2 pooling -> normalization
-      model1:add(nn.SpatialConvolutionMM(nfeats, nstates[1], filtsize, filtsize))
-      model1:add(nn.Tanh())
-      model1:add(nn.SpatialLPPooling(nstates[1],2,poolsize,poolsize,poolsize,poolsize))
-      model1:add(nn.SpatialSubtractiveNormalization(nstates[1], normkernel))
+      model = nn.Sequential()
 
-      -- model1 stage 2 : filter bank -> squashing -> L2 pooling -> normalization
-      model1:add(nn.SpatialConvolutionMM(nstates[1], nstates[2], filtsize, filtsize))
-      model1:add(nn.Tanh())
-      model1:add(nn.SpatialLPPooling(nstates[2],2,poolsize,poolsize,poolsize,poolsize))
-      model1:add(nn.SpatialSubtractiveNormalization(nstates[2], normkernel))
-
-      -- model2 stage 1 : filter bank -> squashing -> L2 pooling -> normalization
-      model2:add(nn.SpatialConvolutionMM(nfeats, nstates[1], filtsize, filtsize))
-      model2:add(nn.Tanh())
-      model2:add(nn.SpatialLPPooling(nstates[1],2,poolsize,poolsize,poolsize,poolsize))
-      model2:add(nn.SpatialSubtractiveNormalization(nstates[1], normkernel))
-
-      -- add construct model1 model2 to model
-      c:add(model1)
-      c:add(model2)
-      model:add(c)
-
-      -- stage 3 : standard 2-layer neural network
-      model:add(nn.SpatialSubtractiveNormalization(nstates[1], normkernel))
-      model:add(nn.Reshape(nstates[2]*filtsize*filtsize))
-      model:add(nn.Linear(nstates[2]*filtsize*filtsize, nstates[3]))
+      -- stage 1 : filter bank -> squashing -> L2 pooling -> normalization
+      model:add(nn.SpatialConvolutionMM(nfeats, nstates[1], filtsize, filtsize))
       model:add(nn.Tanh())
-      model:add(nn.Linear(nstates[3], noutputs))
+      model:add(nn.SpatialLPPooling(nstates[1],2,poolsize,poolsize,poolsize,poolsize))
+      model:add(nn.SpatialSubtractiveNormalization(nstates[1], normkernel))
+
+      -- stage 2 : filter bank -> squashing -> L2 pooling -> normalization
+      model:add(nn.SpatialConvolutionMM(nstates[1], nstates[2], filtsize, filtsize))
+      model:add(nn.Tanh())
+      model:add(nn.SpatialLPPooling(nstates[2],2,poolsize,poolsize,poolsize,poolsize))
+      model:add(nn.SpatialSubtractiveNormalization(nstates[2], normkernel))
+
+      -- stage 3 : filter bank -> squashing -> L2 pooling -> normalization
+      model:add(nn.SpatialConvolutionMM(nstates[2], nstates[3], filtsize, filtsize))
+      model:add(nn.Tanh())
+      model:add(nn.SpatialLPPooling(nstates[3],2,1,1,1,1))
+      model:add(nn.SpatialSubtractiveNormalization(nstates[3], normkernel))
+
+      -- stage 4 : standard 2-layer neural network
+      model:add(nn.Reshape(nstates[3]*1*1))
+      model:add(nn.Linear(nstates[3]*1*1, nstates[4]))
+      model:add(nn.Tanh())
+      model:add(nn.Linear(nstates[4], noutputs))
    end
 else
 
