@@ -1,0 +1,1026 @@
+==> doing epoch on training data:
+==> online epoch # 20 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m20s | Step: 13ms
+
+==> time to learn 1 sample = 13.346303629875ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6741       0       0       0       0       0       1       0       0]   99.985% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6129       0       1       0       0       0       1]   99.967% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       1       0    5420       0       0       0       0]   99.982% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       2       0       0       0       0       0    6263       0       0]   99.968% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.988505840302%
+ + average rowUcol correct (VOC measure): 99.977195262909%
+ + global correct: 99.988333333333%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 50s830ms | Step: 4ms
+
+==> time to test 1 sample = 5.0836251974106ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1133       1       0       0       0       1       0       0       0]   99.824% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     978       0       0       0       0       4]   99.593% 	[class: 5]
+ [       1       0       0       4       0     886       1       0       0       0]   99.327% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.504774808884%
+ + average rowUcol correct (VOC measure): 99.019373059273%
+ + global correct: 99.51%
+==> doing epoch on training data:
+==> online epoch # 21 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m22s | Step: 12ms
+
+==> time to learn 1 sample = 13.369126633803ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6740       0       0       0       0       0       2       0       0]   99.970% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6129       0       1       0       0       0       1]   99.967% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.992059469223%
+ + average rowUcol correct (VOC measure): 99.983748197556%
+ + global correct: 99.991666666667%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s533ms | Step: 5ms
+
+==> time to test 1 sample = 5.1539045095444ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       1    1027       1       0       0       0       2       0       0]   99.516% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     978       0       0       0       0       4]   99.593% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       3       1       0       0       0    1020       1       1]   99.222% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       1       2    1001]]  99.207% 	[class: 0]
+ + average row correct: 99.53615128994%
+ + average rowUcol correct (VOC measure): 99.080364704132%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 22 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m20s | Step: 13ms
+
+==> time to learn 1 sample = 13.336281732718ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6741       0       0       0       0       0       1       0       0]   99.985% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6130       0       0       0       0       0       1]   99.984% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       1       0    5420       0       0       0       0]   99.982% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       1       0       0       0       0       0    6264       0       0]   99.984% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.991733431816%
+ + average rowUcol correct (VOC measure): 99.983748197556%
+ + global correct: 99.991666666667%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 52s314ms | Step: 4ms
+
+==> time to test 1 sample = 5.2319108963013ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       3       0       0       1       1     952       0       0       0]   99.374% 	[class: 7]
+ [       0       2       0       1       0       0       0    1024       1       0]   99.611% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.555206298828%
+ + average rowUcol correct (VOC measure): 99.118797183037%
+ + global correct: 99.56%
+==> doing epoch on training data:
+==> online epoch # 23 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m18s | Step: 12ms
+
+==> time to learn 1 sample = 13.307768150171ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       1       0       0       0       0       0    6264       0       0]   99.984% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.996691942215%
+ + average rowUcol correct (VOC measure): 99.993613362312%
+ + global correct: 99.996666666667%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s633ms | Step: 5ms
+
+==> time to test 1 sample = 5.163858294487ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1133       1       0       0       0       1       0       0       0]   99.824% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       0       0       0       2       0     889       1       0       0       0]   99.664% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       1       1       0       0       0    1023       1       0]   99.514% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.558317661285%
+ + average rowUcol correct (VOC measure): 99.121533036232%
+ + global correct: 99.56%
+==> doing epoch on training data:
+==> online epoch # 24 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m18s | Step: 13ms
+
+==> time to learn 1 sample = 13.305147997538ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6741       0       0       0       0       0       1       0       0]   99.985% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.99680519104%
+ + average rowUcol correct (VOC measure): 99.993613958359%
+ + global correct: 99.996666666667%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s527ms | Step: 5ms
+
+==> time to test 1 sample = 5.1532269954681ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1133       1       0       0       0       1       0       0       0]   99.824% 	[class: 2]
+ [       1       0    1027       1       0       0       0       3       0       0]   99.516% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       3       0       0       1       1     952       0       0       0]   99.374% 	[class: 7]
+ [       0       2       3       1       0       0       0    1021       1       0]   99.319% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.526903033257%
+ + average rowUcol correct (VOC measure): 99.061912298203%
+ + global correct: 99.53%
+==> doing epoch on training data:
+==> online epoch # 25 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m20s | Step: 13ms
+
+==> time to learn 1 sample = 13.336496516069ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6741       0       0       0       0       0       1       0       0]   99.985% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.99680519104%
+ + average rowUcol correct (VOC measure): 99.993613958359%
+ + global correct: 99.996666666667%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s852ms | Step: 5ms
+
+==> time to test 1 sample = 5.1857710123062ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1133       1       0       0       0       1       0       0       0]   99.824% 	[class: 2]
+ [       1       0    1027       1       0       0       0       3       0       0]   99.516% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     978       0       0       0       0       4]   99.593% 	[class: 5]
+ [       1       0       0       4       0     886       1       0       0       0]   99.327% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       3       1       0       0       0    1021       1       0]   99.319% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.51494038105%
+ + average rowUcol correct (VOC measure): 99.039816260338%
+ + global correct: 99.52%
+==> doing epoch on training data:
+==> online epoch # 26 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m16s | Step: 13ms
+
+==> time to learn 1 sample = 13.273132868608ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6741       0       0       0       0       0       1       0       0]   99.985% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.998517036438%
+ + average rowUcol correct (VOC measure): 99.996920824051%
+ + global correct: 99.998333333333%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s590ms | Step: 5ms
+
+==> time to test 1 sample = 5.1596347093582ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1027       1       0       0       0       3       0       0]   99.516% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       3       1       0       0       0    1020       1       1]   99.222% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.546627998352%
+ + average rowUcol correct (VOC measure): 99.100447893143%
+ + global correct: 99.55%
+==> doing epoch on training data:
+==> online epoch # 27 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m16s | Step: 13ms
+
+==> time to learn 1 sample = 13.273314901193ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.998288154602%
+ + average rowUcol correct (VOC measure): 99.996691942215%
+ + global correct: 99.998333333333%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s431ms | Step: 5ms
+
+==> time to test 1 sample = 5.1436314105988ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       3       0     887       1       0       0       0]   99.439% 	[class: 6]
+ [       1       3       0       0       1       1     952       0       0       0]   99.374% 	[class: 7]
+ [       0       2       1       1       0       0       0    1023       1       0]   99.514% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.534267783165%
+ + average rowUcol correct (VOC measure): 99.078605175018%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 28 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m15s | Step: 13ms
+
+==> time to learn 1 sample = 13.251898781459ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s905ms | Step: 5ms
+
+==> time to test 1 sample = 5.1910623073578ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1027       1       0       0       0       3       0       0]   99.516% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.555879831314%
+ + average rowUcol correct (VOC measure): 99.118631482124%
+ + global correct: 99.56%
+==> doing epoch on training data:
+==> online epoch # 29 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m17s | Step: 13ms
+
+==> time to learn 1 sample = 13.292233514786ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5841       0       0       1       0       0]   99.983% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 99.998288154602%
+ + average rowUcol correct (VOC measure): 99.996691942215%
+ + global correct: 99.998333333333%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s619ms | Step: 5ms
+
+==> time to test 1 sample = 5.16245200634ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1027       1       0       0       0       3       0       0]   99.516% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       4       0     886       1       0       0       0]   99.327% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.533458352089%
+ + average rowUcol correct (VOC measure): 99.076799154282%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 30 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m16s | Step: 12ms
+
+==> time to learn 1 sample = 13.277644582589ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s359ms | Step: 5ms
+
+==> time to test 1 sample = 5.1364785194397ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1021       1       1]   99.319% 	[class: 8]
+ [       1       0       1       1       0       1       0       0     969       1]   99.487% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.546728730202%
+ + average rowUcol correct (VOC measure): 99.100317358971%
+ + global correct: 99.55%
+==> doing epoch on training data:
+==> online epoch # 31 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m17s | Step: 12ms
+
+==> time to learn 1 sample = 13.294890081882ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s322ms | Step: 5ms
+
+==> time to test 1 sample = 5.1327443122864ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       1       1       0       0       0    1023       1       0]   99.514% 	[class: 8]
+ [       1       0       1       1       0       1       0       0     969       1]   99.487% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.556494355202%
+ + average rowUcol correct (VOC measure): 99.1197514534%
+ + global correct: 99.56%
+==> doing epoch on training data:
+==> online epoch # 32 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m13s | Step: 12ms
+
+==> time to learn 1 sample = 13.225636816025ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s870ms | Step: 5ms
+
+==> time to test 1 sample = 5.1875756025314ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       1       1       0       0       0    1023       1       0]   99.514% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.556431174278%
+ + average rowUcol correct (VOC measure): 99.119929075241%
+ + global correct: 99.56%
+==> doing epoch on training data:
+==> online epoch # 33 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m19s | Step: 13ms
+
+==> time to learn 1 sample = 13.317444765568ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 52s149ms | Step: 5ms
+
+==> time to test 1 sample = 5.2154978990555ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.546703696251%
+ + average rowUcol correct (VOC measure): 99.100698828697%
+ + global correct: 99.55%
+==> doing epoch on training data:
+==> online epoch # 34 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m24s | Step: 13ms
+
+==> time to learn 1 sample = 13.402774333954ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 52s238ms | Step: 5ms
+
+==> time to test 1 sample = 5.2243506908417ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.546703696251%
+ + average rowUcol correct (VOC measure): 99.100698828697%
+ + global correct: 99.55%
+==> doing epoch on training data:
+==> online epoch # 35 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m30s | Step: 13ms
+
+==> time to learn 1 sample = 13.514148569107ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s942ms | Step: 5ms
+
+==> time to test 1 sample = 5.1948494911194ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       3       0       0       1       1     952       0       0       0]   99.374% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.536265134811%
+ + average rowUcol correct (VOC measure): 99.081549048424%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 36 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m22s | Step: 13ms
+
+==> time to learn 1 sample = 13.376186434428ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s563ms | Step: 5ms
+
+==> time to test 1 sample = 5.1569082021713ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1021       1       1]   99.319% 	[class: 8]
+ [       2       0       1       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.536975622177%
+ + average rowUcol correct (VOC measure): 99.081311225891%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 37 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m19s | Step: 13ms
+
+==> time to learn 1 sample = 13.323699331284ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 53s326ms | Step: 5ms
+
+==> time to test 1 sample = 5.3331207036972ms
+ConfusionMatrix:
+[[     978       0       0       0       0       0       1       1       0       0]   99.796% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       3       0     887       1       0       0       0]   99.439% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       1       0       1       1       0       1       0       0     969       1]   99.487% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.535555839539%
+ + average rowUcol correct (VOC measure): 99.079595804214%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 38 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m21s | Step: 14ms
+
+==> time to learn 1 sample = 13.365549234549ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s823ms | Step: 5ms
+
+==> time to test 1 sample = 5.1828597068787ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       3       0     887       1       0       0       0]   99.439% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1021       1       1]   99.319% 	[class: 8]
+ [       2       0       2       1       0       1       0       0     967       1]   99.281% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.52518761158%
+ + average rowUcol correct (VOC measure): 99.059776067734%
+ + global correct: 99.53%
+==> doing epoch on training data:
+==> online epoch # 39 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m24s | Step: 12ms
+
+==> time to learn 1 sample = 13.407832900683ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 51s636ms | Step: 5ms
+
+==> time to test 1 sample = 5.1641456127167ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       3       0     887       1       0       0       0]   99.439% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       1       0       1       1       0       1       0       0     969       1]   99.487% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.555449485779%
+ + average rowUcol correct (VOC measure): 99.119271636009%
+ + global correct: 99.56%
+==> doing epoch on training data:
+==> online epoch # 40 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m18s | Step: 13ms
+
+==> time to learn 1 sample = 13.303210735321ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [=============================================================== 10000/10000 =========>] Tot: 52s96ms | Step: 4ms
+
+==> time to test 1 sample = 5.2101808786392ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1026       1       0       0       0       4       0       0]   99.419% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1021       1       1]   99.319% 	[class: 8]
+ [       1       0       1       1       0       1       0       0     969       1]   99.487% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.556932449341%
+ + average rowUcol correct (VOC measure): 99.120799899101%
+ + global correct: 99.56%
+==> doing epoch on training data:
+==> online epoch # 41 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m17s | Step: 13ms
+
+==> time to learn 1 sample = 13.284832568963ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 55s317ms | Step: 5ms
+
+==> time to test 1 sample = 5.5322210073471ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       3       0     887       1       0       0       0]   99.439% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       1       0       1       1       0       1       0       0     969       1]   99.487% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.545759558678%
+ + average rowUcol correct (VOC measure): 99.100078344345%
+ + global correct: 99.55%
+==> doing epoch on training data:
+==> online epoch # 42 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 14m15s | Step: 14ms
+
+==> time to learn 1 sample = 14.251065882047ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [=============================================================== 10000/10000 =========>] Tot: 1m281ms | Step: 5ms
+
+==> time to test 1 sample = 6.0287091016769ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       1       0       2       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.546703696251%
+ + average rowUcol correct (VOC measure): 99.101220369339%
+ + global correct: 99.55%
+==> doing epoch on training data:
+==> online epoch # 43 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 15m15s | Step: 13ms
+
+==> time to learn 1 sample = 15.26413368384ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 53s903ms | Step: 5ms
+
+==> time to test 1 sample = 5.3908305883408ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       3       0       0       1       1     952       0       0       0]   99.374% 	[class: 7]
+ [       0       2       2       1       0       0       0    1022       1       0]   99.416% 	[class: 8]
+ [       1       0       2       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.536265134811%
+ + average rowUcol correct (VOC measure): 99.082070589066%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 44 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m48s | Step: 14ms
+
+==> time to learn 1 sample = 13.81578245163ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 53s804ms | Step: 5ms
+
+==> time to test 1 sample = 5.3810377836227ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1021       1       1]   99.319% 	[class: 8]
+ [       1       0       2       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.536975622177%
+ + average rowUcol correct (VOC measure): 99.081832766533%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 45 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 13m41s | Step: 13ms
+
+==> time to learn 1 sample = 13.694020919005ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [================================================================ 10000/10000 ========>] Tot: 53s108ms | Step: 5ms
+
+==> time to test 1 sample = 5.3113853931427ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       2       0     888       1       0       0       0]   99.552% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1021       1       1]   99.319% 	[class: 8]
+ [       1       0       2       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.536975622177%
+ + average rowUcol correct (VOC measure): 99.081832766533%
+ + global correct: 99.54%
+==> doing epoch on training data:
+==> online epoch # 46 [batchSize = 1]
+ [=============================================================== 60000/60000 =========>] Tot: 14m12s | Step: 14ms
+
+==> time to learn 1 sample = 14.211181950569ms
+ConfusionMatrix:
+[[    5923       0       0       0       0       0       0       0       0       0]   100.000% 	[class: 1]
+ [       0    6742       0       0       0       0       0       0       0       0]   100.000% 	[class: 2]
+ [       0       0    5958       0       0       0       0       0       0       0]   100.000% 	[class: 3]
+ [       0       0       0    6131       0       0       0       0       0       0]   100.000% 	[class: 4]
+ [       0       0       0       0    5842       0       0       0       0       0]   100.000% 	[class: 5]
+ [       0       0       0       0       0    5421       0       0       0       0]   100.000% 	[class: 6]
+ [       0       0       0       0       0       0    5918       0       0       0]   100.000% 	[class: 7]
+ [       0       0       0       0       0       0       0    6265       0       0]   100.000% 	[class: 8]
+ [       0       0       0       0       0       0       0       0    5851       0]   100.000% 	[class: 9]
+ [       0       0       0       0       0       0       0       0       0    5949]]  100.000% 	[class: 0]
+ + average row correct: 100%
+ + average rowUcol correct (VOC measure): 100%
+ + global correct: 100%
+==> saving model to /Volumes/HHD/Users/yun-shaosung/HDD_Doc/NYU/DL/assignment1/ds-ga-1008-a1/results/model.net
+==> testing on test set:
+ [============================================================== 10000/10000 ==========>] Tot: 54m53s | Step: 6ms
+
+==> time to test 1 sample = 329.33517229557ms
+ConfusionMatrix:
+[[     979       0       0       0       0       0       0       1       0       0]   99.898% 	[class: 1]
+ [       0    1134       0       0       0       0       1       0       0       0]   99.912% 	[class: 2]
+ [       1       0    1025       1       0       0       0       5       0       0]   99.322% 	[class: 3]
+ [       0       0       0    1007       0       2       0       0       1       0]   99.703% 	[class: 4]
+ [       0       0       0       0     979       0       0       0       0       3]   99.695% 	[class: 5]
+ [       1       0       0       3       0     887       1       0       0       0]   99.439% 	[class: 6]
+ [       1       2       0       0       1       1     953       0       0       0]   99.478% 	[class: 7]
+ [       0       2       2       1       0       0       0    1021       1       1]   99.319% 	[class: 8]
+ [       1       0       2       1       0       1       0       0     968       1]   99.384% 	[class: 9]
+ [       1       0       0       0       4       0       0       2       2    1000]]  99.108% 	[class: 0]
+ + average row correct: 99.525764584541%
+ + average rowUcol correct (VOC measure): 99.060907363892%
+ + global correct: 99.53%
