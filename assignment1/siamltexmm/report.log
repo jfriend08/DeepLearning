@@ -1,25 +1,26 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  10 FEB 2016 02:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 FEB 2016 14:09
 entering extended mode
-**D:/DL_HW/HW1/DeepLearning/assignment1/siamltexmm/report.tex
-(D:/DL_HW/HW1/DeepLearning/assignment1/siamltexmm/report.tex
-LaTeX2e <2015/10/01> patch level 2
-Babel <3.9n> and hyphenation patterns for 69 languages loaded.
-(siamltexmm.cls
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**report.tex
+(./report.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./siamltexmm.cls
 Document Class: siamltexmm 1996/10/11 v1.2 LaTeX document class
-(siam11.clo
+(./siam11.clo
 File: siam11.clo 1994/10/01 v1.0 SIAM LaTeX file (size option)
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: dvips.def on input line 142.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/dvips.def
 File: dvips.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/dvipsnam.def
 File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
 ))
 \c@section=\count79
@@ -36,16 +37,16 @@ File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
-Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
-Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
@@ -76,7 +77,7 @@ Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
 Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
 Package: xcolor-patch 2011/01/30 xcolor patch
 Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
@@ -84,29 +85,29 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen103
 \Hy@linkcounter=\count89
 \Hy@pagecounter=\count90
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count91
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `final' set `true' on input line 4319.
@@ -120,7 +121,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count92
 
-(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -145,12 +146,12 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count97
 \c@bookmark@seq@number=\count98
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
@@ -168,32 +169,32 @@ l.2 \documentclass[10pt,a4paper]{
                                  article}
 The document may only declare one class.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 94.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 \Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen107
 \Gin@req@width=\dimen108
 )
-(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithm.st
-y
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count100
 \float@exts=\toks15
@@ -201,14 +202,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks16
 \@floatcapt=\box27
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks17
 \c@algorithm=\count101
 )
-(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithmic.
-sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@unique=\count102
 \c@ALC@line=\count103
@@ -216,7 +216,8 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \c@ALC@depth=\count105
 \ALC@tlm=\skip44
 \algorithmicindent=\skip45
-) (report.aux)
+)
+(./report.aux)
 \openout1 = `report.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
@@ -236,10 +237,10 @@ LaTeX Font Info:    ... okay on input line 37.
 \AtBeginShipoutBox=\box28
 Package hyperref Info: Link coloring ON on input line 37.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count106
@@ -248,12 +249,12 @@ LaTeX Info: Redefining \ref on input line 37.
 LaTeX Info: Redefining \pageref on input line 37.
 LaTeX Info: Redefining \nameref on input line 37.
 
-(report.out) (report.out)
+(./report.out) (./report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
 
-(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
 \scratchdimen=\dimen109
@@ -266,7 +267,23 @@ LaTeX Info: Redefining \nameref on input line 37.
 \MPnumerator=\count111
 \makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks19
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+34.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -458,20 +475,20 @@ and I'll forget about whatever was undefined.
 
 [1
 
-{C:/Users/joyceyao/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<../fig/g7.png, id=32, 25.5354pt x 20.7174pt>
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<../fig/g7.png, id=33, 25.5354pt x 20.7174pt>
 File: ../fig/g7.png Graphic file (type png)
  <use ../fig/g7.png>
 Package pdftex.def Info: ../fig/g7.png used on input line 112.
 (pdftex.def)             Requested size: 85.37166pt x 85.3674pt.
 
-<../fig/g15.png, id=33, 25.65585pt x 21.07875pt>
+<../fig/g15.png, id=34, 25.65585pt x 21.07875pt>
 File: ../fig/g15.png Graphic file (type png)
  <use ../fig/g15.png>
 Package pdftex.def Info: ../fig/g15.png used on input line 113.
 (pdftex.def)             Requested size: 85.38249pt x 85.37465pt.
 
-<../fig/no.png, id=34, 25.17406pt x 20.9583pt>
+<../fig/no.png, id=35, 25.17406pt x 20.9583pt>
 File: ../fig/no.png Graphic file (type png)
  <use ../fig/no.png>
 Package pdftex.def Info: ../fig/no.png used on input line 114.
@@ -496,7 +513,14 @@ l.144
                                                   \fi \fi 
 l.144 
        <../fig/g7.png> <../fig/g15.png> <../fig/no.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
+Overfull \hbox (4.3816pt too wide) in paragraph at lines 169--170
+[] \OT1/cmss/bx/n/10.95 3.1.5. 3-layer model struc-ture.[][] \OT1/cmr/m/n/10.95
+ With the orig-i-nal pro-cess pi-pline: Spa-tial-Con-vo-lu-tionMM,
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Overfull \vbox (3.04993pt too high) has occurred while \output is active []
 
@@ -506,49 +530,62 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.171 \end{document}
-                    pdfTeX warning (ext4): destination with the same identifier
- (name{table.4}) has been already used, duplicate ignored
+l.196 
+      pdfTeX warning (ext4): destination with the same identifier (name{table.4
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.171 \end{document}
+l.196 
+      ]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+
+Overfull \vbox (3.04993pt too high) has occurred while \output is active []
+
+
+[4pdfTeX warning (ext4): destination with the same identifier (name{table.5}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.197 \end{document}
                     ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
- (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
+ (./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
- 5600 strings out of 493634
- 81701 string characters out of 3141306
- 169611 words of memory out of 3000000
- 8932 multiletter control sequences out of 15000+200000
- 10202 words of font info for 36 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 36i,14n,23p,325b,411s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (3 pages, 232999 bytes).
+ 5714 strings out of 493089
+ 83739 string characters out of 6134842
+ 176293 words of memory out of 5000000
+ 9134 multiletter control sequences out of 15000+600000
+ 10202 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 36i,14n,23p,783b,411s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
+15/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on report.pdf (4 pages, 223027 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 114 PDF objects out of 1000 (max. 8388607)
+ 88 compressed objects within 1 object stream
+ 23 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
