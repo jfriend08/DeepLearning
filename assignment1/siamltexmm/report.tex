@@ -98,7 +98,7 @@ The training accuracy achieve 100\% in epoch 30. The test accuracy shift up and 
 
 \begin{figure}[H]
   \centering
-    \includegraphics[width=0.9\textwidth]{../fig/accuracy_org.png}
+    \includegraphics[width=1\textwidth]{../fig/accuracy_org.png}
   \caption{The training and test accuracy with epoches}
 \end{figure}
 
@@ -171,7 +171,69 @@ generate the same result with NLL. The MSE looks slightly better in training acc
 \end{table}
 
 
-\subsubsection{Different model structure}
+\subsubsection{3-layer model structure}
+With the original process pipline: SpatialConvolutionMM, Tanh, SpatialLPPooling, SpatialSubtractiveNormalization, and NLL as loss function, we construct additional layer, and the dimension is from (64,64,128) to (32,64,128,256). So now it is 3-layer structure, followed by standard 2-layer neural network. For training set, there is a noticeable faster convergent rate in 3-layer than in 2-layer model, that 3-layer model can reach 100\% accuracy when at epoch 21 compare to epoch 29 in 2-layer model. However, this phenomenon seems differ not much when running on test set. Potentional explaination is the 3-layer model may have better way to fit the training data so converged faster, but might be a bit over-fitted when run on general test set.
 
+\begin{table}[H]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+    \hline
+    Loss Function
+        & \multicolumn{2}{|c|}{3-layer Model}
+        & \multicolumn{2}{|c|}{2-layer Model} \\ \hline
+    \tabincell{c}{Accuracy in \\ each epoch} & training & test & training & test \\ \hline
+    20 & 99.99 & 99.51 & 99.98 & 99.53 \\ \hline
+    21 & 100.00 & 99.51 & 99.98 & 99.51 \\ \hline
+    22 & 99.99 & 99.53 & 99.99 & 99.54 \\ \hline
+    23 & 100.00 & 99.53 & 99.99 & 99.56 \\ \hline
+    24 & 100.00 & 99.57 & 99.99 & 99.56 \\ \hline
+    25 & 100.00 & 99.52 & 99.99 & 99.53 \\ \hline
+    26 & 100.00 & 99.52 & 99.99 & 99.52 \\ \hline
+    27 & 100.00 & 99.56 & 99.99 & 99.55 \\ \hline
+    28 & 100.00 & 99.52 & 99.99 & 99.54 \\ \hline
+    29 & 100.00 & 99.52 & 100.00 & 99.56 \\ \hline
+    30 & 100.00 & 99.53 & 99.99 & 99.54 \\ \hline
+    31 & 100.00 & 99.52 & 100.00 & 99.55 \\ \hline
+    \end{tabular}
+\end{center}
+\caption{The training and test accuracy of 3-layer versus 2-layer model}
+\end{table}
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/all.png}
+  \caption{The training and test accuracy of 3-layer versus 2-layer model}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/training_compare.png}
+  \caption{The training accuracy of 3-layer versus 2-layer model}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/test_compare.png}
+  \caption{The test accuracy of 3-layer versus 2-layer model}
+\end{figure}
+
+\newpage
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/training_compare_0-30.png}
+  \caption{The training accuracy of 3-layer versus 2-layer model}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/test_compare_0-30.png}
+  \caption{The test accuracy of 3-layer versus 2-layer model}
+\end{figure}
 
 \end{document}
