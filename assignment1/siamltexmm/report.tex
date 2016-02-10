@@ -1,8 +1,13 @@
 \documentclass[final]{siamltexmm}
+\documentclass[10pt,a4paper]{article}
 
 \usepackage{graphicx}
 \usepackage{algorithm}
 \usepackage{algorithmic}
+
+% \usepackage[demo]{graphicx}
+% \usepackage{subfig}
+
 \newcommand{\pe}{\psi}
 \def\d{\delta} 
 \def\ds{\displaystyle} 
@@ -60,5 +65,12 @@ Write the expression of ${\partial (X_{out})_i \over \partial (X_{in})_j}$
 \begin{equation}
 {\partial (X_o)_i\over \partial (X_I)_j} = {\partial \over \partial (X_I)_j} \Bigg({{ e^{(X_I)_i}\over K + e^{(X_I)_j}} \Bigg) = {{ \beta e^{-\beta(X_I)_i} e^{-\beta(X_I)_j}\over {(K + e^{(X_I)_i}})^2} = \beta(X_o)_i (X_o)_j
 \end{equation}
+
+\begin{figure}[!ht]
+  \centering
+    \includegraphics[width=0.7\textwidth]{../fig/chromagram1.png}
+  \caption{Histogram of accuracy result from search space. Top row is baseline method 5, and the remaining rows are new feature extraction method 1, 2, and 3 respectively}
+\end{figure}
+
 
 \end{document}

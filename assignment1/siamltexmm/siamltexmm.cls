@@ -895,8 +895,7 @@ Vol.\ #3, pp.\ #4
 \newcommand{\HLlittleital}{\sevenptsize\sf\itshape}
 \newcommand{\HLlittlest}{\sixptsize\sf}
 \newcommand{\HLlittlestital}{\sixptsize\sf\itshape}
-\RequirePackage[dvips]{graphics,graphicx}
-\RequirePackage[colorlinks,pdfmark,dvips]{hyperref}
+\RequirePackage[colorlinks]{hyperref}
 \def\wwwbrowser{C:\string\Program\space
 Files\string\Plus!\string\Microsoft\space
 Internet\string\iexplore.exe}

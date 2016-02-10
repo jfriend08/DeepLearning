@@ -5,3 +5,7 @@
 *.o*
 .ipynb_checkpoints
 model.net
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
