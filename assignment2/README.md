@@ -2,13 +2,13 @@
 ## DeepLearning Assignment2
 ---
 ## Paths at aws instance
--- ds-ga-1008-a2
-⋅⋅⋅logs/ <-- models and report are here
-⋅⋅⋅models/
-⋅⋅⋅stl-10/
-⋅⋅⋅train.lua
-⋅⋅⋅provider.lua
--- peterSpace/ <-- my working space
++-- ds-ga-1008-a2
++-- _drafts
+|   +-- logs/ <-- models and report are here
+|   +-- models/
+|   +-- train.lua
+|   +-- provider.lua
++-- peterSpace
 
 ---
 ## Baseline model
