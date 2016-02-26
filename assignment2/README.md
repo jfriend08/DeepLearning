@@ -8,8 +8,8 @@
   * stl-10/
   * train.lua
   * provider.lua
-
 --peterSpace/ <-- my working space
+
 ---
 ## Baseline model
 ![alt text](./fig/val.png)
