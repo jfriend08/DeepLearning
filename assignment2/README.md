@@ -29,3 +29,9 @@ Surrogate:getSurrogate(numFig)
 torch.save('Surrogate.t7',Surrogate)
 ```
 So this way we can load Surrogate.t7 and call `Surrogate.surrogateData.data:float()` and `Surrogate.surrogateData.labels:float()`
+Original figure:
+![alt text](./fig/img_regNorm/2.png)
+After :
+![alt text](./fig/img_regNorm/2_1.png)
+![alt text](./fig/img_regNorm/2_2.png)
+![alt text](./fig/img_regNorm/2_4.png)
