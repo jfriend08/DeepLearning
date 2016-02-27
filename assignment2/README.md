@@ -15,3 +15,14 @@
 ## Baseline model
 ![alt text](./fig/val.png)
 
+---
+## Create Surrogate sample
+```
+th -i surrogate.lua
+```
+```
+Surrogate = Surrogate()
+Surrogate:normalize()
+Surrogate:getSurrogate(numFig)
+torch.save('Surrogate.t7',Surrogate)
+```
