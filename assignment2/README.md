@@ -32,6 +32,6 @@ So this way we can load Surrogate.t7 and call `Surrogate.surrogateData.data:floa
 Original figure:
 ![alt text](./fig/img_regNorm/2.png)
 After :
-![alt text](./fig/img_regNorm/2_1.png)
-![alt text](./fig/img_regNorm/2_2.png)
-![alt text](./fig/img_regNorm/2_4.png)
+![alt text](./fig/img/2_1.png)
+![alt text](./fig/img/2_2.png)
+![alt text](./fig/img/2_4.png)
