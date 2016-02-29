@@ -36,3 +36,9 @@ After :
 ![alt text](./fig/img/2_1.png)
 ![alt text](./fig/img/2_2.png)
 ![alt text](./fig/img/2_4.png)
+---
+## Way to train surrogate data
+Was tring to follow the structure of this [paper](http://arxiv.org/pdf/1406.6909.pdf)
+Now the structure is mainly for 64c5-128c5-256c5-512f-4000f, code is here
+
+
