@@ -15,6 +15,7 @@ opt = lapp[[
    --model                    (default vgg_bn_drop)     model name
    --max_epoch                (default 300)           maximum number of iterations
    --backend                  (default nn)            backend
+   --numClasses                  (default 4000)            num of classes for surrogate data
 ]]
 
 print(opt)
@@ -63,7 +64,7 @@ provider.trainData.data = provider.surrogateData.data:float()
 provider.valData.data = provider.valData.data:float()
 
 --
-confusion = optim.ConfusionMatrix(10)
+confusion = optim.ConfusionMatrix(opt.numClasses)
 
 print('Will save at '..opt.save)
 paths.mkdir(opt.save)
@@ -107,13 +108,7 @@ function train()
 
     local inputs = provider.trainData.data:index(1,v)
     targets:copy(provider.surrogateData.labels:index(1,v))
-    print(inputs:size())
-    print(targets:size())
     -- targets:copy(provider.trainData.labels:index(1,v))
-    print("TEST!")
-    r = model:forward(inputs)
-    print(r:size())
-    print(targets:size())
 
     local feval = function(x)
       if x ~= parameters then parameters:copy(x) end
@@ -123,9 +118,6 @@ function train()
       local f = criterion:forward(outputs, targets)
       local df_do = criterion:backward(outputs, targets)
       model:backward(inputs, df_do)
-      print("finish backProp")
-      print(outputs:size())
-      print(targets:size())
       confusion:batchAdd(outputs, targets)
 
       return f,gradParameters

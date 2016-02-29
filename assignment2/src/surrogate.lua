@@ -16,6 +16,20 @@ function Surrogate:__init(full)
   local height = 96
   local width = 96
 
+  if not paths.dirp('stl-10') then
+    os.execute('mkdir stl-10')
+    local www = {
+      train = 'https://s3.amazonaws.com/dsga1008-spring16/data/a2/train.t7b',
+      val = 'https://s3.amazonaws.com/dsga1008-spring16/data/a2/val.t7b',
+      extra = 'https://s3.amazonaws.com/dsga1008-spring16/data/a2/extra.t7b',
+      test = 'https://s3.amazonaws.com/dsga1008-spring16/data/a2/test.t7b'
+   }
+   os.execute('wget ' .. www.train .. '; '.. 'mv train.t7b stl-10/train.t7b')
+   os.execute('wget ' .. www.val .. '; '.. 'mv val.t7b stl-10/val.t7b')
+   os.execute('wget ' .. www.test .. '; '.. 'mv test.t7b stl-10/test.t7b')
+   os.execute('wget ' .. www.extra .. '; '.. 'mv extra.t7b stl-10/extra.t7b')
+  end
+
   local raw_train = torch.load('stl-10/train.t7b')
   local raw_val = torch.load('stl-10/val.t7b')
 
