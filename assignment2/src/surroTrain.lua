@@ -1,12 +1,12 @@
 require 'xlua'
 require 'optim'
 require 'cunn'
-dofile './provider.lua'
+dofile './surrogate.lua'
 local c = require 'trepl.colorize'
 
 opt = lapp[[
    -s,--save                  (default "logs")      subdirectory to save logs
-   -b,--batchSize             (default 64)          batch size
+   -b,--batchSize             (default 120)          batch size
    -r,--learningRate          (default 1)        learning rate
    --learningRateDecay        (default 1e-7)      learning rate decay
    --weightDecay              (default 0.0005)      weightDecay
@@ -55,10 +55,14 @@ end
 print(model)
 
 print(c.blue '==>' ..' loading data')
-provider = torch.load 'provider.t7'
-provider.trainData.data = provider.trainData.data:float()
+
+
+-- here to change
+provider = torch.load 'Surrogate.t7'
+provider.trainData.data = provider.surrogateData.data:float()
 provider.valData.data = provider.valData.data:float()
 
+--
 confusion = optim.ConfusionMatrix(10)
 
 print('Will save at '..opt.save)
@@ -89,7 +93,7 @@ function train()
 
   -- drop learning rate every "epoch_step" epochs
   if epoch % opt.epoch_step == 0 then optimState.learningRate = optimState.learningRate/2 end
-  
+
   print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. opt.batchSize .. ']')
 
   local targets = torch.CudaTensor(opt.batchSize)
@@ -102,17 +106,26 @@ function train()
     xlua.progress(t, #indices)
 
     local inputs = provider.trainData.data:index(1,v)
-    targets:copy(provider.trainData.labels:index(1,v))
+    targets:copy(provider.surrogateData.labels:index(1,v))
+    print(inputs:size())
+    print(targets:size())
+    -- targets:copy(provider.trainData.labels:index(1,v))
+    print("TEST!")
+    r = model:forward(inputs)
+    print(r:size())
+    print(targets:size())
 
     local feval = function(x)
       if x ~= parameters then parameters:copy(x) end
       gradParameters:zero()
-      
+
       local outputs = model:forward(inputs)
       local f = criterion:forward(outputs, targets)
       local df_do = criterion:backward(outputs, targets)
       model:backward(inputs, df_do)
-
+      print("finish backProp")
+      print(outputs:size())
+      print(targets:size())
       confusion:batchAdd(outputs, targets)
 
       return f,gradParameters
@@ -193,7 +206,8 @@ end
 
 for i=1,opt.max_epoch do
   train()
-  val()
+  -- val()
 end
+
 
 
