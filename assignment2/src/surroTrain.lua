@@ -57,18 +57,18 @@ print(model)
 
 print(c.blue '==>' ..' loading data')
 
-
--- here to change
 provider = torch.load 'Surrogate.t7'
+-- trainData, trainLabels, valData, valLabels = splitDataset(provider.surrogateData.data:float(), provider.surrogateData.labels:float(), 0.9)
+-- print(trainData:size(), trainLabels:size(), valData:size(), valLabels:size())
 provider.trainData.data = provider.surrogateData.data:float()
 provider.valData.data = provider.valData.data:float()
 
---
 confusion = optim.ConfusionMatrix(opt.numClasses)
 
 print('Will save at '..opt.save)
 paths.mkdir(opt.save)
-valLogger = optim.Logger(paths.concat(opt.save, 'val.log'))
+print(paths.concat(opt.save, 'surro.log'))
+valLogger = optim.Logger(paths.concat(opt.save, 'surro.log'))
 valLogger:setNames{'% mean class accuracy (train set)', '% mean class accuracy (val set)'}
 valLogger.showPlot = false
 
@@ -179,13 +179,13 @@ function val()
       end
     end
     file:write'</table><pre>\n'
-    file:write(tostring(confusion)..'\n')
+    -- file:write(tostring(confusion)..'\n')
     file:write(tostring(model)..'\n')
     file:write'</pre></body></html>'
     file:close()
   end
 
-  -- save model every 50 epochs
+  -- save model every 5 epochs
   if epoch % 5 == 0 then
     local filename = paths.concat(opt.save, 'model.net')
     print('==> saving model to '..filename)
@@ -198,7 +198,7 @@ end
 
 for i=1,opt.max_epoch do
   train()
-  -- val()
+  val()
 end
 
 

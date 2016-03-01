@@ -9,4 +9,5 @@ model.net
 *.fdb_latexmk
 *.fls
 *.synctex.gz
-Surrogate.t7
+*.t7
+*.t7b
