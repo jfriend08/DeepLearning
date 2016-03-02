@@ -23,9 +23,9 @@ print(opt)
 
 local patchRun = torch.class 'patchRun'
 
-function patchRun:__init(full)
+function patchRun:__init(trsize)
   local FIG_dim = {3, 96, 96}
-  local trsize = 4000
+  -- local trsize = 10000
   local kSize = 28
   local gap = 2
   local nPatch = 9
