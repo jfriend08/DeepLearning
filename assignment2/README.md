@@ -49,11 +49,12 @@ th surroTrain.lua --model surroTrainII  -s logs/surro -numClasses 4000
 ## Kmeans implementation
 Method is mainly based on this [paper](http://ai.stanford.edu/~ang/papers/nipsdlufl10-AnalysisSingleLayerUnsupervisedFeatureLearning.pdf).
 ```
-patchRun = patchRun()
+patchRun = patchRun(10000) --number of random-selected figures
 patchRun:normalize()
-patchRun:getPatch()
+patchRun:getPatch() --9 patch for size 28*28
 patchRun:whiten()
 patchRun:runKmean(1600, 300) --ncentroids, niter
 torch.save('patchProvider.t7',patchRun)
 ```
+
 
