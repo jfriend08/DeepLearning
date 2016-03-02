@@ -51,7 +51,7 @@ Method is mainly based on this [paper](http://ai.stanford.edu/~ang/papers/nipsdl
 ```
 patchRun = patchRun(10000) --number of random-selected figures
 patchRun:normalize()
-patchRun:getPatch() --9 patch for size 28*28
+patchRun:getPatch(22, 2, 16) --kSize, gap, nPatch
 patchRun:whiten()
 patchRun:runKmean(1600, 300) --ncentroids, niter
 torch.save('patchProvider.t7',patchRun)
