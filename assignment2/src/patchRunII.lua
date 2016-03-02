@@ -98,7 +98,7 @@ function patchRun:whiten()
 end
 
 function patchRun:runKmean(ncentroids, niter)
-  print 'start whiten centroids'
+  print 'start kmeans for centroids'
   -- local ncentroids = 1600
   self.patches.centroids, counts = unsup.kmeans_modified(self.patches.data, ncentroids, nil, 0.1, niter, 1000, nil, true)
   print(self.patches.data:size())

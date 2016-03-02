@@ -45,5 +45,15 @@ To start the training on surrogate data:
 ```
 th surroTrain.lua --model surroTrainII  -s logs/surro -numClasses 4000
 ```
-
+---
+## Kmeans implementation
+Method is mainly based on this [paper](http://ai.stanford.edu/~ang/papers/nipsdlufl10-AnalysisSingleLayerUnsupervisedFeatureLearning.pdf).
+```
+patchRun = patchRun()
+patchRun:normalize()
+patchRun:getPatch()
+patchRun:whiten()
+patchRun:runKmean(1600, 300) --ncentroids, niter
+torch.save('patchProvider.t7',patchRun)
+```
 
