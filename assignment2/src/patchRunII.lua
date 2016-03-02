@@ -16,20 +16,11 @@ torch.setdefaulttensortype('torch.FloatTensor')
 
 dofile './provider.lua'
 
-opt = {
-   whiten = true,
-}
-print(opt)
-
 local patchRun = torch.class 'patchRun'
 
 function patchRun:__init(trsize)
   local FIG_dim = {3, 96, 96}
   -- local trsize = 10000
-  local kSize = 28
-  local gap = 2
-  local nPatch = 9
-
   print("==> loading dataset")
 
   local raw_train = torch.load('stl-10/extra.t7b')
@@ -120,13 +111,13 @@ function parseData(d, numSamples, numChannels, height, width)
 end
 
 
-function patchRun:getPatch()
+function patchRun:getPatch(kSize, gap, nPatch)
   print 'start getting patches'
   collectgarbage()
 
-  local kSize = 28
-  local gap = 2
-  local nPatch = 9
+  -- local kSize = 22
+  -- local gap = 2
+  -- local nPatch = 16
   local FIG_dim = {3, 96, 96}
 
   numFig = self.trainData:size()
