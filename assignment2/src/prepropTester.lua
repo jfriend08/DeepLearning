@@ -22,7 +22,7 @@ end
 local FIG_dim = {3, 96, 96}
 local trsize = 10
 local data = parseData(raw_train.data[1], trsize, FIG_dim[1], FIG_dim[2], FIG_dim[3])
-dataKmeanPreProp:prePropHandler(data, 16, 22, 2)
+dataKmeanPreProp:prePropHandler(data, 16, 22, 2, true)
 
 
 

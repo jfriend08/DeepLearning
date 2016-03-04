@@ -9,13 +9,17 @@ function dataKmeanPreProp:__init(path)
 end
 
 
-function dataKmeanPreProp:prePropHandler(d, numPatch, kSize, gap)
+function dataKmeanPreProp:prePropHandler(d, numPatch, kSize, gap, runWhiten)
   local numSamples = d:size()[1]
   local FIG_dim = {3,96,96}
   data_norm = normalize(d)
   patches = parsePatch(data_norm, numSamples, numPatch, FIG_dim[1], FIG_dim[2], FIG_dim[3], kSize, gap)
   print(patches:size())
   print(self.kmeanProvider.patches.centroids:size())
+  if runWhiten then
+    patches = whiten(patches)
+    print(patches:size())
+  end
 
 end
 
@@ -48,11 +52,11 @@ function normalize(d)
 end
 
 function parsePatch(d, numSamples, numPatch, numChannels, height, width, kSize, gap)
-  local t = torch.Tensor(numSamples*numPatch, numChannels*kSize*kSize)
+  local t = torch.Tensor(numSamples, numPatch, numChannels*kSize*kSize)
   local idx = 1
   for i = 1, numSamples do
     local this_d = d[i]
-
+    local p = torch.Tensor(numPatch, numChannels*kSize*kSize)
     for row = 0, 3 do
       for col = 0, 3 do
         if row*(kSize+gap)+kSize < height and col*(kSize+gap)+kSize < width then
@@ -61,12 +65,36 @@ function parsePatch(d, numSamples, numPatch, numChannels, height, width, kSize, 
           -- local filename = paths.concat("../fig/patchII", i.."_"..idx.."_After"..".png")
           -- image.save(filename, c1)
 
-          t[idx]:copy(c1:resize(numChannels*kSize*kSize))
-          idx = idx + 1
+          p[idx]:copy(c1:resize(numChannels*kSize*kSize))
+
         end
       end
     end
+    idx = idx + 1
   end
-  assert(idx == numSamples*numPatch+1)
+  assert(idx == numSamples+1)
   return t
+end
+
+function whiten(d)
+  print 'start whiten patches'
+  collectgarbage()
+
+  local function zca_whiten(x)
+    local dims = x:size()
+    local nsamples = dims[1]
+    local ndims    = dims[2]
+    local M = torch.mean(x, 1)
+    local D, V = unsup.pcacov(x)
+    x:add(torch.ger(torch.ones(nsamples), M:squeeze()):mul(-1))
+    local diag = torch.diag(D:add(0.1):sqrt():pow(-1))
+    local P = V * diag * V:t()
+    x = x * P
+    return x
+    -- return x, M, P
+  end
+  for i = 1, d:size()[1] do
+    d[1] = zca_whiten(d[1])
+  end
+  return d
 end
