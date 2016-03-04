@@ -24,12 +24,8 @@ provider.valData.data = provider.valData.data:float()
 print(provider.trainData.data:size())
 
 local FIG_dim = {3, 96, 96}
-self.trainData = {
-  data = torch.Tensor(trsize, FIG_dim[1]*FIG_dim[2]*FIG_dim[3]),
-  labels = torch.Tensor(trsize),
-  size = function() return trsize end
-}
-train = parsePatch(provider.trainData.data, 9, FIG_dim[1], FIG_dim[2], FIG_dim[3], 28, 2)
+
+trainData, TrainLabels = parsePatch(provider.trainData.data, 16, FIG_dim[1], FIG_dim[2], FIG_dim[3], 22, 2)
 
 
 

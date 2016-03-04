@@ -14,7 +14,7 @@ require 'kmeans'
 torch.manualSeed(1)
 torch.setdefaulttensortype('torch.FloatTensor')
 
-dofile './provider.lua'
+-- dofile './provider.lua'
 
 local patchRun = torch.class 'patchRun'
 
@@ -94,6 +94,8 @@ function patchRun:runKmean(ncentroids, niter)
   self.patches.centroids, counts = unsup.kmeans_modified(self.patches.data, ncentroids, nil, 0.1, niter, 1000, nil, true)
   print(self.patches.data:size())
   print(self.patches.centroids:size())
+  self.trainData = torch.Tensor() --free the space out
+  self.patches.data = torch.Tensor() --free the space out
 end
 
 function parseData(d, numSamples, numChannels, height, width)
