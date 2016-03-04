@@ -32,21 +32,35 @@ function getFeatureFromCentroids(p, centers)
   local numK = centers:size()[1]
   local centerDim = centers:size()[2]
   local norm_res = torch.Tensor(numSamples, 4*numK)
+  -- local norm_res = torch.Tensor()
   local mlp_l2 = nn.PairwiseDistance(2)
   for i = 1, numSamples do
     local fk = torch.Tensor(centerDim)
     local zk = torch.Tensor(numPatch,numK)
-
+    --Calculate distance of each centroid to each patch
     for k = 1, numK do
       for pidx = 1, numPatch do
         zk[pidx][k] = mlp_l2:forward({p[i][pidx], centers[k]})
+        local mean = zk[pidx]:mean()
+        zk[pidx]:neg():add(mean)
+        zk[pidx]:apply(stepFunction)
       end
     end
-    print(zk)
-
+    r1 = zk[1]:add(zk[2]):add(zk[5]):add(zk[6])
+    r2 = zk[2]:add(zk[3]):add(zk[7]):add(zk[8])
+    r3 = zk[9]:add(zk[10]):add(zk[13]):add(zk[14])
+    r4 = zk[11]:add(zk[12]):add(zk[15]):add(zk[16])
+    norm_res[i] = torch.cat(r1,r2,1):cat(r3,1):cat(r4,1)
   end
 end
 
+function stepFunction(x)
+  if x > 0 then
+    return x
+  else
+    return 0
+  end
+end
 function normalize(d)
   local data = d
   print 'preprocessing data'
