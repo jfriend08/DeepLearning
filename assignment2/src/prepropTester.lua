@@ -1,7 +1,7 @@
 dofile './dataKmeanPreProp.lua'
 
 local raw_train = torch.load('stl-10/extra.t7b')
-dataKmeanPreProp = dataKmeanPreProp('./patchProvider_22_10000_2.t7')
+dataKmeanPreProp = dataKmeanPreProp('./patchProvider_22_20000_400.t7')
 
 
 function parseData(d, numSamples, numChannels, height, width)

@@ -20,9 +20,32 @@ function dataKmeanPreProp:prePropHandler(d, numPatch, kSize, gap, runWhiten)
     patches = whiten(patches)
     print(patches:size())
   end
+  getFeatureFromCentroids(patches, self.kmeanProvider.patches.centroids)
 
 end
 
+function getFeatureFromCentroids(p, centers)
+  print 'start feature extraction'
+  collectgarbage()
+  local numSamples = p:size()[1]
+  local numPatch = p:size()[2]
+  local numK = centers:size()[1]
+  local centerDim = centers:size()[2]
+  local norm_res = torch.Tensor(numSamples, 4*numK)
+  local mlp_l2 = nn.PairwiseDistance(2)
+  for i = 1, numSamples do
+    local fk = torch.Tensor(centerDim)
+    local zk = torch.Tensor(numPatch,numK)
+
+    for k = 1, numK do
+      for pidx = 1, numPatch do
+        zk[pidx][k] = mlp_l2:forward({p[i][pidx], centers[k]})
+      end
+    end
+    print(zk)
+
+  end
+end
 
 function normalize(d)
   local data = d
