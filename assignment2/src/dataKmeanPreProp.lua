@@ -20,7 +20,7 @@ function dataKmeanPreProp:prePropHandler(d, numPatch, kSize, gap, runWhiten)
     patches = whiten(patches)
     print(patches:size())
   end
-  getFeatureFromCentroids(patches, self.kmeanProvider.patches.centroids)
+  return getFeatureFromCentroids(patches, self.kmeanProvider.patches.centroids)
 
 end
 
@@ -35,6 +35,7 @@ function getFeatureFromCentroids(p, centers)
   -- local norm_res = torch.Tensor()
   local mlp_l2 = nn.PairwiseDistance(2)
   for i = 1, numSamples do
+    xlua.progress(i, numSamples)
     local fk = torch.Tensor(centerDim)
     local zk = torch.Tensor(numPatch,numK)
     --Calculate distance of each centroid to each patch
@@ -52,6 +53,7 @@ function getFeatureFromCentroids(p, centers)
     r4 = zk[11]:add(zk[12]):add(zk[15]):add(zk[16])
     norm_res[i] = torch.cat(r1,r2,1):cat(r3,1):cat(r4,1)
   end
+  return norm_res
 end
 
 function stepFunction(x)
@@ -94,6 +96,7 @@ function parsePatch(d, numSamples, numPatch, numChannels, height, width, kSize, 
   for i = 1, numSamples do
     local this_d = d[i]
     local p = torch.Tensor(numPatch, numChannels*kSize*kSize)
+    local p_idx = 1
     for row = 0, 3 do
       for col = 0, 3 do
         if row*(kSize+gap)+kSize < height and col*(kSize+gap)+kSize < width then
@@ -102,11 +105,13 @@ function parsePatch(d, numSamples, numPatch, numChannels, height, width, kSize, 
           -- local filename = paths.concat("../fig/patchII", i.."_"..idx.."_After"..".png")
           -- image.save(filename, c1)
 
-          p[idx]:copy(c1:resize(numChannels*kSize*kSize))
+          p[p_idx]:copy(c1:resize(numChannels*kSize*kSize))
+          p_idx = p_idx + 1
 
         end
       end
     end
+    t[idx]:copy(p)
     idx = idx + 1
   end
   assert(idx == numSamples+1)
@@ -131,7 +136,8 @@ function whiten(d)
     -- return x, M, P
   end
   for i = 1, d:size()[1] do
-    d[1] = zca_whiten(d[1])
+    xlua.progress(i, d:size()[1])
+    d[i] = zca_whiten(d[i])
   end
   return d
 end
