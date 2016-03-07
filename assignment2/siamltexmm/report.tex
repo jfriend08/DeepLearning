@@ -1,0 +1,211 @@
+\documentclass[final]{siamltexmm}
+\documentclass[10pt,a4paper]{article}
+
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+% \usepackage[demo]{graphicx}
+% \usepackage{subfig}
+
+\newcommand{\pe}{\psi}
+\def\d{\delta} 
+\def\ds{\displaystyle} 
+\def\e{{\epsilon}} 
+\def\eb{\bar{\eta}}  
+\def\enorm#1{\|#1\|_2} 
+\def\Fp{F^\prime}  
+\def\fishpack{{FISHPACK}} 
+\def\fortran{{FORTRAN}} 
+\def\gmres{{GMRES}} 
+\def\gmresm{{\rm GMRES($m$)}} 
+\def\Kc{{\cal K}} 
+\def\norm#1{\|#1\|} 
+\def\wb{{\bar w}} 
+\def\zb{{\bar z}} 
+
+% some definitions of bold math italics to make typing easier.
+% They are used in the corollary.
+
+\def\bfE{\mbox{\boldmath$E$}}
+\def\bfG{\mbox{\boldmath$G$}}
+
+\title{Deep Learning Assignment 1}
+\author{Yun-shao Sung\thanks{\tt yss265@nyu.edu}
+        \and Chung-Ling Yao\thanks{\tt cly264@nyu.edu}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This is the report for deep learning assignment 1
+\end{abstract}
+
+\pagestyle{myheadings}
+\thispagestyle{plain}
+
+\section{Warmup}
+Write $\partial E \over \partial X_{in} $ in terms of $\partial E \over \partial X_{out} $
+\begin{equation}
+{\partial E\over \partial X_{in}} = {\partial E\over \partial X_{out}} {\partial F(X_{in}, W_i) \over \partial X_{in}} = {\partial E\over \partial X_{out}} {e^{X_{in}} \over (1+e^{X_{in}})^2} = {\partial E\over \partial X_{out}} X_{out} (1-X_{out})
+\end{equation}
+
+\\
+\section{Multinomial logistic regression}
+Write the expression of ${\partial (X_{out})_i \over \partial (X_{in})_j}$ 
+\\ if $i = j$, , and let $C = \displaystyle\sum_{k} e^{(X_I)_k}} - e^{(X_I)_i$
+\begin{equation}
+(X_o)_i = {{ e^{(X_I)_i}\over \displaystyle\sum_{k} e^{(X_I)_k}} = {{ e^{(X_I)_i}\over e^{(X_I)_0} + e^{(X_I)_i} + \ldots e^{(X_I)_i} + \ldots + e^{(X_I)_k}} = {{ e^{(X_I)_i}\over C + e^{(X_I)_i}}
+\end{equation}
+\begin{equation}
+{\partial (X_o)_i\over \partial (X_I)_i} = {\partial \over \partial (X_I)_i} \Bigg({{ e^{(X_I)_i}\over C + e^{(X_I)_i}} \Bigg) = {{ -\beta e^{-\beta(X_I)_i}\over C + e^{(X_I)_i}} +  { \beta e^{-2\beta(X_I)_i}\over {(C + e^{(X_I)_i}})^2} } = \beta X_{o}(-1+X_{o})
+\end{equation}
+\\
+\\if $i \neq j$, and let $K = \displaystyle\sum_{k} e^{(X_I)_k}} - e^{(X_I)_j$
+\begin{equation}
+{\partial (X_o)_i\over \partial (X_I)_j} = {\partial \over \partial (X_I)_j} \Bigg({{ e^{(X_I)_i}\over K + e^{(X_I)_j}} \Bigg) = {{ \beta e^{-\beta(X_I)_i} e^{-\beta(X_I)_j}\over {(K + e^{(X_I)_i}})^2} = \beta(X_o)_i (X_o)_j
+\end{equation}
+
+
+\\
+\section{Torch (MNIST Handwritten Digit Recognition)}
+
+\subsection{Original Model}
+The training and test accuracy of the original model. In the following experiments, we will compare the outcome of different configure with the original model. 
+The training accuracy achieve 100\% in epoch 30. The test accuracy increased slowly in the first several epochs. 
+After that, the test accuracy stopped increasing. It never exceeded 99.56\% and changed up and down slightly in each epoch. 
+
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| c | c | c |}
+    \hline
+    Epoch & Training Accuracy (\%) & Test Accuracy (\%) \\ \hline
+    1 & 96.71 & 99.04 \\ \hline
+    2 & 99.04 & 99.41 \\ \hline
+    3 & 99.34 & 99.40 \\ \hline
+    4 & 99.53 & 99.47 \\ \hline
+    5 & 99.62 & 99.48 \\ \hline
+    6 & 99.77 & 99.54 \\ \hline
+    7 & 99.81 & 99.48 \\ \hline
+    8 & 99.86 & 99.43 \\ \hline  
+    9 & 99.89 & 99.49 \\ \hline
+    10 & 99.92 & 99.51 \\ \hline      
+    \end{tabular}
+\end{center}
+\caption{The training and test accuracy of the original model}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/accuracy_org.png}
+  \caption{The training and test accuracy with epochs}
+\end{figure}
+
+
+\subsection{Different normalization methods}
+Use different normalization methods, such as different Gaussian 1D normalization array size or without normalization. 
+Virtualize it to see how the normalization changed the images, and compare the training/test accuracy in the first three epochs.
+We can find the performance of default settings (Gaussian1D(7)) is better than Gaussian1D(15) and no-normalization. 
+
+\begin{table}[H]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{center}
+    \begin{tabular}{| c | c | c | c | c | c | c |}
+    \hline
+    Normalization 
+    	& \multicolumn{2}{|c|}{Gaussian1D(7)} 
+    	& \multicolumn{2}{|c|}{Gaussian1D(15)} & \multicolumn{2}{|c|}{no normalization} \\ \hline
+    \tabincell{c}{Vitualization}
+    	& \multicolumn{2}{|c|}{\includegraphics[width=3cm,height=3cm,trim=0 0 0 -1]{../fig/g7.png}} 
+    	& \multicolumn{2}{|c|}{\includegraphics[width=3cm,height=3cm,trim=0 0 0 -1]{../fig/g15.png}} 
+    	& \multicolumn{2}{|c|}{\includegraphics[width=3cm,height=3cm,trim=0 0 0 -1]{../fig/no.png}} \\ \hline
+    \tabincell{c}{Accuracy in \\ each epoch} & training & test & training & test & training & test \\ \hline
+    1 & 96.71 & 99.04 & 96.72 & 98.88 & 96.66 & 98.79 \\ \hline
+    2 & 99.04 & 99.41 & 99.00 & 99.11 & 98.99 & 99.14 \\ \hline
+    3 & 99.34 & 99.40 & 99.32 & 99.28 & 99.27 & 99.31 \\ \hline
+    \end{tabular}
+\end{center}
+\caption{The training and test accuracy of different normalization methods}
+\end{table}
+
+
+\subsection{Different activation function}
+The original activation function is tanh. We tried reLU and compare them. We found the original tanh function works better in both training and test accuracy.
+
+\begin{table}[H]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+    \hline
+    Loss Function 
+    	& \multicolumn{2}{|c|}{Tanh(default)} 
+    	& \multicolumn{2}{|c|}{reLU} \\ \hline
+    \tabincell{c}{Accuracy in \\ each epoch} & training & test & training & test \\ \hline
+    1 & 96.71 & 99.04 & 96.52 & 98.73 \\ \hline
+    2 & 99.04 & 99.41 & 98.86 & 99.02 \\ \hline
+    3 & 99.34 & 99.40 & 99.13 & 99.08 \\ \hline
+    \end{tabular}
+\end{center}
+\caption{The training and test accuracy of different activation function}
+\end{table}
+
+
+\subsection{Different loss function}
+The original loss function is NLL. We changed it to multi-margin and MSE. We found the multi-margin 
+generate the same result with NLL. The MSE looks slightly better in training accuracy, but not in test accuracy.
+
+\begin{table}[H]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{center}
+    \begin{tabular}{| c | c | c | c | c | c | c |}
+    \hline
+    Loss Function 
+    	& \multicolumn{2}{|c|}{NLL(default)} 
+    	& \multicolumn{2}{|c|}{Multi-margin} & \multicolumn{2}{|c|}{MSE} \\ \hline
+    \tabincell{c}{Accuracy in \\ each epoch} & training & test & training & test & training & test \\ \hline
+    1 & 96.71 & 99.04 & 96.71 & 99.04 & 96.74 & 99.04 \\ \hline
+    2 & 99.04 & 99.41 & 99.04 & 99.41 & 99.07 & 99.30 \\ \hline
+    3 & 99.34 & 99.40 & 99.34 & 99.40 & 99.35 & -- \\ \hline
+    \end{tabular}
+\end{center}
+\caption{The training and test accuracy of different loss function}
+\end{table}
+
+
+\subsection{3-layer model structure}
+With the original process pipline: SpatialConvolutionMM, Tanh, SpatialLPPooling, SpatialSubtractiveNormalization, and NLL as loss function, we construct additional layer, and the dimension is from (64,64,128) to (32,64,128,256). So now it is 3-layer structure, followed by standard 2-layer neural network. For training set, there is a noticeable faster convergent rate in 3-layer than in 2-layer model, that 3-layer model can reach 100\% accuracy when at epoch 21 compare to epoch 29 in 2-layer model. However, this phenomenon seems differ not much when running on test set. Potentional explaination is the 3-layer model may have better way to fit the training data so converged faster, but might be a bit over-fitted when run on general test set.
+
+\begin{table}[H]
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+\begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+    \hline
+    Loss Function
+        & \multicolumn{2}{|c|}{3-layer Model}
+        & \multicolumn{2}{|c|}{2-layer Model} \\ \hline
+    \tabincell{c}{Accuracy in \\ each epoch} & training & test & training & test \\ \hline
+    20 & 99.99 & 99.51 & 99.98 & 99.53 \\ \hline
+    21 & 100.00 & 99.51 & 99.98 & 99.51 \\ \hline
+    22 & 99.99 & 99.53 & 99.99 & 99.54 \\ \hline
+    23 & 100.00 & 99.53 & 99.99 & 99.56 \\ \hline
+    24 & 100.00 & 99.57 & 99.99 & 99.56 \\ \hline
+    25 & 100.00 & 99.52 & 99.99 & 99.53 \\ \hline
+    26 & 100.00 & 99.52 & 99.99 & 99.52 \\ \hline
+    27 & 100.00 & 99.56 & 99.99 & 99.55 \\ \hline
+    28 & 100.00 & 99.52 & 99.99 & 99.54 \\ \hline
+    29 & 100.00 & 99.52 & 100.00 & 99.56 \\ \hline
+    30 & 100.00 & 99.53 & 99.99 & 99.54 \\ \hline
+    31 & 100.00 & 99.52 & 100.00 & 99.55 \\ \hline
+    \end{tabular}
+\end{center}
+\caption{The training and test accuracy of 3-layer versus 2-layer model}
+\end{table}
+
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/all.png}
+  \caption{The training and test accuracy of 3-layer versus 2-layer model}
+\end{figure}
+
+\end{document}
