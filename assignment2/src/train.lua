@@ -1,7 +1,7 @@
 require 'xlua'
 require 'optim'
 require 'cunn'
-dofile './surrogate.lua'
+dofile './provider.lua'
 local c = require 'trepl.colorize'
 
 opt = lapp[[
@@ -55,13 +55,10 @@ end
 print(model)
 
 print(c.blue '==>' ..' loading data')
-
-
--- here to change
-provider = torch.load 'Surrogate.t7'
-provider.trainData.data = provider.surrogateData.data:float()
+provider = torch.load 'provider.t7'
+provider.trainData.data = provider.trainData.data:float()
 provider.valData.data = provider.valData.data:float()
---
+
 confusion = optim.ConfusionMatrix(10)
 
 print('Will save at '..opt.save)
@@ -92,7 +89,7 @@ function train()
 
   -- drop learning rate every "epoch_step" epochs
   if epoch % opt.epoch_step == 0 then optimState.learningRate = optimState.learningRate/2 end
-
+  
   print(c.blue '==>'.." online epoch # " .. epoch .. ' [batchSize = ' .. opt.batchSize .. ']')
 
   local targets = torch.CudaTensor(opt.batchSize)
