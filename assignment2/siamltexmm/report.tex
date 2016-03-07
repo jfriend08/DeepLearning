@@ -58,5 +58,12 @@ This is the report for deep learning assignment 2
 \section{Visualization}
 \subsection{Visualizing filters and augmentations}
 \subsection{t-SNE}
+Here we took all the images from val.t7b, which contains 1000 figures for total and 100 figures in each of class. To generate t-SNE embedding, we used only the first channel of each of the image, which the dimension is 1x96x96, and feed it into manifold.embedding.tsne. Then we will get the mapping result for each of the image onto the 2D space, and we can plot the figures based on the mapped coordinate.
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width=1\textwidth]{../fig/t_SNEIII.jpeg}
+  \caption{The training and test accuracy of 3-layer versus 2-layer model}
+\end{figure}
 
 \end{document}
