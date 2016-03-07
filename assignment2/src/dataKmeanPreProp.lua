@@ -6,20 +6,31 @@ dofile './patchRunII.lua'
 
 function dataKmeanPreProp:__init(path)
   self.kmeanProvider = torch.load(path)
+  self.kmeanProvider.patches.centroids = self.kmeanProvider.patches.centroids:float()
 end
 
 
-function dataKmeanPreProp:prePropHandler(d, numPatch, kSize, gap, runWhiten)
+function dataKmeanPreProp:prePropHandler(d, numPatch, kSize, gap, runNorm, runWhiten)
   local numSamples = d:size()[1]
   local FIG_dim = {3,96,96}
-  data_norm = normalize(d)
+
+  data_norm = d:float()
+  if runNorm then
+    data_norm = normalize(d)
+  end
+  data_norm = data_norm:float()
+
   patches = parsePatch(data_norm, numSamples, numPatch, FIG_dim[1], FIG_dim[2], FIG_dim[3], kSize, gap)
+  patches = patches:float()
   print(patches:size())
   print(self.kmeanProvider.patches.centroids:size())
+
   if runWhiten then
     patches = whiten(patches)
+    patches = patches:float()
     print(patches:size())
   end
+
   return getFeatureFromCentroids(patches, self.kmeanProvider.patches.centroids)
 
 end
@@ -63,19 +74,20 @@ function stepFunction(x)
     return 0
   end
 end
+
 function normalize(d)
   local data = d
-  print 'preprocessing data'
+  print 'normalize data'
   collectgarbage()
   local normalization = nn.SpatialContrastiveNormalization(1, image.gaussian1D(7))
   for i = 1, data:size()[1] do
-     xlua.progress(i, data:size()[1])
-     -- rgb -> yuv
-     local rgb = d[i]
-     local yuv = image.rgb2yuv(rgb)
-     -- normalize y locally:
-     yuv[1] = normalization(yuv[{{1}}])
-     d[i] = yuv
+    xlua.progress(i, data:size()[1])
+    -- rgb -> yuv
+    local rgb = data[i]
+    local yuv = image.rgb2yuv(rgb)
+    -- normalize y locally:
+    yuv[1] = normalization(yuv[{{1}}])
+    data[i] = yuv
   end
   -- normalize u globally:
   local mean_u = data:select(2,2):mean()
@@ -107,10 +119,10 @@ function parsePatch(d, numSamples, numPatch, numChannels, height, width, kSize, 
 
           p[p_idx]:copy(c1:resize(numChannels*kSize*kSize))
           p_idx = p_idx + 1
-
         end
       end
     end
+    assert(p_idx == numPatch+1)
     t[idx]:copy(p)
     idx = idx + 1
   end
