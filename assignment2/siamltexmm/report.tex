@@ -46,6 +46,19 @@ This is the report for deep learning assignment 2
 
 \section{More Backpropagation}
 \subsection{Backpropagation through a DAG of modules}
+Given each node is sigmoid layers, and the second layer is $O_{min} = min(i_{1}, i_{2})$ and $O_{max} = max(i_{1}, i_{2})$. Therefore, we can rewrite $y$ as:
+\begin{equation}
+y = min({1\over1+e^{-x_{1}}}, {1\over1+e^{-x_{2}}}) + max({1\over1+e^{-x_{1}}}, {1\over1+e^{-x_{2}}})
+\end{equation}
+which can also rewrite as:
+\begin{equation}
+y = {1\over1+e^{-x_{1}}} + {1\over1+e^{-x_{2}}}
+\end{equation}
+as we taking the deritive of $E$ respect to $x_{i}$ and with chain rule applied:
+\begin{equation}
+{\partial E\over \partial x_{i}} = {\partial E\over \partial y} {e^{-x_{i}} \over (1+e^{x_{i}})^2}}
+\end{equation}
+
 \subsection{Batch Normalization}
 
 \\
