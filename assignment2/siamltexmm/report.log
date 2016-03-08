@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 MAR 2016 12:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  8 MAR 2016 12:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -330,19 +330,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--72
 Missing character: There is no Â in font cmssbx10!
 Missing character: There is no ­ in font cmssbx10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--82
+Underfull \hbox (badness 10000) in paragraph at lines 74--80
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--82
+Underfull \hbox (badness 10000) in paragraph at lines 74--80
 
  []
 
 ! Undefined control sequence.
 \@thehead ->\slugmaster 
                         
-l.82 \begin{equation}
+l.80 \begin{equation}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -360,7 +360,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 where $\[
+l.83 where $\[
                z_{k} = \norm{x-c^{(k)}} \]$ and $\mu(z)$ is the mean of the ...
 
 Your command was ignored.
@@ -374,17 +374,17 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.85 where $\[ z_{k} = \norm{x-c^{(k)}} \]
+l.83 where $\[ z_{k} = \norm{x-c^{(k)}} \]
                                           $ and $\mu(z)$ is the mean of the ...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<../fig/kmeans.png, id=32, 826.08624pt x 399.4925pt>
+<../fig/kmeans.png, id=31, 826.08624pt x 399.4925pt>
 File: ../fig/kmeans.png Graphic file (type png)
  <use ../fig/kmeans.png>
-Package pdftex.def Info: ../fig/kmeans.png used on input line 91.
+Package pdftex.def Info: ../fig/kmeans.png used on input line 89.
 (pdftex.def)             Requested size: 284.52756pt x 137.5995pt.
 Missing character: There is no Â in font cmssbx10!
 Missing character: There is no ­ in font cmssbx10!
@@ -400,7 +400,7 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.112 
+l.110 
        <../fig/kmeans.png>]
 Missing character: There is no Â in font cmssbx10!
 Missing character: There is no ­ in font cmssbx10!
@@ -409,7 +409,7 @@ Missing character: There is no ­ in font cmssbx10!
 File: ../fig/PseudoÂ­labels.png Graphic file (type png)
 
 <use ../fig/PseudoÂ­labels.png>
-Package pdftex.def Info: ../fig/PseudoÂ­labels.png used on input line 117.
+Package pdftex.def Info: ../fig/PseudoÂ­labels.png used on input line 115.
 (pdftex.def)             Requested size: 284.52756pt x 185.10515pt.
 Missing character: There is no Â in font cmti9!
 Missing character: There is no ­ in font cmti9!
@@ -421,7 +421,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 \section
+l.124 \section
               {Visualization}
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -438,7 +438,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.131 \begin{subfigure}
+l.129 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -448,17 +448,17 @@ or  <return>  to continue without it.
 File: ../fig/img_regNorm/2.png Graphic file (type png)
 
 <use ../fig/img_regNorm/2.png>
-Package pdftex.def Info: ../fig/img_regNorm/2.png used on input line 133.
+Package pdftex.def Info: ../fig/img_regNorm/2.png used on input line 131.
 (pdftex.def)             Requested size: 142.26378pt x 142.26353pt.
 
 
-! LaTeX Error: \begin{figure} on input line 129 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 127 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.135 \end{subfigure}
+l.133 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -471,14 +471,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.136 \begin{subfigure}
+l.134 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.138   \subfloat
+l.136   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img_regNorm/2.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -488,11 +488,11 @@ and I'll forget about whatever was undefined.
 
 File: ../fig/img_regNorm/2.png Graphic file (type png)
 <use ../fig/img_regNorm/2.png>
-Package pdftex.def Info: ../fig/img_regNorm/2.png used on input line 138.
+Package pdftex.def Info: ../fig/img_regNorm/2.png used on input line 136.
 (pdftex.def)             Requested size: 28.45274pt x 28.45241pt.
 
 ! Undefined control sequence.
-l.139   \subfloat
+l.137   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_1.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -503,11 +503,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_1.png, id=45, 32.12pt x 32.12pt>
 File: ../fig/img/2_1.png Graphic file (type png)
  <use ../fig/img/2_1.png>
-Package pdftex.def Info: ../fig/img/2_1.png used on input line 139.
+Package pdftex.def Info: ../fig/img/2_1.png used on input line 137.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.140   \subfloat
+l.138   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_2.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -518,11 +518,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_2.png, id=46, 32.12pt x 32.12pt>
 File: ../fig/img/2_2.png Graphic file (type png)
  <use ../fig/img/2_2.png>
-Package pdftex.def Info: ../fig/img/2_2.png used on input line 140.
+Package pdftex.def Info: ../fig/img/2_2.png used on input line 138.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.141   \subfloat
+l.139   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_19.png}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -533,13 +533,13 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_19.png, id=47, 32.12pt x 32.12pt>
 File: ../fig/img/2_19.png Graphic file (type png)
  <use ../fig/img/2_19.png>
-Package pdftex.def Info: ../fig/img/2_19.png used on input line 141.
+Package pdftex.def Info: ../fig/img/2_19.png used on input line 139.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.142   \subfloat
+l.140   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_3.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -550,11 +550,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_3.png, id=48, 32.12pt x 32.12pt>
 File: ../fig/img/2_3.png Graphic file (type png)
  <use ../fig/img/2_3.png>
-Package pdftex.def Info: ../fig/img/2_3.png used on input line 142.
+Package pdftex.def Info: ../fig/img/2_3.png used on input line 140.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.143   \subfloat
+l.141   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_4.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -565,11 +565,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_4.png, id=49, 32.12pt x 32.12pt>
 File: ../fig/img/2_4.png Graphic file (type png)
  <use ../fig/img/2_4.png>
-Package pdftex.def Info: ../fig/img/2_4.png used on input line 143.
+Package pdftex.def Info: ../fig/img/2_4.png used on input line 141.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.144   \subfloat
+l.142   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_5.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -580,11 +580,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_5.png, id=50, 32.12pt x 32.12pt>
 File: ../fig/img/2_5.png Graphic file (type png)
  <use ../fig/img/2_5.png>
-Package pdftex.def Info: ../fig/img/2_5.png used on input line 144.
+Package pdftex.def Info: ../fig/img/2_5.png used on input line 142.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.145   \subfloat
+l.143   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_10.png}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -595,13 +595,13 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_10.png, id=51, 32.12pt x 32.12pt>
 File: ../fig/img/2_10.png Graphic file (type png)
  <use ../fig/img/2_10.png>
-Package pdftex.def Info: ../fig/img/2_10.png used on input line 145.
+Package pdftex.def Info: ../fig/img/2_10.png used on input line 143.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.146   \subfloat
+l.144   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_25.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -612,11 +612,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_25.png, id=52, 32.12pt x 32.12pt>
 File: ../fig/img/2_25.png Graphic file (type png)
  <use ../fig/img/2_25.png>
-Package pdftex.def Info: ../fig/img/2_25.png used on input line 146.
+Package pdftex.def Info: ../fig/img/2_25.png used on input line 144.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.147   \subfloat
+l.145   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_26.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -627,11 +627,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_26.png, id=53, 32.12pt x 32.12pt>
 File: ../fig/img/2_26.png Graphic file (type png)
  <use ../fig/img/2_26.png>
-Package pdftex.def Info: ../fig/img/2_26.png used on input line 147.
+Package pdftex.def Info: ../fig/img/2_26.png used on input line 145.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.148   \subfloat
+l.146   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_29.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -642,11 +642,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_29.png, id=54, 32.12pt x 32.12pt>
 File: ../fig/img/2_29.png Graphic file (type png)
  <use ../fig/img/2_29.png>
-Package pdftex.def Info: ../fig/img/2_29.png used on input line 148.
+Package pdftex.def Info: ../fig/img/2_29.png used on input line 146.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.149   \subfloat
+l.147   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_30.png}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -657,13 +657,13 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_30.png, id=55, 32.12pt x 32.12pt>
 File: ../fig/img/2_30.png Graphic file (type png)
  <use ../fig/img/2_30.png>
-Package pdftex.def Info: ../fig/img/2_30.png used on input line 149.
+Package pdftex.def Info: ../fig/img/2_30.png used on input line 147.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.150   \subfloat
+l.148   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_32.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -674,11 +674,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_32.png, id=56, 32.12pt x 32.12pt>
 File: ../fig/img/2_32.png Graphic file (type png)
  <use ../fig/img/2_32.png>
-Package pdftex.def Info: ../fig/img/2_32.png used on input line 150.
+Package pdftex.def Info: ../fig/img/2_32.png used on input line 148.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.151   \subfloat
+l.149   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_33.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -689,11 +689,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_33.png, id=57, 32.12pt x 32.12pt>
 File: ../fig/img/2_33.png Graphic file (type png)
  <use ../fig/img/2_33.png>
-Package pdftex.def Info: ../fig/img/2_33.png used on input line 151.
+Package pdftex.def Info: ../fig/img/2_33.png used on input line 149.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.152   \subfloat
+l.150   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_34.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -704,11 +704,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_34.png, id=58, 32.12pt x 32.12pt>
 File: ../fig/img/2_34.png Graphic file (type png)
  <use ../fig/img/2_34.png>
-Package pdftex.def Info: ../fig/img/2_34.png used on input line 152.
+Package pdftex.def Info: ../fig/img/2_34.png used on input line 150.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.153   \subfloat
+l.151   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_35.png}}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -719,13 +719,13 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_35.png, id=59, 32.12pt x 32.12pt>
 File: ../fig/img/2_35.png Graphic file (type png)
  <use ../fig/img/2_35.png>
-Package pdftex.def Info: ../fig/img/2_35.png used on input line 153.
+Package pdftex.def Info: ../fig/img/2_35.png used on input line 151.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.154   \subfloat
+l.152   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_37.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -736,11 +736,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_37.png, id=60, 32.12pt x 32.12pt>
 File: ../fig/img/2_37.png Graphic file (type png)
  <use ../fig/img/2_37.png>
-Package pdftex.def Info: ../fig/img/2_37.png used on input line 154.
+Package pdftex.def Info: ../fig/img/2_37.png used on input line 152.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.155   \subfloat
+l.153   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_38.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -751,11 +751,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_38.png, id=61, 32.12pt x 32.12pt>
 File: ../fig/img/2_38.png Graphic file (type png)
  <use ../fig/img/2_38.png>
-Package pdftex.def Info: ../fig/img/2_38.png used on input line 155.
+Package pdftex.def Info: ../fig/img/2_38.png used on input line 153.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.156   \subfloat
+l.154   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_41.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -766,11 +766,11 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_41.png, id=62, 32.12pt x 32.12pt>
 File: ../fig/img/2_41.png Graphic file (type png)
  <use ../fig/img/2_41.png>
-Package pdftex.def Info: ../fig/img/2_41.png used on input line 156.
+Package pdftex.def Info: ../fig/img/2_41.png used on input line 154.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Undefined control sequence.
-l.157   \subfloat
+l.155   \subfloat
                  {\includegraphics[width = 10mm]{../fig/img/2_48.png}}&
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -781,26 +781,26 @@ and I'll forget about whatever was undefined.
 <../fig/img/2_48.png, id=63, 32.12pt x 32.12pt>
 File: ../fig/img/2_48.png Graphic file (type png)
  <use ../fig/img/2_48.png>
-Package pdftex.def Info: ../fig/img/2_48.png used on input line 157.
+Package pdftex.def Info: ../fig/img/2_48.png used on input line 155.
 (pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
 
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.157 ...hics[width = 10mm]{../fig/img/2_48.png}}&
+l.155 ...hics[width = 10mm]{../fig/img/2_48.png}}&
                                                   
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 
-! LaTeX Error: \begin{figure} on input line 129 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 127 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.159 \end{subfigure}
+l.157 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -810,12 +810,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.160 \caption
+l.158 \caption
               {Figures of surrogate set}pdfTeX warning (ext4): destination with
  the same identifier (name{figure.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.160 \caption{Figures of surrogate set}
+l.158 \caption{Figures of surrogate set}
                                         
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -828,14 +828,14 @@ as been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.162 T
+l.160 T
        hen we implemented the kmeans method. According to the paper, they ra...
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.162 T
+l.160 T
        hen we implemented the kmeans method. According to the paper, they ra...
  <../fig/PseudoÂ­labels.png>]
 
@@ -845,7 +845,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.165 \begin{subfigure}
+l.163 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -855,17 +855,17 @@ or  <return>  to continue without it.
 File: ../fig/kmeansMethod.png Graphic file (type png)
 
 <use ../fig/kmeansMethod.png>
-Package pdftex.def Info: ../fig/kmeansMethod.png used on input line 167.
+Package pdftex.def Info: ../fig/kmeansMethod.png used on input line 165.
 (pdftex.def)             Requested size: 284.52756pt x 118.45674pt.
 
 
-! LaTeX Error: \begin{figure} on input line 163 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 161 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.169 \end{subfigure}
+l.167 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -878,14 +878,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.170 \begin{subfigure}
+l.168 \begin{subfigure}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 ! Undefined control sequence.
-l.172   \subfloat
+l.170   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -898,11 +898,11 @@ File: ../fig/center_20000_700/center4.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center4.png>
 Package pdftex.def Info: ../fig/center_20000_700/center4.png used on input line
- 172.
+ 170.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.173   \subfloat
+l.171   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -915,11 +915,11 @@ File: ../fig/center_20000_700/center5.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center5.png>
 Package pdftex.def Info: ../fig/center_20000_700/center5.png used on input line
- 173.
+ 171.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.174   \subfloat
+l.172   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -932,11 +932,11 @@ File: ../fig/center_20000_700/center6.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center6.png>
 Package pdftex.def Info: ../fig/center_20000_700/center6.png used on input line
- 174.
+ 172.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.175   \subfloat
+l.173   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -949,13 +949,13 @@ File: ../fig/center_20000_700/center8.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center8.png>
 Package pdftex.def Info: ../fig/center_20000_700/center8.png used on input line
- 175.
+ 173.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.176   \subfloat
+l.174   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -968,11 +968,11 @@ File: ../fig/center_20000_700/center12.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center12.png>
 Package pdftex.def Info: ../fig/center_20000_700/center12.png used on input lin
-e 176.
+e 174.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.177   \subfloat
+l.175   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -985,11 +985,11 @@ File: ../fig/center_20000_700/center22.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center22.png>
 Package pdftex.def Info: ../fig/center_20000_700/center22.png used on input lin
-e 177.
+e 175.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.178   \subfloat
+l.176   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1002,11 +1002,11 @@ File: ../fig/center_20000_700/center23.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center23.png>
 Package pdftex.def Info: ../fig/center_20000_700/center23.png used on input lin
-e 178.
+e 176.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.179   \subfloat
+l.177   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1019,13 +1019,13 @@ File: ../fig/center_20000_700/center24.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center24.png>
 Package pdftex.def Info: ../fig/center_20000_700/center24.png used on input lin
-e 179.
+e 177.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.180   \subfloat
+l.178   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1038,11 +1038,11 @@ File: ../fig/center_20000_700/center28.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center28.png>
 Package pdftex.def Info: ../fig/center_20000_700/center28.png used on input lin
-e 180.
+e 178.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.181   \subfloat
+l.179   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1055,11 +1055,11 @@ File: ../fig/center_20000_700/center30.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center30.png>
 Package pdftex.def Info: ../fig/center_20000_700/center30.png used on input lin
-e 181.
+e 179.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.182   \subfloat
+l.180   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1072,11 +1072,11 @@ File: ../fig/center_20000_700/center36.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center36.png>
 Package pdftex.def Info: ../fig/center_20000_700/center36.png used on input lin
-e 182.
+e 180.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.183   \subfloat
+l.181   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1089,13 +1089,13 @@ File: ../fig/center_20000_700/center37.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center37.png>
 Package pdftex.def Info: ../fig/center_20000_700/center37.png used on input lin
-e 183.
+e 181.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.184   \subfloat
+l.182   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1108,11 +1108,11 @@ File: ../fig/center_20000_700/center38.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center38.png>
 Package pdftex.def Info: ../fig/center_20000_700/center38.png used on input lin
-e 184.
+e 182.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.185   \subfloat
+l.183   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1125,11 +1125,11 @@ File: ../fig/center_20000_700/center41.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center41.png>
 Package pdftex.def Info: ../fig/center_20000_700/center41.png used on input lin
-e 185.
+e 183.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.186   \subfloat
+l.184   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1142,11 +1142,11 @@ File: ../fig/center_20000_700/center46.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center46.png>
 Package pdftex.def Info: ../fig/center_20000_700/center46.png used on input lin
-e 186.
+e 184.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.187   \subfloat
+l.185   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1159,13 +1159,13 @@ File: ../fig/center_20000_700/center49.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center49.png>
 Package pdftex.def Info: ../fig/center_20000_700/center49.png used on input lin
-e 187.
+e 185.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
 <recently read> \subfloat 
                           
-l.188   \subfloat
+l.186   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1178,11 +1178,11 @@ File: ../fig/center_20000_700/center50.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center50.png>
 Package pdftex.def Info: ../fig/center_20000_700/center50.png used on input lin
-e 188.
+e 186.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.189   \subfloat
+l.187   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1195,11 +1195,11 @@ File: ../fig/center_20000_700/center52.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center52.png>
 Package pdftex.def Info: ../fig/center_20000_700/center52.png used on input lin
-e 189.
+e 187.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.190   \subfloat
+l.188   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1212,11 +1212,11 @@ File: ../fig/center_20000_700/center57.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center57.png>
 Package pdftex.def Info: ../fig/center_20000_700/center57.png used on input lin
-e 190.
+e 188.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Undefined control sequence.
-l.191   \subfloat
+l.189   \subfloat
                  {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1229,26 +1229,26 @@ File: ../fig/center_20000_700/center58.png Graphic file (type png)
 
 <use ../fig/center_20000_700/center58.png>
 Package pdftex.def Info: ../fig/center_20000_700/center58.png used on input lin
-e 191.
+e 189.
 (pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
 
 ! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
-l.191 ...]{../fig/center_20000_700/center58.png}}&
+l.189 ...]{../fig/center_20000_700/center58.png}}&
                                                   
 You have given more \span or & marks than there were
 in the preamble to the \halign or \valign now in progress.
 So I'll assume that you meant to type \cr instead.
 
 
-! LaTeX Error: \begin{figure} on input line 163 ended by \end{subfigure}.
+! LaTeX Error: \begin{figure} on input line 161 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.193 \end{subfigure}
+l.191 \end{subfigure}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1258,12 +1258,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.194 \caption
+l.192 \caption
               {Figure of centroids}pdfTeX warning (ext4): destination with the 
 same identifier (name{figure.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.194 \caption{Figure of centroids}
+l.192 \caption{Figure of centroids}
                                    
 Overfull \vbox (3.04993pt too high) has occurred while \output is active []
 
@@ -1294,9 +1294,9 @@ py)> <../fig/center_20000_700/center57.png (PNG copy)> <../fig/center_20000_700
 File: ../fig/t_SNEIII.jpeg Graphic file (type jpg)
 
 <use ../fig/t_SNEIII.jpeg>
-Package pdftex.def Info: ../fig/t_SNEIII.jpeg used on input line 202.
+Package pdftex.def Info: ../fig/t_SNEIII.jpeg used on input line 200.
 (pdftex.def)             Requested size: 284.52756pt x 284.4997pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
 
 Overfull \vbox (3.04993pt too high) has occurred while \output is active []
 
@@ -1306,24 +1306,24 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.206 \end{document}
+l.204 \end{document}
                      <../fig/t_SNEIII.jpeg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 204.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 206.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 206.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 204.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 204.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 206.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
  ) 
 Here is how much of TeX's memory you used:
  5931 strings out of 493089
  89641 string characters out of 6134842
- 170293 words of memory out of 5000000
+ 171293 words of memory out of 5000000
  9303 multiletter control sequences out of 15000+600000
  10202 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,13n,23p,554b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,23p,832b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
@@ -1339,7 +1339,7 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (5 pages, 1152736 bytes).
+Output written on report.pdf (5 pages, 1153900 bytes).
 PDF statistics:
  162 PDF objects out of 1000 (max. 8388607)
  92 compressed objects within 1 object stream

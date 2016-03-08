@@ -68,9 +68,7 @@ We were trying to create surrogate training data from unlabeled images. As the r
 1. Rotation with random degree in range $[-20, 20]$\\
 2. Translate random horizontally and vertically in range $[0, 0.1]$ of patch size\\
 3. Scale with random degree in range $[0.7, 1.4]$ of patch size\\\\
-The procedures mentioned above are applied to unlabel images after normalization. Figure 3.1 showes the example surrogate figures.
-
-
+The procedures mentioned above are applied to unlabel images after normalization. Figure 3.1 showes the example surrogate figures. According to the reference paper, they construct the convolution neuron network for either 64c-64c-128 or 64c5-128c5-256c5-512f, which letter $c$ represent number of convolutional filters and $f$ represent the number of fully connected units. As we randomly selected 4000 unlabel images and create 100 surrogate set per image, we got total 400000 patches which belongs to 4000 class. The techinical difficulity for this method is the time complexity because the reference paper took 4 days to train the second model, and when we did face the issue when contruct and train the model. Therefore, we realize this model may not suitable for this assignment and decided to move to other model.
 
 \subsection{Method: K­means Centroids}
 We implemented Kmeans methods as one of our model, since based on previous paper that they can reach very good performance based on this simple model. The idea can divided into two part: first for getting centroids, and the second is perform feature mapping and perform classification. Regarding to the centroids identification, we did the following three steps: \\\\
