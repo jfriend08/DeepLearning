@@ -65,7 +65,22 @@ as we taking the deritive of $E$ respect to $x_{i}$ and with chain rule applied:
 \section{STL-10: semi-supervised image recognition}
 \subsection{Method: Surrogate Class}
 \subsection{Method: K­means Centroids}
-Hi
+We implemented Kmeans methods as one of our model, since based on previous paper that they can reach very good performance based on this simple model. The idea can divided into two part: first for getting centroids, and the second is perform feature mapping and perform classification. Regarding to the centroids identification, we did the following three steps: \\
+1. Randomly select certain amount of unlabeled training images, and extract random patches. The size of patch is 22x22\\
+2. Apply pre-processing to patches, including normalization and whitening\\
+3. Learn feature-mapping using unsupervised method, and here we use kmeans due to the its good performance in the reference paper
+After centroids are identified, the steps for the second stage is as followed:\\
+1. Extract patches from input images. The size of patches is 22x22, and the gap between patches is 2, and therefore we can get 16 patches from each of imput figure. Then we perforem feature mapping as the following equation:
+\begin{equation}
+{f_{k}(x) = max\{0, \mu(z)-z_{k}\}}
+\end{equation}
+where $\[ z_{k} = \norm{x-c^{(k)}} \]$ and $\mu(z)$ is the mean of the elements of $z$\\
+2. Pool features together over region and perform 4 quadrants summation to reduce the number of feature values, and therefore we will get the feature in the size of $4k$ per figure, and $k$ is the number of centroids.\\
+3. Perform classification based on the feature vector, and here we used 1-vs-N SVM.\\
+Figure 3.2 showes the process of the centroids identification part, and figure 2.1 shows the feature mapping and classification part
+
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[width=100mm]{../fig/kmeans.png}
