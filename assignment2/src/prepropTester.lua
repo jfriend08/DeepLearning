@@ -8,26 +8,16 @@ require 'optim'
 require 'cunn'
 local c = require 'trepl.colorize'
 
-dataKmeanPreProp = dataKmeanPreProp('./patchProvider_22_20000_400.t7')
+dataKmeanPreProp = dataKmeanPreProp('./patchProvider_22_20000_700.t7')
 
 -- local raw_train = torch.load('stl-10/extra.t7b')
 
-provider = torch.load 'provider.t7'
-provider.trainData.data = provider.trainData.data:float()
-provider.valData.data = provider.valData.data:float()
 
-opt = lapp[[
-   -s,--save                  (default "logs")      subdirectory to save logs
-   -b,--batchSize             (default 20)          batch size
-   -r,--learningRate          (default 1)        learning rate
-   --learningRateDecay        (default 1e-7)      learning rate decay
-   --weightDecay              (default 0.0005)      weightDecay
-   -m,--momentum              (default 0.9)         momentum
-   --epoch_step               (default 25)          epoch step
-   --model                    (default kmeansModel)     model name
-   --max_epoch                (default 300)           maximum number of iterations
-   --backend                  (default nn)            backend
-]]
+cmd = torch.CmdLine()
+cmd:option('-doTrain',1,'0 or 1')
+cmd:option('-doVal',1,'0 or 1')
+cmd:option('-SVMiter',100,'number of SVM iterations')
+opt = cmd:parse(arg)
 
 print(opt)
 
@@ -45,36 +35,58 @@ function parseData(d, numSamples, numChannels, height, width)
   return t
 end
 
-
--- local FIG_dim = {3, 96, 96}
--- local trsize = 10
--- local data = parseData(raw_train.data[1], trsize, FIG_dim[1], FIG_dim[2], FIG_dim[3])
--- local normFeatures = dataKmeanPreProp:prePropHandler(data, 16, 22, 2, false)
+if opt.doTrain == 1 or opt.doVal then
+  provider = torch.load 'provider.t7'
+  provider.trainData.data = provider.trainData.data:float()
+  provider.valData.data = provider.valData.data:float()
+end
 
 local trsize = 4000
-local vasize = 5
+local vasize = 1000
 local numPatch = 16
 local w = 22
 local gap = 2
 local doNorm = true
 local doWhiten = true
-local max_epoch = 200
-local modelName = ''
+local trainFeatures = torch.Tensor()
+local trainlabels = torch.Tensor()
+local testFeatures = torch.Tensor()
+local testlabels = torch.Tensor()
 
-idxs = torch.randperm(4000):long():sub(1,trsize)
-local train = provider.trainData.data:index(1,idxs)
-local trainlabels = provider.trainData.labels:index(1,idxs)
+print("==> Start training set process")
+if opt.doTrain == 1 then
+  idxs = torch.randperm(4000):long():sub(1,trsize)
+  train = provider.trainData.data:index(1,idxs)
+  trainFeatures = dataKmeanPreProp:prePropHandler(train, numPatch, w, gap, doNorm, doWhiten)
+  trainlabels = provider.trainData.labels:index(1,idxs)
+  obj = {
+   trainFeatures = trainFeatures,
+   trainLabels = trainlabels}
+  torch.save('trainObj.dat', obj)
+else
+  obj = torch.load('trainObj.dat')
+  trainFeatures = obj.trainFeatures
+  trainlabels = obj.trainLabels
+end
 
--- idxs = torch.randperm(1000):long():sub(1,vasize)
--- local test = provider.valData.data[{{1,vasize},{}}]
--- local testlabels = provider.valData.labels:index(1,idxs)
--- -- local train = provider.valData.data:index(1,idxs)
--- -- local testlabels = provider.valData.labels[{{1,vasize}}]
+print("==> Start testing set process")
+if opt.doVal == 1 then
+  idxs = torch.randperm(1000):long():sub(1,vasize)
+  test = provider.valData.data[{{1,vasize},{}}]
+  testFeatures = dataKmeanPreProp:prePropHandler(test, numPatch, w, gap, doNorm, doWhiten)
+  testlabels = provider.valData.labels:index(1,idxs)
+  obj = {
+   testFeatures = testFeatures,
+   testlabels = testlabels}
+  torch.save('testObj.dat', obj)
+else
+  obj = torch.load('testObj.dat')
+  testFeatures = obj.testFeatures
+  testlabels = obj.testlabels
+end
 
-local trainFeatures = dataKmeanPreProp:prePropHandler(train, numPatch, w, gap, doNorm, doWhiten)
--- local testFeatures = dataKmeanPreProp:prePropHandler(test, numPatch, w, gap, doNorm, doWhiten)
 trainFeatures = trainFeatures:float()
--- testFeatures = testFeatures:float()
+testFeatures = testFeatures:float()
 
 print ("hi!", trainFeatures:size())
 
@@ -90,13 +102,19 @@ print ("hi!", trainFeatures:size())
 --   table.insert(t2,{testlabels[l],{torch.range(1,4*1600):int(), trainFeatures[l]}})
 -- end
 
+print("==> Start SVM")
 trainFeatures = torch.cat(trainFeatures, torch.ones(trainFeatures:size(1)), 2)
-local theta = train_svm(trainFeatures, trainlabels, 100);
-print(theta:size())
+local theta = train_svm(trainFeatures, trainlabels, opt.SVMiter);
 local val,idx = torch.max(trainFeatures * theta, 2)
 local match = torch.eq(trainlabels, idx:float():squeeze()):sum()
 local accuracy = match/trainlabels:size(1)*100
 print('==> train accuracy is '..accuracy..'%')
+
+testFeatures = torch.cat(testFeatures, torch.ones(testFeatures:size(1)), 2)
+local val,idx = torch.max(testFeatures * theta, 2)
+local match = torch.eq(testlabels, idx:float():squeeze()):sum()
+local accuracy = match/testlabels:size(1)*100
+print('==> test accuracy is '..accuracy..'%')
 
 -- model = liblinear.train(t)
 -- labels,accuracy,dec = liblinear.predict(t,model)

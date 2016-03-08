@@ -17,7 +17,7 @@ function train_svm(data, label, c, verbose)
       local n = X:size(2)
       local l = label
       local k = nclass
-      local c = 100
+      -- local c = 100
       local theta = w:reshape(n, k)
 
       local y = l:reshape(m, 1):expand(m, k)
