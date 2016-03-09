@@ -146,7 +146,6 @@ function parsePatchRand(d, numSamples, numPatch, numChannels, height, width, kSi
     for pc = 1, numPatch do
       loc = torch.random(0,height-kSize-gap)
       c1 = image.crop(this_d, loc,loc, loc+kSize,loc+kSize)
-      print(c1:size(), idx)
       t[idx]:copy(c1:resize(numChannels*kSize*kSize))
       idx = idx + 1
     end
