@@ -91,7 +91,7 @@ end
 function patchRun:runKmean(ncentroids, niter)
   print 'start kmeans for centroids'
   -- local ncentroids = 1600
-  self.patches.centroids, counts = unsup.kmeans_modified(self.patches.data, ncentroids, nil, 0.1, niter, 1000, nil, true)
+  self.patches.centroids, self.patches.centroidsCount = unsup.kmeans_modified(self.patches.data, ncentroids, nil, 0.1, niter, 1000, nil, true)
   print(self.patches.data:size())
   print(self.patches.centroids:size())
   self.trainData = torch.Tensor() --free the space out
@@ -113,7 +113,7 @@ function parseData(d, numSamples, numChannels, height, width)
 end
 
 
-function patchRun:getPatch(kSize, gap, nPatch)
+function patchRun:getPatch(kSize, gap, nPatch, isRandom)
   print 'start getting patches'
   collectgarbage()
 
@@ -127,9 +127,32 @@ function patchRun:getPatch(kSize, gap, nPatch)
   self.patches = {
      data = torch.Tensor(),
      centroids = torch.Tensor(),
+     centroidsCount = torch.Tensor(),
      size = function() return numFig*nPatch end
   }
-  self.patches.data = parsePatch(self.trainData.data, numFig, nPatch, FIG_dim[1], FIG_dim[2], FIG_dim[2], kSize, gap)
+  if isRandom then
+    self.patches.data = parsePatchRand(self.trainData.data, numFig, nPatch, FIG_dim[1], FIG_dim[2], FIG_dim[2], kSize, gap)
+  else
+    self.patches.data = parsePatch(self.trainData.data, numFig, nPatch, FIG_dim[1], FIG_dim[2], FIG_dim[2], kSize, gap)
+  end
+
+end
+
+function parsePatchRand(d, numSamples, numPatch, numChannels, height, width, kSize, gap)
+  local t = torch.Tensor(numSamples*numPatch, numChannels*kSize*kSize)
+  local idx = 1
+  for i = 1,numSamples do
+    local this_d = d[i]
+    for pc = 1, numPatch do
+      loc = torch.random(0,height-kSize-gap)
+      c1 = image.crop(this_d, loc,loc, loc+kSize,loc+kSize)
+      print(c1:size(), idx)
+      t[idx]:copy(c1:resize(numChannels*kSize*kSize))
+      idx = idx + 1
+    end
+  end
+  assert(idx == numSamples*numPatch+1)
+  return t
 end
 
 function parsePatch(d, numSamples, numPatch, numChannels, height, width, kSize, gap)

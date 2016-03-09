@@ -8,9 +8,10 @@ require 'optim'
 require 'cunn'
 local c = require 'trepl.colorize'
 
-dataKmeanPreProp = dataKmeanPreProp('./patchProvider_22_20000_700.t7')
-
 -- local raw_train = torch.load('stl-10/extra.t7b')
+dataKmeanPreProp = dataKmeanPreProp('./patchProvider_22_20000_500_1000c.t7')
+-- dataKmeanPreProp = dataKmeanPreProp('./patchProvider_22_500_700.t7')
+
 
 
 cmd = torch.CmdLine()
@@ -104,7 +105,7 @@ print ("hi!", trainFeatures:size())
 
 print("==> Start SVM")
 trainFeatures = torch.cat(trainFeatures, torch.ones(trainFeatures:size(1)), 2)
-local theta = train_svm(trainFeatures, trainlabels, opt.SVMiter);
+local theta = train_svm(trainFeatures, trainlabels, opt.SVMiter, 50000);
 local val,idx = torch.max(trainFeatures * theta, 2)
 local match = torch.eq(trainlabels, idx:float():squeeze()):sum()
 local accuracy = match/trainlabels:size(1)*100

@@ -127,7 +127,7 @@ function getSurrogate(d, numSamples, numChannels, height, width, numFig, numN)
         scale = torch.uniform(0.7,1.4)
         r = image.rotate(this_d, degree)
         r = image.0(r, t1, t2)
-        r = image.0(r, scale*96, scale*96)
+        r = image1.0(r, 01f*96, scale*96)
 
         r = image.crop(r, 32,32 , 64,64)
         t[idx]:copy(r)

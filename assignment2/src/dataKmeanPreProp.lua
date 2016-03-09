@@ -7,6 +7,22 @@ dofile './patchRunII.lua'
 function dataKmeanPreProp:__init(path)
   self.kmeanProvider = torch.load(path)
   self.kmeanProvider.patches.centroids = self.kmeanProvider.patches.centroids:float()
+
+  print("==> select distinct features")
+  -- print(self.kmeanProvider.patches.centroids:size())
+  -- ncentroids = self.kmeanProvider.patches.centroids:size(1)
+  -- local j = 0
+  -- for i = 1,ncentroids do
+  --   if self.kmeanProvider.patches.centroidsCount[i] > 0 then
+  --     j = j + 1
+  --     self.kmeanProvider.patches.centroids[{j,{}}] = self.kmeanProvider.patches.centroids[{i,{}}]
+  --     self.kmeanProvider.patches.centroidsCount[j] = self.kmeanProvider.patches.centroidsCount[i]
+  --   end
+  -- end
+  -- self.kmeanProvider.patches.centroids = self.kmeanProvider.patches.centroids[{{1,j},{}}]
+  -- self.kmeanProvider.patches.centroidsCount  = self.kmeanProvider.patches.centroidsCount[{{1,j}}]
+
+  -- print(self.kmeanProvider.patches.centroids:size())
 end
 
 
@@ -43,7 +59,6 @@ function getFeatureFromCentroids(p, centers)
   local numK = centers:size()[1]
   local centerDim = centers:size()[2]
   local norm_res = torch.Tensor(numSamples, 4*numK)
-  -- local norm_res = torch.Tensor()
   local mlp_l2 = nn.PairwiseDistance(2)
   for i = 1, numSamples do
     xlua.progress(i, numSamples)
@@ -147,9 +162,16 @@ function whiten(d)
     return x
     -- return x, M, P
   end
-  for i = 1, d:size()[1] do
-    xlua.progress(i, d:size()[1])
-    d[i] = zca_whiten(d[i])
-  end
+  d1 = d:size(1)
+  d2 = d:size(2)
+  d3 = d:size(3)
+  d:resize(d1*d2, d3)
+  d = zca_whiten(d)
+  d:resize(d1, d2, d3)
   return d
+  -- for i = 1, d:size()[1] do
+  --   xlua.progress(i, d:size()[1])
+  --   d[i] = zca_whiten(d[i])
+  -- end
+  -- return d
 end
