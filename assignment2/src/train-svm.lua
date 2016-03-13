@@ -7,7 +7,7 @@
 --
 require("optim")
 
-function train_svm(data, label, c, verbose)
+function train_svm(data, label, iter, c, verbose)
    local nclass = torch.max(label)
    local w      = torch.zeros(data:size(2)*nclass)
 
@@ -17,7 +17,7 @@ function train_svm(data, label, c, verbose)
       local n = X:size(2)
       local l = label
       local k = nclass
-      local c = 100
+      -- local c = 100
       local theta = w:reshape(n, k)
 
       local y = l:reshape(m, 1):expand(m, k)
@@ -36,8 +36,9 @@ function train_svm(data, label, c, verbose)
 
       return loss, g:resize(n*k)
    end
-
-   local w,fw,i = optim.lbfgs(svm_loss, w, {maxIter=1000, maxEval=1000})
+   print("iter", iter)
+   -- local w,fw,i = optim.lbfgs(svm_loss, w, {maxIter=iter, maxEval=1000})
+   local w,fw,i = optim.lbfgs(svm_loss, w, {maxIter=iter})
    if verbose then for i=1,#fw do print(i,fw[i]); end end
    return w:resize(data:size(2), nclass)
 end
