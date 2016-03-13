@@ -60,13 +60,69 @@ as we taking the deritive of $E$ respect to $x_{i}$ and with chain rule applied:
 \end{equation}
 
 \subsection{Batch Normalization}
+\subsubsection{Calculate {\partial E\over \partial x_k}}
+Let us concentrate on a particular activation $x_k$, which is a mini-batch $\beta$ of size m
+\begin{equation}
+\beta=\{{x_{1...m}}\}
+\end{equation}
+mean of this mini-batch:
+\begin{equation}
+\mu_\beta={1\over m} \sum\limits_{i=1}^{m}x_i
+\end{equation}
+variance of this mini-batch:
+\begin{equation}
+\sigma^2_\beta={1\over m} \sum\limits_{i=1}^{m}(x_i-\mu_\beta)^2
+\end{equation}
+By definition:
+\begin{equation}
+y_i={{x_i-\mu_\beta}\over \sqrt{\sigma^2_\beta}} 
+\end{equation}
+
+Since $\sigma^2_\beta$ and $\mu_\beta$ are function of $x_i$, we have to calculate ${\partial E \over \partial \sigma^2_\beta}$ and ${\partial E \over \partial \mu_\beta}$
+\begin{equation}
+{\partial E \over \partial \sigma^2_\beta}=\sum\limits_{i=1}^{m} {\partial E \over \partial y_i}\cdot {\partial y_i \over \partial \sigma^2_\beta} 
+=\sum\limits_{i=1}^{m} {\partial E \over \partial y_i}\cdot (x_i-\mu_\beta) \cdot {-1 \over 2} (\sigma^2_\beta)^{3 \over 2}
+\end{equation}
+
+\begin{equation}
+{\partial E \over \partial \mu_\beta}=
+\sum\limits_{i=1}^{m} {\partial E \over \partial y_i}\cdot {\partial y_i \over \partial \mu_\beta} + {\partial E \over \partial \sigma^2_\beta} \cdot {\partial \sigma^2_\beta \over \partial \mu_\beta}
+=(\sum\limits_{i=1}^{m} {\partial E \over \partial y_i}\cdot {-1 \over {\sqrt{\sigma^2_\beta}}})+ {\partial E \over \partial \sigma^2_\beta} \cdot {{\sum\limits_{i=1}^{m}{-2(x_i-\mu_\beta)}} \over {m}}
+\end{equation}
+
+\begin{equation}
+{\partial E\over \partial x_i}={\partial E\over \partial y_i} {\partial y_i\over \partial x_i}+{\partial E\over \partial \sigma^2_\beta} {\partial \sigma^2_\beta \over \partial x_i}+{\partial E\over \partial \mu_\beta} {\partial \mu_\beta\over \partial x_i}
+={\partial E\over \partial y_i} \cdot {1 \over {\sqrt{\sigma^2_\beta}}}+{\partial E\over \partial \sigma^2_\beta} \cdot {2(x_i-\mu_\beta) \over {m}}+{\partial E\over \partial \mu_\beta}\cdot{1 \over m}
+\end{equation}
+
+\subsubsection{Shift variable}
+Let $\varepsilon$ be a learnable shift variable, we can define the formula as:\\
+forward pass:
+\begin{equation}
+y_k={x_k-E(x_k)\over {\sigma(x_k)}}+\varepsilon_k
+\end{equation}
+
+backward pass:
+\begin{equation}
+{\partial E\over \partial x_i}={\partial E\over \partial y_i} {\partial y_i\over \partial x_i}+{\partial E\over \partial \sigma^2_\beta} {\partial \sigma^2_\beta \over \partial x_i}+{\partial E\over \partial \mu_\beta} {\partial \mu_\beta\over \partial x_i}
+={\partial E\over \partial y_i} \cdot {1 \over {\sqrt{\sigma^2_\beta}}}+{\partial E\over \partial \sigma^2_\beta} \cdot {2(x_i-\mu_\beta) \over {m}}+{\partial E\over \partial \mu_\beta}\cdot{1 \over m}
+\end{equation}
+
+
+\begin{equation}
+{\partial E\over \partial \varepsilon}
+=\sum\limits_{i=1}^{m}{\partial E\over \partial y_i}\cdot{\partial y_i\over \partial \varepsilon}
+=\sum\limits_{i=1}^{m}{\partial E\over \partial y_i}\cdot{\partial \over \partial \varepsilon}{( {x_i-E(x_k)\over {\sigma(x_k)}}+\varepsilon_k )}
+=\sum\limits_{i=1}^{m}{\partial E\over \partial y_i}
+\end{equation}
 
 \\
 \section{STL-10: semi-supervised image recognition}
 \subsection{Method: Surrogate Class}
 We were trying to create surrogate training data from unlabeled images. As the reference paper mentioned, we ramdonly choose 4000 unlabel images and obtain patches from different images at varying positions and scales. The tansformation $\{T_{\alpha}|\alpha \in A\}$ parameterized by vectors $\alpha$ and $A$ is a set of random possible tranformation. Therefore, each tranformation $T_{\alpha}$ is a combination of each transformation below:\\\\
 1. Rotation with random degree in range $[-20, 20]$\\
-2. Translate random horizontally and vertically in range $[0, 0.1]$ of patch size\\
+2. Translate random
+\end{equation} horizontally and vertically in range $[0, 0.1]$ of patch size\\
 3. Scale with random degree in range $[0.7, 1.4]$ of patch size\\\\
 The procedures mentioned above are applied to unlabel images after normalization. Figure 3.1 showes the example surrogate figures.
 
@@ -111,16 +167,26 @@ Here is the test
 \end{table}
 
 \subsection{Method: Pseudo­labels}
-Hi
+We started with the trained baseline model. For every 5 epochs, use the current model to predict 1000 unlabeled figures. We collected 100 figures out of 1000 having largest confidence (the largest prediction probabilities) and used the predicted classes as the real labels of these figures. Then we merged these new "labeled" figures into the training set and used them to train the model. We started with 4000 training set and terminated at 8800 training set. The training process was interrupted by "Out of Memory" for several times, so the training result is splited into several pictures. From the training result, we found this method didin't help to improve the validation accuracy. 
 \begin{figure}[H]
 \centering
 \includegraphics[width=100mm]{../fig/Pseudo­labels.png}
   \caption{Pseudo­labels model}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width = 140mm, height=90mm]{../fig/pseudo_label/val_7100.png}
+  \caption{Pseudo­labels training result: training set start from 5000 figures and end at 7100.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = 140mm, height=90mm]{../fig/pseudo_label/val_8800.png}
+  \caption{Pseudo­labels training result: training set start from 7100 figures and end at 8800.}
+\end{figure}
+
 \subsection{Method: K­means Centroids + Pseudo­labels}
-
-
 
 \\
 \section{Visualization}
