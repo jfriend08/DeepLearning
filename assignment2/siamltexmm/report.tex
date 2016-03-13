@@ -65,10 +65,11 @@ as we taking the deritive of $E$ respect to $x_{i}$ and with chain rule applied:
 \section{STL-10: semi-supervised image recognition}
 \subsection{Method: Surrogate Class}
 We were trying to create surrogate training data from unlabeled images. As the reference paper mentioned, we ramdonly choose 4000 unlabel images and obtain patches from different images at varying positions and scales. The tansformation $\{T_{\alpha}|\alpha \in A\}$ parameterized by vectors $\alpha$ and $A$ is a set of random possible tranformation. Therefore, each tranformation $T_{\alpha}$ is a combination of each transformation below:\\\\
-1. Rotation with random degree in range $[-20, 20]$\\
+1. Rotation with random degree in range $[-10, 10]$\\
 2. Translate random horizontally and vertically in range $[0, 0.1]$ of patch size\\
-3. Scale with random degree in range $[0.7, 1.4]$ of patch size\\\\
-The procedures mentioned above are applied to unlabel images after normalization. Figure 3.1 showes the example surrogate figures. According to the reference paper, they construct the convolution neuron network for either 64c-64c-128 or 64c5-128c5-256c5-512f, which letter $c$ represent number of convolutional filters and $f$ represent the number of fully connected units. As we randomly selected 4000 unlabel images and create 100 surrogate set per image, we got total 400000 patches which belongs to 4000 class. The techinical difficulity for this method is the time complexity because the reference paper took 4 days to train the second model, and when we did face the issue when contruct and train the model. Therefore, we realized this model may not suitable for this assignment and decided to move to other model.
+3. Scale with random degree in range $[1, 1.4]$ of patch size\\
+4. Randomly decide to perform hflip\\\\
+The procedures mentioned above are applied to unlabel images after normalization. Figure 3.1 showes the example surrogate figures. According to the reference paper, they constructed the convolution neuron network for either 64c-64c-128 or 64c5-128c5-256c5-512f, which letter $c$ represent number of convolutional filters and $f$ represent the number of fully connected units. As we randomly selected 4000 unlabel images and create 100 surrogate set per image, we got total 400000 patches which belongs to 4000 class. The techinical difficulity for this method is the time complexity because the reference paper took 4 days to train the second model, and when we did face the issue when contruct and train the model. Therefore, we realized this model may not suitable for this assignment and decided to move to other model.
 
 \subsection{Method: K­means Centroids}
 We implemented Kmeans methods as one of our model, since based on previous paper that they can reach very good performance based on this simple model. The idea can divided into two part: first for getting centroids, and the second is perform feature mapping and perform classification. Regarding to the centroids identification, we did the following three steps: \\\\
@@ -83,30 +84,48 @@ After centroids are identified, the steps for the second stage is as followed:\\
 where $\[ z_{k} = \norm{x-c^{(k)}} \]$ and $\mu(z)$ is the mean of the elements of $z$\\
 2. Pool features together over region and perform 4 quadrants summation to reduce the number of feature values, and therefore we will get the feature in the size of $4k$ per figure, and $k$ is the number of centroids.\\
 3. Perform classification based on the feature vector, and here we used 1-vs-N SVM.\\
-Figure 3.2 showes the process of the centroids identification part, and figure 2.1 shows the feature mapping and classification part
-\begin{figure}[H]
-\centering
-\includegraphics[width=100mm]{../fig/kmeans.png}
-  \caption{Kmeans model}
-\end{figure}
-
-\subsubsection{Experiment: K­means Centroids}
-Here is the test
+Figure 3.2 demonstrate the procedures mentioned above, and also shows the example of centroids during the processes. As we can see from Table 2.1, when the number of 1600 centroids is fixed and changing the number of 1-vs-N SVM iterations, the accuracy is improving but not good enough. We are thinking there are few points need to take care more delicatly, for example the way of normalization, whitening, and 4 quadrants for dimension reduction.
 \begin{table}[H]
 \begin{center}
     \begin{tabular}{| c | c | c |}
     \hline
     numIter & Training Accuracy (\%) & Test Accuracy (\%) \\ \hline
-    500 & 96.71 & 99.04 \\ \hline
-    1000 & 99.04 & 99.41 \\ \hline
-    10000 & 99.34 & 99.40 \\ \hline
-    20000 & 99.53 & 99.47 \\ \hline
-    50000 & 99.53 & 99.47 \\ \hline
-    300000 & 99.53 & 99.47 \\ \hline
+    500 & 20.3 & 16.1 \\ \hline
+    1000 & 22.4 & 18.1 \\ \hline
+    10000 & 26.2 & 18.5 \\ \hline
     \end{tabular}
 \end{center}
-\caption{The training and test accuracy of the original model}
+\caption{The training and test accuracy of kmeans implementation based on reference paper}
 \end{table}
+
+\subsection{Method: VGG+Kmeans+Surrogate}
+Here we decide not to following the exact methoded mentioned in the reference papers, but to combine their high level ideas together. For example, the idea of kmeans is to find the centroids which will be a good representive for the small patches. Also, the idea of surrogate is to increase the size of training set by randomly transformation and therefore may give training model more different angles to learn the figure and better to predict the unlabel figures. For the left figure at figure 2.1, as we initially running the original vgg model, the training set is keep improving but not validation set after epoch 50. This suggests the training set may found a point that is good to optimize toward it but seems it's just a local minimum as we can see it not able to improve the validation set. \\
+As the training process is pretty much all about updating the appropriate weighting, we think assigning a proper initial weighting will help the optimization away from local but more toward global minimum. Therefore, as centroids from the kmeans method is a good representation of patches, we decide to assign the centroids to the weighting of the first convolution layer in vgg model. The first layer performs SpatialConvolution from 3 input plane to 64 output plane with 3x3 patch size, and therefore the weighting of this layer is in the size of 64x3x3x3. To match the size of this layer, we used almost the same method mentioned above, but to randomly select 10 patches of size 3x3 from each of label figures, and run kmeans for 64 centroids. After those 64 centroids are found, we assigned the value to the first SpatialConvolution layer before the training. As we can see from the second figure in figure 2.1, generally the value for the validation set is lifting up from 68\% in original vgg model to 72\%.\\
+However, we can still see the phenomenon that the training set keep improving but not the validation set, and we think the kmeans initialization indeed gave it a good start to train, but now the limitation is still the size of training set cannot reflect to the unlabel data to give the proper prediction. Therefore, we dicide to create 10 surrogate figrues with the transformation mentioned above from each of the 4000 label figures, and therefore now we get 44000 training set with the original figure and surrogate figure included. The training curve become very interesting. First of all we can see the prediction for validation set sometimes even outperform the training set, and also we can see the prediction gep between training and validation set are much close then the other models. However, limitation can still observed after epoch 50 that training still improving but not the validation set, suggesting surrogate indeed provide improvement but addition new figures may still required for model to learn from something new and potentially will need to include the method of Pseudo­labels.
+\begin{table}[H]
+\begin{center}
+    \begin{tabular}{| c | c | c |}
+    \hline
+    Method & Best Validation Accuracy (\%) \\ \hline
+    vgg & 68.6 \\ \hline
+    vgg+kmeans & 73.7 \\ \hline
+    vgg+kmeans+surrogate & 76.9 \\ \hline
+    \end{tabular}
+\end{center}
+\caption{Accuracy of different model}
+\end{table}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}
+  \begin{tabular}{cccc}
+  \subfloat{\includegraphics[width = 50mm]{../fig/models/vgg.png}}&
+  \subfloat{\includegraphics[width = 50mm]{../fig/models/vgg_kmeans.png}}&
+  \subfloat{\includegraphics[width = 50mm]{../fig/models/vgg_kmeans_surro.png}}&
+  \end{tabular}
+\end{subfigure}
+\caption{Training curve for original vgg, vgg+kmenas, and vgg+kmeans+surrogate}
+\end{figure}
 
 \subsection{Method: Pseudo­labels}
 Hi
@@ -115,9 +134,6 @@ Hi
 \includegraphics[width=100mm]{../fig/Pseudo­labels.png}
   \caption{Pseudo­labels model}
 \end{figure}
-
-\subsection{Method: K­means Centroids + Pseudo­labels}
-
 
 
 \\
