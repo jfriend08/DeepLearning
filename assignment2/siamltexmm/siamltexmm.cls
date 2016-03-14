@@ -104,7 +104,7 @@
 %%%\ExecuteOptions{letterpaper,10pt,twoside,onecolumn,leqno,draft,notitlepage}
 \ExecuteOptions{siamltexmmpaper,twoside,onecolumn,draft,notitlepage}
 \ProcessOptions
-\input{siam11.clo}
+\input{SIAM11.clo}
 \setlength\lineskip{1\p@}
 \setlength\normallineskip{1\p@}
 \renewcommand\baselinestretch{}
