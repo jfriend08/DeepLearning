@@ -16,7 +16,7 @@ function Surrogate:__init(full)
   local height = 96
   local width = 96
 
-  if not paths.dirp('../stl-10') then
+  if not paths.dirp('./stl-10') then
     os.execute('mkdir stl-10')
     local www = {
       train = 'https://s3.amazonaws.com/dsga1008-spring16/data/a2/train.t7b',
@@ -30,8 +30,8 @@ function Surrogate:__init(full)
    os.execute('wget ' .. www.extra .. '; '.. 'mv extra.t7b stl-10/extra.t7b')
   end
 
-  local raw_train = torch.load('../stl-10/train.t7b')
-  local raw_val = torch.load('../stl-10/val.t7b')
+  local raw_train = torch.load('./stl-10/train.t7b')
+  local raw_val = torch.load('./stl-10/val.t7b')
 
   -- load and parse dataset
   self.trainData = {
@@ -156,7 +156,7 @@ function getSurrogate(d, labels, numSamples, numChannels, height, width, numFig,
         r = image.rotate(this_d, degree)
         r = image.translate(r, t1, t2)
         r = image.scale(r, scale*96, scale*96)
-        if isflip > 0.5 then image.hflip(r, r) end
+        if isflip > 0.5ph then image.hflip(r, r) end
         r = addPadding(r, this_d)
         r = image.crop(r, "c", 96, 96)
         --print(r:size())
