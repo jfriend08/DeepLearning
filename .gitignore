@@ -4,7 +4,7 @@
 *.e*
 *.o*
 .ipynb_checkpoints
-model.net
+model*.net
 *.aux
 *.fdb_latexmk
 *.fls

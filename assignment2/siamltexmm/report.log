@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 MAR 2016 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 MAR 2016 21:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1374,13 +1374,84 @@ fig/center_20000_700/center41.png (PNG copy)> <../fig/center_20000_700/center46
 er_20000_700/center50.png (PNG copy)> <../fig/center_20000_700/center52.png (PN
 G copy)> <../fig/center_20000_700/center57.png (PNG copy)> <../fig/center_20000
 _700/center58.png (PNG copy)>]
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.218   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/t_SNEIII.jpeg}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 <../fig/t_SNEIII.jpeg, id=109, 4111.36pt x 4111.36pt>
 File: ../fig/t_SNEIII.jpeg Graphic file (type jpg)
 
 <use ../fig/t_SNEIII.jpeg>
-Package pdftex.def Info: ../fig/t_SNEIII.jpeg used on input line 216.
-(pdftex.def)             Requested size: 284.52756pt x 284.4997pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 220.
+Package pdftex.def Info: ../fig/t_SNEIII.jpeg used on input line 218.
+(pdftex.def)             Requested size: 142.26378pt x 142.21848pt.
+
+! Undefined control sequence.
+l.219   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/t-SNE1_1.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/t-SNE1_1.png, id=110, 2055.68pt x 2055.68pt>
+File: ../fig/t-SNE1_1.png Graphic file (type png)
+ <use ../fig/t-SNE1_1.png>
+Package pdftex.def Info: ../fig/t-SNE1_1.png used on input line 219.
+(pdftex.def)             Requested size: 142.26378pt x 142.24985pt.
+
+! Undefined control sequence.
+l.220   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/t-SNE0_2.png}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/t-SNE0_2.png, id=111, 2055.68pt x 2055.68pt>
+File: ../fig/t-SNE0_2.png Graphic file (type png)
+ <use ../fig/t-SNE0_2.png>
+Package pdftex.def Info: ../fig/t-SNE0_2.png used on input line 220.
+(pdftex.def)             Requested size: 142.26378pt x 142.24985pt.
+
+
+! LaTeX Error: \begin{figure} on input line 214 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.222 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (18.2585pt too wide) in paragraph at lines 217--223
+ [][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
 
 Overfull \vbox (3.04993pt too high) has occurred while \output is active []
 
@@ -1390,21 +1461,22 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.220 \end{document}
-                     <../fig/t_SNEIII.jpeg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 220.
+l.226 \end{document}
+                     <../fig/t_SNEIII.jpeg> <../fig/t-SNE1_1.png (PNG copy)> <.
+./fig/t-SNE0_2.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 226.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 220.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 220.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 226.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 226.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 220.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
  ) 
 Here is how much of TeX's memory you used:
- 5943 strings out of 493089
- 89982 string characters out of 6134842
+ 5953 strings out of 493089
+ 90196 string characters out of 6134842
  173293 words of memory out of 5000000
- 9311 multiletter control sequences out of 15000+600000
+ 9319 multiletter control sequences out of 15000+600000
  10202 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,13n,23p,1115b,345s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1423,10 +1495,10 @@ ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 /2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on report.pdf (6 pages, 1266318 bytes).
+Output written on report.pdf (6 pages, 11890651 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
+ 172 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream
  27 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

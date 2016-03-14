@@ -61,4 +61,4 @@ im_size = 4096
 -- map_im = m.draw_image_map(mapped_x1, x:resize(x:size(1), 1, 96, 96), im_size, 0, true)
 map_im = m.draw_image_map(mapped_x1, mydata, im_size, 0, true)
 mapped_x1:size()
-gfx.image(map_im)
+
