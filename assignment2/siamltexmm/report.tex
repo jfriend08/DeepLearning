@@ -61,13 +61,13 @@ as we taking the deritive of $E$ respect to $x_{i}$ and with chain rule applied:
 
 \subsection{Batch Normalization}
 \subsubsection{Calculate {\partial E\over \partial x_k}}
-Let us concentrate on a particular activation $x_k$, which is a mini-batch $\beta$ of size m
+Let us concentrate on a particular activation $x_{k}$, which is a mini-batch $\beta$ of size m
 \begin{equation}
 \beta=\{{x_{1...m}}\}
 \end{equation}
 mean of this mini-batch:
 \begin{equation}
-\mu_\beta={1\over m} \sum\limits_{i=1}^{m}x_i
+\mu_\beta={1\over m} \sum\limits_{i=1}^{m}x_{i}
 \end{equation}
 variance of this mini-batch:
 \begin{equation}
