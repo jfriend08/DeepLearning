@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  13 MAR 2016 21:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  13 MAR 2016 21:44
 entering extended mode
 **D:/DL_HW/HW1/DeepLearning/assignment2/siamltexmm/report.tex
 (D:/DL_HW/HW1/DeepLearning/assignment2/siamltexmm/report.tex
@@ -291,7 +291,7 @@ deleted material, e.g., by typing `I$}'.
 <inserted text> 
                 $
 l.64 L
-      et us concentrate on a particular activation $x_k$, which is a mini-ba...
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
@@ -299,7 +299,7 @@ you left one out. Proceed, with fingers crossed.
 <argument> ...ulate {\partial E\over \partial x_k}
                                                   
 l.64 L
-      et us concentrate on a particular activation $x_k$, which is a mini-ba...
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
 you forgot something else, as in `\hbox{$x}'. In such cases
@@ -310,7 +310,7 @@ deleted material, e.g., by typing `I$}'.
 <inserted text> 
                 $
 l.64 L
-      et us concentrate on a particular activation $x_k$, which is a mini-ba...
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
@@ -321,7 +321,7 @@ my insertion and my current dilemma will both disappear.
 <inserted text> 
                 }
 l.64 L
-      et us concentrate on a particular activation $x_k$, which is a mini-ba...
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
 With luck, this will get me unwedged. But if you
