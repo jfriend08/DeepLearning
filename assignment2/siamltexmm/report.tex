@@ -193,14 +193,13 @@ We started with the trained baseline model. For every 5 epochs, use the current 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = 140mm, height=90mm]{../fig/pseudo_label/val_7100.png}
-  \caption{Pseudo­labels training result: training set start from 5000 figures and end at 7100.}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width = 140mm, height=90mm]{../fig/pseudo_label/val_8800.png}
-  \caption{Pseudo­labels training result: training set start from 7100 figures and end at 8800.}
+\begin{subfigure}
+  \begin{tabular}{cccc}
+  \subfloat{\includegraphics[width = 75mm]{../fig/pseudo_label/val_7100.png}}&
+  \subfloat{\includegraphics[width = 75mm]{../fig/pseudo_label/val_8800.png}}&
+  \end{tabular}
+\end{subfigure}
+\caption{Pseudo­labels training result. Left: training set number starts from 5000 and ends at 7100. Right: training set number starts from 7100 and ends at 8800}
 \end{figure}
 
 \subsection{Method: K­means Centroids + Pseudo­labels}
