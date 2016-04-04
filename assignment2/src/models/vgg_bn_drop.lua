@@ -36,15 +36,15 @@ ConvBNReLU(512,512):add(nn.Dropout(0.4))
 ConvBNReLU(512,512):add(nn.Dropout(0.4))
 ConvBNReLU(512,512)
 vgg:add(MaxPooling(2,2,2,2):ceil())
-vgg:add(nn.View(64*512*1*1))
+vgg:add(nn.View(512*3*3))
 
 classifier = nn.Sequential()
 classifier:add(nn.Dropout(0.5))
-classifier:add(nn.Linear(64*512*1*1,512))
+classifier:add(nn.Linear(512*3*3,512))
 classifier:add(nn.BatchNormalization(512))
 classifier:add(nn.ReLU(true))
 classifier:add(nn.Dropout(0.5))
-classifier:add(nn.Linear(512,4000))
+classifier:add(nn.Linear(512,10))
 vgg:add(classifier)
 
 -- initialization from MSR

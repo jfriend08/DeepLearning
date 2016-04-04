@@ -4,10 +4,11 @@
 *.e*
 *.o*
 .ipynb_checkpoints
-model.net
+model*.net
 *.aux
 *.fdb_latexmk
 *.fls
 *.synctex.gz
 *.t7
 *.t7b
+report.log

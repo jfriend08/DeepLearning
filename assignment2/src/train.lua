@@ -1,7 +1,7 @@
 require 'xlua'
 require 'optim'
 require 'cunn'
-dofile './provider.lua'
+
 local c = require 'trepl.colorize'
 
 opt = lapp[[
@@ -31,6 +31,7 @@ do -- data augmentation module
     if self.train then
       local bs = input:size(1)
       local flip_mask = torch.randperm(bs):le(bs/2)
+      -- local flip_mask = torch.randperm(100):le(bs/2)
       for i=1,input:size(1) do
         if flip_mask[i] == 1 then image.hflip(input[i], input[i]) end
       end
@@ -54,8 +55,19 @@ end
 
 print(model)
 
+dofile './patchRunII.lua'
+kmeanProvider = torch.load('./patchProvider_3_40000_1000_64c.t7')
+-- print(model:get(3):get(1).weight[1])
+-- print(kmeanProvider.patches.centroids:resize(64,3,3,3):float():cuda()[1])
+-- print(model:get(3):get(1).weight:size())
+-- print(kmeanProvider.patches.centroids:resize(64,3,3,3):float():size())
+model:get(3):get(1).weight = kmeanProvider.patches.centroids:resize(64,3,3,3):float():cuda()
+
+-- dofile './provider.lua'
+dofile './surrogate2.lua'
 print(c.blue '==>' ..' loading data')
-provider = torch.load 'provider.t7'
+-- provider = torch.load 'provider.t7'
+provider = torch.load 'Surrogate_new.t7'
 provider.trainData.data = provider.trainData.data:float()
 provider.valData.data = provider.valData.data:float()
 
@@ -68,6 +80,7 @@ valLogger:setNames{'% mean class accuracy (train set)', '% mean class accuracy (
 valLogger.showPlot = false
 
 parameters,gradParameters = model:getParameters()
+print(parameters:size(), gradParameters:size())
 
 
 print(c.blue'==>' ..' setting criterion')

@@ -1,0 +1,1618 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  13 MAR 2016 22:10
+entering extended mode
+**D:/DL_HW/HW1/DeepLearning/assignment2/siamltexmm/report.tex
+(D:/DL_HW/HW1/DeepLearning/assignment2/siamltexmm/report.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+(siamltexmm.cls
+Document Class: siamltexmm 1996/10/11 v1.2 LaTeX document class
+(SIAM11.clo
+File: siam11.clo 1994/10/01 v1.0 SIAM LaTeX file (size option)
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: dvips.def on input line 142.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+File: dvipsnam.def 2014/10/14 v3.0j Driver-dependent file (DPC,SPQR)
+))
+\c@section=\count79
+\c@subsection=\count80
+\c@subsubsection=\count81
+\c@paragraph=\count82
+\c@subparagraph=\count83
+\c@rmnum=\count84
+\c@muni=\count85
+\c@theorem=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen103
+\Hy@linkcounter=\count89
+\Hy@pagecounter=\count90
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count91
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `final' set `true' on input line 4319.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count92
+
+(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen104
+\Fld@menulength=\count93
+\Field@Width=\dimen105
+\Fld@charsize=\dimen106
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count94
+\c@Item=\count95
+\c@Hfootnote=\count96
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count97
+\c@bookmark@seq@number=\count98
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+))
+
+! LaTeX Error: Two \documentclass or \documentstyle commands.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2 \documentclass[10pt,a4paper]{
+                                 article}
+The document may only declare one class.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+)
+(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithm.st
+y
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks17
+\c@algorithm=\count101
+)
+(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithmic.
+sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count102
+\c@ALC@line=\count103
+\c@ALC@rem=\count104
+\c@ALC@depth=\count105
+\ALC@tlm=\skip44
+\algorithmicindent=\skip45
+) (report.aux)
+\openout1 = `report.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+\AtBeginShipoutBox=\box28
+Package hyperref Info: Link coloring ON on input line 37.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count106
+)
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
+
+(report.out) (report.out)
+\@outlinefile=\write3
+\openout3 = `report.out'.
+
+
+(C:\Users\joyceyao\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count107
+\scratchdimen=\dimen109
+\scratchbox=\box29
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen110
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks19
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 39.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 39.
+
+! Extra }, or forgotten $.
+l.59 ...ial y} {e^{-x_{i}} \over (1+e^{x_{i}})^2}}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.64 L
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+<argument> ...ulate {\partial E\over \partial x_k}
+                                                  
+l.64 L
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.64 L
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.64 L
+      et us concentrate on a particular activation $x_{k}$, which is a mini-...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Undefined control sequence.
+\@thehead ->\slugmaster 
+                        
+l.91 \end{equation}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[1
+
+{C:/Users/joyceyao/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \section
+              {STL-10: semi-supervised image recognition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--129
+
+ []
+
+Missing character: There is no Â in font cmssbx10!
+Missing character: There is no ­ in font cmssbx10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--137
+
+ []
+
+
+Overfull \vbox (3.04993pt too high) has occurred while \output is active []
+
+
+[2]
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 where $\[
+                z_{k} = \norm{x-c^{(k)}} \]$ and $\mu(z)$ is the mean of the...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Bad math environment delimiter.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.140 where $\[ z_{k} = \norm{x-c^{(k)}} \]
+                                           $ and $\mu(z)$ is the mean of the...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no Â in font cmr10!
+Missing character: There is no ­ in font cmr10!
+
+Overfull \vbox (3.04993pt too high) has occurred while \output is active []
+
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{table.1}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.172 \end{table}
+                 ]
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.176 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.178   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/models/vgg.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/models/vgg.png, id=56, 1003.75pt x 702.625pt>
+File: ../fig/models/vgg.png Graphic file (type png)
+
+<use ../fig/models/vgg.png>
+Package pdftex.def Info: ../fig/models/vgg.png used on input line 178.
+(pdftex.def)             Requested size: 142.26378pt x 99.57831pt.
+
+! Undefined control sequence.
+l.179   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/models/vgg_kmeans.pn...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/models/vgg_kmeans.png, id=57, 1003.75pt x 702.625pt>
+File: ../fig/models/vgg_kmeans.png Graphic file (type png)
+
+<use ../fig/models/vgg_kmeans.png>
+Package pdftex.def Info: ../fig/models/vgg_kmeans.png used on input line 179.
+(pdftex.def)             Requested size: 142.26378pt x 99.57831pt.
+
+! Undefined control sequence.
+l.180   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/models/vgg_kmeans_su...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/models/vgg_kmeans_surro.png, id=58, 1003.75pt x 702.625pt>
+File: ../fig/models/vgg_kmeans_surro.png Graphic file (type png)
+
+<use ../fig/models/vgg_kmeans_surro.png>
+Package pdftex.def Info: ../fig/models/vgg_kmeans_surro.png used on input line 
+180.
+(pdftex.def)             Requested size: 142.26378pt x 99.57831pt.
+
+
+! LaTeX Error: \begin{figure} on input line 174 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.182 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (30.2585pt too wide) in paragraph at lines 177--183
+ [][] 
+ []
+
+Missing character: There is no Â in font cmssbx10!
+Missing character: There is no ­ in font cmssbx10!
+<../fig/PseudoÂ­labels.png, id=60, 789.95125pt x 513.92pt>
+File: ../fig/PseudoÂ­labels.png Graphic file (type png)
+
+<use ../fig/PseudoÂ­labels.png>
+Package pdftex.def Info: ../fig/PseudoÂ­labels.png used on input line 190.
+(pdftex.def)             Requested size: 284.52756pt x 185.10515pt.
+Missing character: There is no Â in font cmti9!
+Missing character: There is no ­ in font cmti9!
+
+Overfull \vbox (3.04993pt too high) has occurred while \output is active []
+
+
+[4pdfTeX warning (ext4): destination with the same identifier (name{table.2}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.192 \end{figure}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.1}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.192 \end{figure}
+                   <../fig/models/vgg.png> <../fig/models/vgg_kmeans.png> <../f
+ig/models/vgg_kmeans_surro.png>]
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.196 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.198   \subfloat
+                 {\includegraphics[width = 75mm]{../fig/pseudo_label/val_710...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/pseudo_label/val_7100.png, id=70, 1003.75pt x 702.625pt>
+File: ../fig/pseudo_label/val_7100.png Graphic file (type png)
+
+<use ../fig/pseudo_label/val_7100.png>
+Package pdftex.def Info: ../fig/pseudo_label/val_7100.png used on input line 19
+8.
+(pdftex.def)             Requested size: 213.39566pt x 149.3782pt.
+
+! Undefined control sequence.
+l.199   \subfloat
+                 {\includegraphics[width = 75mm]{../fig/pseudo_label/val_880...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/pseudo_label/val_8800.png, id=71, 1003.75pt x 702.625pt>
+File: ../fig/pseudo_label/val_8800.png Graphic file (type png)
+
+<use ../fig/pseudo_label/val_8800.png>
+Package pdftex.def Info: ../fig/pseudo_label/val_8800.png used on input line 19
+9.
+(pdftex.def)             Requested size: 213.39566pt x 149.3782pt.
+
+
+! LaTeX Error: \begin{figure} on input line 194 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.201 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (18.25848pt too wide) in paragraph at lines 197--202
+ [][] 
+ []
+
+Missing character: There is no Â in font cmti9!
+Missing character: There is no ­ in font cmti9!
+Missing character: There is no Â in font cmti9!
+Missing character: There is no ­ in font cmti9!
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.206 \section
+              {Visualization}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.211 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../fig/img_regNorm/2.png, id=72, 96.36pt x 96.36pt>
+File: ../fig/img_regNorm/2.png Graphic file (type png)
+
+<use ../fig/img_regNorm/2.png>
+Package pdftex.def Info: ../fig/img_regNorm/2.png used on input line 213.
+(pdftex.def)             Requested size: 142.26378pt x 142.26353pt.
+
+
+! LaTeX Error: \begin{figure} on input line 209 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.215 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.216 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.218   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img_regNorm/2.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+File: ../fig/img_regNorm/2.png Graphic file (type png)
+<use ../fig/img_regNorm/2.png>
+Package pdftex.def Info: ../fig/img_regNorm/2.png used on input line 218.
+(pdftex.def)             Requested size: 28.45274pt x 28.45241pt.
+
+! Undefined control sequence.
+l.219   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_1.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_1.png, id=73, 32.12pt x 32.12pt>
+File: ../fig/img/2_1.png Graphic file (type png)
+ <use ../fig/img/2_1.png>
+Package pdftex.def Info: ../fig/img/2_1.png used on input line 219.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.220   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_2.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_2.png, id=74, 32.12pt x 32.12pt>
+File: ../fig/img/2_2.png Graphic file (type png)
+ <use ../fig/img/2_2.png>
+Package pdftex.def Info: ../fig/img/2_2.png used on input line 220.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.221   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_19.png}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_19.png, id=75, 32.12pt x 32.12pt>
+File: ../fig/img/2_19.png Graphic file (type png)
+ <use ../fig/img/2_19.png>
+Package pdftex.def Info: ../fig/img/2_19.png used on input line 221.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.222   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_3.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_3.png, id=76, 32.12pt x 32.12pt>
+File: ../fig/img/2_3.png Graphic file (type png)
+ <use ../fig/img/2_3.png>
+Package pdftex.def Info: ../fig/img/2_3.png used on input line 222.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.223   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_4.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_4.png, id=77, 32.12pt x 32.12pt>
+File: ../fig/img/2_4.png Graphic file (type png)
+ <use ../fig/img/2_4.png>
+Package pdftex.def Info: ../fig/img/2_4.png used on input line 223.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.224   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_5.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_5.png, id=78, 32.12pt x 32.12pt>
+File: ../fig/img/2_5.png Graphic file (type png)
+ <use ../fig/img/2_5.png>
+Package pdftex.def Info: ../fig/img/2_5.png used on input line 224.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.225   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_10.png}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_10.png, id=79, 32.12pt x 32.12pt>
+File: ../fig/img/2_10.png Graphic file (type png)
+ <use ../fig/img/2_10.png>
+Package pdftex.def Info: ../fig/img/2_10.png used on input line 225.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.226   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_25.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_25.png, id=80, 32.12pt x 32.12pt>
+File: ../fig/img/2_25.png Graphic file (type png)
+ <use ../fig/img/2_25.png>
+Package pdftex.def Info: ../fig/img/2_25.png used on input line 226.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.227   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_26.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_26.png, id=81, 32.12pt x 32.12pt>
+File: ../fig/img/2_26.png Graphic file (type png)
+ <use ../fig/img/2_26.png>
+Package pdftex.def Info: ../fig/img/2_26.png used on input line 227.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.228   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_29.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_29.png, id=82, 32.12pt x 32.12pt>
+File: ../fig/img/2_29.png Graphic file (type png)
+ <use ../fig/img/2_29.png>
+Package pdftex.def Info: ../fig/img/2_29.png used on input line 228.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.229   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_30.png}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_30.png, id=83, 32.12pt x 32.12pt>
+File: ../fig/img/2_30.png Graphic file (type png)
+ <use ../fig/img/2_30.png>
+Package pdftex.def Info: ../fig/img/2_30.png used on input line 229.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.230   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_32.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_32.png, id=84, 32.12pt x 32.12pt>
+File: ../fig/img/2_32.png Graphic file (type png)
+ <use ../fig/img/2_32.png>
+Package pdftex.def Info: ../fig/img/2_32.png used on input line 230.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.231   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_33.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_33.png, id=85, 32.12pt x 32.12pt>
+File: ../fig/img/2_33.png Graphic file (type png)
+ <use ../fig/img/2_33.png>
+Package pdftex.def Info: ../fig/img/2_33.png used on input line 231.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.232   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_34.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_34.png, id=86, 32.12pt x 32.12pt>
+File: ../fig/img/2_34.png Graphic file (type png)
+ <use ../fig/img/2_34.png>
+Package pdftex.def Info: ../fig/img/2_34.png used on input line 232.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.233   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_35.png}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_35.png, id=87, 32.12pt x 32.12pt>
+File: ../fig/img/2_35.png Graphic file (type png)
+ <use ../fig/img/2_35.png>
+Package pdftex.def Info: ../fig/img/2_35.png used on input line 233.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.234   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_37.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_37.png, id=88, 32.12pt x 32.12pt>
+File: ../fig/img/2_37.png Graphic file (type png)
+ <use ../fig/img/2_37.png>
+Package pdftex.def Info: ../fig/img/2_37.png used on input line 234.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.235   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_38.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_38.png, id=89, 32.12pt x 32.12pt>
+File: ../fig/img/2_38.png Graphic file (type png)
+ <use ../fig/img/2_38.png>
+Package pdftex.def Info: ../fig/img/2_38.png used on input line 235.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.236   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_41.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_41.png, id=90, 32.12pt x 32.12pt>
+File: ../fig/img/2_41.png Graphic file (type png)
+ <use ../fig/img/2_41.png>
+Package pdftex.def Info: ../fig/img/2_41.png used on input line 236.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Undefined control sequence.
+l.237   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/img/2_48.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/img/2_48.png, id=91, 32.12pt x 32.12pt>
+File: ../fig/img/2_48.png Graphic file (type png)
+ <use ../fig/img/2_48.png>
+Package pdftex.def Info: ../fig/img/2_48.png used on input line 237.
+(pdftex.def)             Requested size: 28.45274pt x 28.45338pt.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.237 ...hics[width = 10mm]{../fig/img/2_48.png}}&
+                                                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+! LaTeX Error: \begin{figure} on input line 209 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.239 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.240 \caption
+              {Figures of surrogate set}pdfTeX warning (ext4): destination with
+ the same identifier (name{figure.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.240 \caption{Figures of surrogate set}
+                                        
+Overfull \vbox (3.04993pt too high) has occurred while \output is active []
+
+
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.241 \end{figure}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.241 \end{figure}
+                   <../fig/PseudoÂ­labels.png> <../fig/pseudo_label/val_7100.pn
+g> <../fig/pseudo_label/val_8800.png>]
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.245 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<../fig/kmeansMethod.png, id=104, 467.7475pt x 194.7275pt>
+File: ../fig/kmeansMethod.png Graphic file (type png)
+
+<use ../fig/kmeansMethod.png>
+Package pdftex.def Info: ../fig/kmeansMethod.png used on input line 247.
+(pdftex.def)             Requested size: 284.52756pt x 118.45674pt.
+
+
+! LaTeX Error: \begin{figure} on input line 243 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.249 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.250 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.252   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center4.png, id=105, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center4.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center4.png>
+Package pdftex.def Info: ../fig/center_20000_700/center4.png used on input line
+ 252.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.253   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center5.png, id=106, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center5.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center5.png>
+Package pdftex.def Info: ../fig/center_20000_700/center5.png used on input line
+ 253.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.254   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center6.png, id=107, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center6.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center6.png>
+Package pdftex.def Info: ../fig/center_20000_700/center6.png used on input line
+ 254.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.255   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center8.png, id=108, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center8.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center8.png>
+Package pdftex.def Info: ../fig/center_20000_700/center8.png used on input line
+ 255.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.256   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center12.png, id=109, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center12.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center12.png>
+Package pdftex.def Info: ../fig/center_20000_700/center12.png used on input lin
+e 256.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.257   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center22.png, id=110, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center22.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center22.png>
+Package pdftex.def Info: ../fig/center_20000_700/center22.png used on input lin
+e 257.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.258   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center23.png, id=111, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center23.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center23.png>
+Package pdftex.def Info: ../fig/center_20000_700/center23.png used on input lin
+e 258.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.259   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center24.png, id=112, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center24.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center24.png>
+Package pdftex.def Info: ../fig/center_20000_700/center24.png used on input lin
+e 259.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.260   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center28.png, id=113, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center28.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center28.png>
+Package pdftex.def Info: ../fig/center_20000_700/center28.png used on input lin
+e 260.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.261   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center30.png, id=114, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center30.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center30.png>
+Package pdftex.def Info: ../fig/center_20000_700/center30.png used on input lin
+e 261.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.262   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center36.png, id=115, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center36.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center36.png>
+Package pdftex.def Info: ../fig/center_20000_700/center36.png used on input lin
+e 262.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.263   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center37.png, id=116, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center37.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center37.png>
+Package pdftex.def Info: ../fig/center_20000_700/center37.png used on input lin
+e 263.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.264   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center38.png, id=117, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center38.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center38.png>
+Package pdftex.def Info: ../fig/center_20000_700/center38.png used on input lin
+e 264.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.265   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center41.png, id=118, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center41.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center41.png>
+Package pdftex.def Info: ../fig/center_20000_700/center41.png used on input lin
+e 265.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.266   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center46.png, id=119, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center46.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center46.png>
+Package pdftex.def Info: ../fig/center_20000_700/center46.png used on input lin
+e 266.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.267   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center49.png, id=120, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center49.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center49.png>
+Package pdftex.def Info: ../fig/center_20000_700/center49.png used on input lin
+e 267.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+<recently read> \subfloat 
+                          
+l.268   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center50.png, id=121, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center50.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center50.png>
+Package pdftex.def Info: ../fig/center_20000_700/center50.png used on input lin
+e 268.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.269   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center52.png, id=122, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center52.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center52.png>
+Package pdftex.def Info: ../fig/center_20000_700/center52.png used on input lin
+e 269.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.270   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center57.png, id=123, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center57.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center57.png>
+Package pdftex.def Info: ../fig/center_20000_700/center57.png used on input lin
+e 270.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Undefined control sequence.
+l.271   \subfloat
+                 {\includegraphics[width = 10mm]{../fig/center_20000_700/cen...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/center_20000_700/center58.png, id=124, 22.0825pt x 22.0825pt>
+File: ../fig/center_20000_700/center58.png Graphic file (type png)
+
+<use ../fig/center_20000_700/center58.png>
+Package pdftex.def Info: ../fig/center_20000_700/center58.png used on input lin
+e 271.
+(pdftex.def)             Requested size: 28.45274pt x 28.45316pt.
+
+! Extra alignment tab has been changed to \cr.
+<recently read> \endtemplate 
+                             
+l.271 ...]{../fig/center_20000_700/center58.png}}&
+                                                  
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
+
+
+! LaTeX Error: \begin{figure} on input line 243 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.273 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.274 \caption
+              {Figure of centroids}pdfTeX warning (ext4): destination with the 
+same identifier (name{figure.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.274 \caption{Figure of centroids}
+                                   
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \vbox (3.04993pt too high) has occurred while \output is active []
+
+
+[6 <../fig/img_regNorm/2.png (PNG copy)> <../fig/img/2_1.png (PNG copy)> <../fi
+g/img/2_2.png (PNG copy)> <../fig/img/2_19.png (PNG copy)> <../fig/img/2_3.png 
+(PNG copy)> <../fig/img/2_4.png (PNG copy)> <../fig/img/2_5.png (PNG copy)> <..
+/fig/img/2_10.png (PNG copy)> <../fig/img/2_25.png (PNG copy)> <../fig/img/2_26
+.png (PNG copy)> <../fig/img/2_29.png (PNG copy)> <../fig/img/2_30.png (PNG cop
+y)> <../fig/img/2_32.png (PNG copy)> <../fig/img/2_33.png (PNG copy)> <../fig/i
+mg/2_34.png (PNG copy)> <../fig/img/2_35.png (PNG copy)> <../fig/img/2_37.png (
+PNG copy)> <../fig/img/2_38.png (PNG copy)> <../fig/img/2_41.png (PNG copy)> <.
+./fig/img/2_48.png (PNG copy)>]
+
+! LaTeX Error: Environment subfigure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.282 \begin{subfigure}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.284   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/t_SNEIII.jpeg}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/t_SNEIII.jpeg, id=129, 4111.36pt x 4111.36pt>
+File: ../fig/t_SNEIII.jpeg Graphic file (type jpg)
+
+<use ../fig/t_SNEIII.jpeg>
+Package pdftex.def Info: ../fig/t_SNEIII.jpeg used on input line 284.
+(pdftex.def)             Requested size: 142.26378pt x 142.21848pt.
+
+! Undefined control sequence.
+l.285   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/t-SNE1_1.png}}&
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/t-SNE1_1.png, id=130, 2055.68pt x 2055.68pt>
+File: ../fig/t-SNE1_1.png Graphic file (type png)
+ <use ../fig/t-SNE1_1.png>
+Package pdftex.def Info: ../fig/t-SNE1_1.png used on input line 285.
+(pdftex.def)             Requested size: 142.26378pt x 142.24985pt.
+
+! Undefined control sequence.
+l.286   \subfloat
+                 {\includegraphics[width = 50mm]{../fig/t-SNE0_2.png}}\\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<../fig/t-SNE0_2.png, id=131, 2055.68pt x 2055.68pt>
+File: ../fig/t-SNE0_2.png Graphic file (type png)
+ <use ../fig/t-SNE0_2.png>
+Package pdftex.def Info: ../fig/t-SNE0_2.png used on input line 286.
+(pdftex.def)             Requested size: 142.26378pt x 142.24985pt.
+
+
+! LaTeX Error: \begin{figure} on input line 280 ended by \end{subfigure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.288 \end{subfigure}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.289 \caption
+              {t-SNE Figure of original, layer before full-connected network...
+
+Overfull \hbox (18.2585pt too wide) in paragraph at lines 283--289
+ [][] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
+s been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.289 ..., and layer after full-connected network}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.3}) has been already used, duplicat
+e ignored
+<to be read again> 
+                   \relax 
+l.289 ..., and layer after full-connected network}
+                                                  
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 292.
+
+Overfull \vbox (3.04993pt too high) has occurred while \output is active []
+
+
+[7 <../fig/kmeansMethod.png> <../fig/center_20000_700/center4.png (PNG copy)> <
+../fig/center_20000_700/center5.png (PNG copy)> <../fig/center_20000_700/center
+6.png (PNG copy)> <../fig/center_20000_700/center8.png (PNG copy)> <../fig/cent
+er_20000_700/center12.png (PNG copy)> <../fig/center_20000_700/center22.png (PN
+G copy)> <../fig/center_20000_700/center23.png (PNG copy)> <../fig/center_20000
+_700/center24.png (PNG copy)> <../fig/center_20000_700/center28.png (PNG copy)>
+ <../fig/center_20000_700/center30.png (PNG copy)> <../fig/center_20000_700/cen
+ter36.png (PNG copy)> <../fig/center_20000_700/center37.png (PNG copy)> <../fig
+/center_20000_700/center38.png (PNG copy)> <../fig/center_20000_700/center41.pn
+g (PNG copy)> <../fig/center_20000_700/center46.png (PNG copy)> <../fig/center_
+20000_700/center49.png (PNG copy)> <../fig/center_20000_700/center50.png (PNG c
+opy)> <../fig/center_20000_700/center52.png (PNG copy)> <../fig/center_20000_70
+0/center57.png (PNG copy)> <../fig/center_20000_700/center58.png (PNG copy)> <.
+./fig/t_SNEIII.jpeg> <../fig/t-SNE1_1.png (PNG copy)> <../fig/t-SNE0_2.png (PNG
+ copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 292.
+ (report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 292.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 292.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 292.
+ ) 
+Here is how much of TeX's memory you used:
+ 5866 strings out of 493634
+ 88679 string characters out of 3141306
+ 171611 words of memory out of 3000000
+ 9125 multiletter control sequences out of 15000+200000
+ 10202 words of font info for 36 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 36i,13n,23p,1165b,345s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmtt9.pfb>
+Output written on report.pdf (7 pages, 12009324 bytes).
+PDF statistics:
+ 200 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+
