@@ -1,0 +1,108 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+% \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading nips_2016
+%
+% to avoid loading the natbib package, add option nonatbib:
+% \usepackage[nonatbib]{nips_2016}
+
+\usepackage{nips_2016}
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+% \usepackage[final]{nips_2016}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+
+\title{Deep Learning Assignment 3}
+
+% The \author macro works with any number of authors. There are two
+% commands used to separate the names and addresses of multiple
+% authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to
+% break the lines. Using \AND forces a line break at that point. So,
+% if LaTeX puts 3 of 4 authors names on the first line, and the last
+% on the second line, try using \AND instead of \And before the third
+% author name.
+\author{
+  Peter Yun-shao Sung
+  \texttt{yss265@nyu.edu} \\
+  %% examples of more authors
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \AND
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+  %% \And
+  %% Coauthor \\
+  %% Affiliation \\
+  %% Address \\
+  %% \texttt{email} \\
+}
+
+\begin{document}
+% \nipsfinalcopy is no longer used
+
+\maketitle
+
+\section{Softmax regression gradient calculation}
+Given
+\begin{equation}
+\hat{y} = \sigma (Wx+b) \textbf{ , where $x \in \mathbb{R}^d$,$W \in \mathbb{R}^{k\times d}$, $b \in \mathbb{R}^k$}
+\end{equation}
+where d is the input dimension, k is the number of classes, σ is the softmax function:
+\begin{equation}
+\sigma(a)_i = {exp(a_i) \over \sum_j exp(a_j)}
+\end{equation}
+Which means a given input $x$ will output $y$ with probability of each class
+
+\subsection{Derive ${\partial l\over \partial W_{ij}}$}
+If the given cross-entropy loss defined as followed:
+\begin{equation}
+l(y, \har{y}) = -\sum_i y_i\log\hat{y_i}
+\end{equation}
+As $W_{ij}$ will affect the prediction of class $i$ by multipling index $j$ in $x$, therefore we can derive:
+\begin{equation}
+{\partial l\over \partial W_{ij}} = {\partial l \over \partial \hat{y_i}} {\partial \hat{y_i} \over \partial W_{ij}}
+\end{equation}
+where:
+\begin{equation}
+l(y, \hat{y}) = -\sum_i y_i\log\hat{y_i} = -(y_i\log\hat{y_1} + y_2\log\hat{y_2} + \dots + y_i\log\hat{y_i} + \dots)
+\end{equation}
+and therefore
+\begin{equation}
+{\partial l \over \partial \hat{y_i}} = {-y_i\over \hat{y_i} \ln 10}
+\end{equation}
+And we can rewrite (1) and (2) and care the value only for $\hat y_i$:
+\begin{equation}
+\hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_j e^{W_{ij}X_j+b_i} - e^{(W_{ij}X_j+b_i)}$}
+\end{equation}
+\begin{equation}
+{\partial \hat{y_i} \over \partial W_{ij}} = {X_je^{(W_{ij}X_j+b_j)} \over C + e^{(W_{ij}X_j+b_j)} } - {X_je^{2(W_{ij}X_j+b_j)} \over (C + e^{(W_{ij}X_j+b_j)})^2 }
+\end{equation}
+Combining (6) and (8) to (4), and we will get the result
+\end{document}
+
+
+
+
+
+
