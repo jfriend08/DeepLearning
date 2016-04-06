@@ -20,7 +20,8 @@
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
-
+\usepackage{amsmath}
+\usepackage{mathtools}
 \title{Deep Learning Assignment 3}
 
 % The \author macro works with any number of authors. There are two
@@ -102,9 +103,15 @@ And we can rewrite (1) and (2) and care the value only for $\hat y_i$:
 Combining (6) and (8) to (4), and we will get the result
 
 \section{Chain rule}
-(a) As it is using 3x3 kernal along x and y axis of input, which is 5 and 5 respectively. The output of this layer will be $(5-3+1)\times(5-3+1)$ which is 3x3.
 \section{Variants of pooling}
 \section{Convolution}
+(a) As it is using 3x3 kernal along x and y axis of input, which is 5 and 5 respectively. The output of this layer will be $(5-3+1)\times(5-3+1)$ which is 3x3.\\
+(b) Assuming the kernel operation is point-point multiplication and summation, then the output of this layer is:\\
+$\begin{pmatrix}
+  109 & 92 & 72 \\
+  108 & 85 & 74 \\
+  110 & 74 & 79
+\end{pmatrix}$
 \section{Optimization}
 \section{Top-k error}
 \section{t-SNE}
