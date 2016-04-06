@@ -62,6 +62,7 @@
 % \nipsfinalcopy is no longer used
 
 \maketitle
+\section{General Questions}
 
 \section{Softmax regression gradient calculation}
 Given
@@ -93,12 +94,23 @@ and therefore
 \end{equation}
 And we can rewrite (1) and (2) and care the value only for $\hat y_i$:
 \begin{equation}
-\hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_j e^{W_{ij}X_j+b_i} - e^{(W_{ij}X_j+b_i)}$}
+\hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_k e^{W_{ik}X_k+b_i} - e^{(W_{ij}X_j+b_i)}$}
 \end{equation}
 \begin{equation}
 {\partial \hat{y_i} \over \partial W_{ij}} = {X_je^{(W_{ij}X_j+b_j)} \over C + e^{(W_{ij}X_j+b_j)} } - {X_je^{2(W_{ij}X_j+b_j)} \over (C + e^{(W_{ij}X_j+b_j)})^2 }
 \end{equation}
 Combining (6) and (8) to (4), and we will get the result
+
+\section{Chain rule}
+(a) As it is using 3x3 kernal along x and y axis of input, which is 5 and 5 respectively. The output of this layer will be $(5-3+1)\times(5-3+1)$ which is 3x3.
+\section{Variants of pooling}
+\section{Convolution}
+\section{Optimization}
+\section{Top-k error}
+\section{t-SNE}
+\section{Proximal gradient descent}
+
+
 \end{document}
 
 
