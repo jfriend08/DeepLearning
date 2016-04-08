@@ -189,7 +189,19 @@ which is
 \begin{equation}
 prox_{h,t}(x) = S_t(x) = (|x|-t)_+\odot sign(x) \quad \text{(element-wise)}
 \end{equation}
-which is a soft-threshold fuction with t as threshold value
+which is a soft-threshold fuction with t as threshold value\\
+(b) In the field of signal processing, the true signal usually will be blurred as followed:
+\begin{equation}
+Ax = b
+\end{equation}
+where $A$ is the blur operation, b is the known observed blured-signal. The way to solve true signal $x$ is called deblurring problem:
+\begin{equation}
+min_x\{F(x) \equiv {1\over 2}||b-Ax||_2^2 + \lambda||x||_1\}
+\end{equation}
+This is ISTA problem, and as we can see the first term is convex and differentiable, and the second term is convex and simple l1-norm function. Then the ISTA is become one example of proximal gradient descent
+
+
+
 \end{document}
 
 
