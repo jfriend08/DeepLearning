@@ -64,6 +64,19 @@
 
 \maketitle
 \section{General Questions}
+(a) Say if the first module is:
+\begin{equation}
+max(W_1X)
+\end{equation}
+where the W input layer maybe doing summation and summation just like matrix mutiplication does $WX$, and the $max$ function is a non-linear active function modifying the valuse like a neuron does before entering the next module:
+\begin{equation}
+W_2(max(W_2X))
+\end{equation}
+If now we don't have the active function then the formula will looks like:
+\begin{equation}
+W_2(W_1X) \to \bar{W}X
+\end{equation}
+which eventually all $W_i$ can become a single module $\bar{W}$
 
 \section{Softmax regression gradient calculation}
 Given
@@ -93,7 +106,7 @@ and therefore
 \begin{equation}
 {\partial l \over \partial \hat{y_i}} = {-y_i\over \hat{y_i}}
 \end{equation}
-And we can rewrite (1) and (2) and care the value only for $\hat y_i$:
+And we can rewrite for only for $\hat y_i$:
 \begin{equation}
 \hat{y_i} = {exp(a_i) \over \Sigma_j exp(a_j)} = {exp(a_i) \over C + exp(a_i)} \textbf{,  where $C = \sum_{k\neq i} exp(a_k)$}
 \end{equation}
@@ -111,7 +124,7 @@ Therefore
 % \begin{equation}
 % {\partial \hat{y_i} \over \partial W_{ij}} = {X_je^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } - {X_je^{2(W_{ij}X_j+b_i)} \over (C + e^{(W_{ij}X_j+b_i)})^2} = X_j \hat{y_i} (1- \hat{y_i})
 % \end{equation}
-Combining (6) and (9) to (4), and we will get the result:
+Finally, we will get the result of ${\partial l\over \partial W_{ij}}$:
 \begin{equation}
 {\partial l\over \partial W_{ij}} = {\partial l \over \partial \hat{y_i}} {\partial \hat{y_i} \over \partial W_{ij}} = -X_jy_i(1- \hat{y_i})
 \end{equation}
