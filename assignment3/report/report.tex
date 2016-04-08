@@ -70,7 +70,7 @@ Given
 \begin{equation}
 \hat{y} = \sigma (Wx+b) \textbf{ , where $x \in \mathbb{R}^d$,$W \in \mathbb{R}^{k\times d}$, $b \in \mathbb{R}^k$}
 \end{equation}
-where d is the input dimension, k is the number of classes, σ is the softmax function:
+where d is the input dimension, k is the number of classes, $\sigma$ is the softmax function:
 \begin{equation}
 \sigma(a)_i = {exp(a_i) \over \sum_j exp(a_j)}
 \end{equation}
@@ -91,16 +91,19 @@ l(y, \hat{y}) = -\sum_i y_i\log\hat{y_i} = -(y_i\log\hat{y_1} + y_2\log\hat{y_2}
 \end{equation}
 and therefore
 \begin{equation}
-{\partial l \over \partial \hat{y_i}} = {-y_i\over \hat{y_i} \ln 10}
+{\partial l \over \partial \hat{y_i}} = {-y_i\over \hat{y_i}}
 \end{equation}
 And we can rewrite (1) and (2) and care the value only for $\hat y_i$:
 \begin{equation}
-\hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_k e^{W_{ik}X_k+b_i} - e^{(W_{ij}X_j+b_i)}$}
+\hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_{k\neq j} e^{W_{ik}X_k+b_i}$}
 \end{equation}
 \begin{equation}
-{\partial \hat{y_i} \over \partial W_{ij}} = {X_je^{(W_{ij}X_j+b_j)} \over C + e^{(W_{ij}X_j+b_j)} } - {X_je^{2(W_{ij}X_j+b_j)} \over (C + e^{(W_{ij}X_j+b_j)})^2 }
+{\partial \hat{y_i} \over \partial W_{ij}} = {X_je^{(W_{ij}X_j+b_j)} \over C + e^{(W_{ij}X_j+b_j)} } - {X_je^{2(W_{ij}X_j+b_j)} \over (C + e^{(W_{ij}X_j+b_j)})^2} = X_j \hat{y_i} (1- \hat{y_i})
 \end{equation}
-Combining (6) and (8) to (4), and we will get the result
+Combining (6) and (8) to (4), and we will get the result:
+\begin{equation}
+{\partial l \over \partial \hat{y_i}} = {-y_i\over \hat{y_i}} = -X_jy_i(1- \hat{y_i})
+\end{equation}
 
 \section{Chain rule}
 \section{Variants of pooling}
