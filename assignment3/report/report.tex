@@ -116,7 +116,7 @@ Combining (6) and (9) to (4), and we will get the result:
 {\partial l\over \partial W_{ij}} = {\partial l \over \partial \hat{y_i}} {\partial \hat{y_i} \over \partial W_{ij}} = -X_jy_i(1- \hat{y_i})
 \end{equation}
 \subsection{What happen when $y_{c_1}=1, \hat{y}_{c_2}=1, c_1 \neq c_2$}
-This means something like $y = [1, 0, 0]^T$ and $\hat{y} = [0,0,1]^T$, and the predict is far different from true lable.
+This means something like $y = [1, 0, 0]^T$ and $\hat{y} = [0,0,1]^T$, and the predict is far different from true lable. This will cause the log part in loss (3) become negative infinity. We may not need to worry this because before one of the class predicted close to 1 and everything else close to 0, it will generate a great positive loss the the class that is miss-predicted trying to make the predict right to true label.
 \section{Chain rule}
 \section{Variants of pooling}
 \section{Convolution}
