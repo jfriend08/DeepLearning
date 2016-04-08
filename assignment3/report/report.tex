@@ -154,8 +154,42 @@ $\begin{pmatrix}
 \section{Top-k error}
 \section{t-SNE}
 \section{Proximal gradient descent}
-
-
+(a) Since Proximal operator is defined as:
+\begin{equation}
+prox_{h,t}(x) = argmin_z{1\over2}||z-x||_2^2 + th(z)
+\end{equation}
+which the optimal condition is to have the gradient w.r.t $z$ equal to 0:
+\begin{equation}
+0 \in z-x+t\partial h(z)
+\end{equation}
+if function $h(z)=||z||_1$ and $z_i \neq 0$, then:
+\begin{equation}
+\partial h(z) = sign(x)
+\end{equation}
+And therefore the optimal solution $z^\ast$ will be:
+\begin{equation}
+z^\ast = x - t\cdot sign(z^\ast)
+\end{equation}
+Noted that if $z_i^\ast<0$, then $x_i<-\lambda$, and if $z_i^\ast>0$, then $x_i>\lambda$. This implies $|x_i|>\lambda$ and $sign(z_i^\ast) = sign(x_i)$, and we can rewrite formula to:
+\begin{equation}
+z_i^\ast = x_i - t\cdot sign(x_i)
+\end{equation}
+Then if the solution $z_i^\ast=0$, the subgradient of l1-norm is in the interval of [-1, 1], and we can write:
+\begin{equation}
+0 \in -x_i + t \cdot [-1,1] \implies x_i \in [-t, t] \implies |x_i| \leq t
+\end{equation}
+Therefore the solution of Proximal operator will be:
+\begin{equation}
+z_i^\ast = \begin{cases}
+    0       & \quad \text{if } |x_i|\leq t\\
+    x_i-t \cdot sign(x_i)  & \quad \text{if } |x_i|>t\\
+  \end{cases}
+\end{equation}
+which is
+\begin{equation}
+prox_{h,t}(x) = S_t(x) = (|x|-t)_+\odot sign(x) \quad \text{(element-wise)}
+\end{equation}
+which is a soft-threshold fuction with t as threshold value
 \end{document}
 
 
