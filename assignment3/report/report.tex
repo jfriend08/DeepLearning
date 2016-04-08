@@ -207,9 +207,24 @@ After we rewite the function and replace $z$ by $u$ which is the optimal result 
 \begin{equation}
 {x-u \over t} \in \partial h(u)
 \end{equation}
-which means the calculated result from proximal function will be within the interval proportional to the subgradient of the simple-nonDerentiable function $h(x)$
-
-
+which means the calculated result from proximal function will be within the interval proportional to the subgradient of the simple-nonDerentiable function $h(x)$\\
+(d)From definition of Proximal operator, the optimal solution $x_{k+1}$ will be:
+\begin{equation}
+x_{k+1} = prox_{h,\alpha_k}(x_k - \alpha_k \nabla g(x_k) = x_k - \alpha_k \nabla g(x_k) - \alpha_k \partial h(x_{k+1})
+\end{equation}
+and from definition:
+\begin{equation}
+G_{\alpha_k}(x_k) = { x_k - prox_{h,\alpha_k}(x_k - \alpha_k \nabla g(x_k)) \over \alpha_k}
+\end{equation}
+after rewite:
+\begin{equation}
+x_k - \alpha_k \nabla g(x_k) - \alpha_k \partial h(x_{k+1}) = x_k - \alpha_k G_{\alpha_k}(x_k)
+\end{equation}
+Therefore
+\begin{equation}
+G_{\alpha_k}(x_k) - \nabla g(x_k) \in \partial h(x_{k+1})
+\end{equation}
+which is because h is not differentiable and the result will within the range of subgradient of $\partial h(x_{k+1})$
 
 \end{document}
 
