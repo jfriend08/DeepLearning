@@ -79,7 +79,7 @@ Which means a given input $x$ will output $y$ with probability of each class
 \subsection{Derive ${\partial l\over \partial W_{ij}}$}
 If the given cross-entropy loss defined as followed:
 \begin{equation}
-l(y, \har{y}) = -\sum_i y_i\log\hat{y_i}
+l(y, \hat{y}) = -\sum_i y_i\log\hat{y_i}
 \end{equation}
 As $W_{ij}$ will affect the prediction of class $i$ by multipling index $j$ in $x$, therefore we can derive:
 \begin{equation}
@@ -95,16 +95,28 @@ and therefore
 \end{equation}
 And we can rewrite (1) and (2) and care the value only for $\hat y_i$:
 \begin{equation}
-\hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_{k\neq j} e^{W_{ik}X_k+b_i}$}
+\hat{y_i} = {exp(a_i) \over \Sigma_j exp(a_j)} = {exp(a_i) \over C + exp(a_i)} \textbf{,  where $C = \sum_{k\neq i} exp(a_k)$}
 \end{equation}
+Since
 \begin{equation}
-{\partial \hat{y_i} \over \partial W_{ij}} = {X_je^{(W_{ij}X_j+b_j)} \over C + e^{(W_{ij}X_j+b_j)} } - {X_je^{2(W_{ij}X_j+b_j)} \over (C + e^{(W_{ij}X_j+b_j)})^2} = X_j \hat{y_i} (1- \hat{y_i})
+{\partial exp(a_i) \over \partial W_{ij}} = W_{ij}exp(a_i)
 \end{equation}
-Combining (6) and (8) to (4), and we will get the result:
+Therefore
 \begin{equation}
-{\partial l \over \partial \hat{y_i}} = {-y_i\over \hat{y_i}} = -X_jy_i(1- \hat{y_i})
+{\partial \hat{y_i} \over \partial W_{ij}} = W_{ij}\hat{y_i}(1-\hat{y_i})
 \end{equation}
-
+% \begin{equation}
+% \hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_{k\neq j} e^{W_{ik}X_k+b_i}$}
+% \end{equation}
+% \begin{equation}
+% {\partial \hat{y_i} \over \partial W_{ij}} = {X_je^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } - {X_je^{2(W_{ij}X_j+b_i)} \over (C + e^{(W_{ij}X_j+b_i)})^2} = X_j \hat{y_i} (1- \hat{y_i})
+% \end{equation}
+Combining (6) and (9) to (4), and we will get the result:
+\begin{equation}
+{\partial l\over \partial W_{ij}} = {\partial l \over \partial \hat{y_i}} {\partial \hat{y_i} \over \partial W_{ij}} = -X_jy_i(1- \hat{y_i})
+\end{equation}
+\subsection{What happen when $y_{c_1}=1, \hat{y}_{c_2}=1, c_1 \neq c_2$}
+This means something like $y = [1, 0, 0]^T$ and $\hat{y} = [0,0,1]^T$, and the predict is far different from true lable.
 \section{Chain rule}
 \section{Variants of pooling}
 \section{Convolution}
