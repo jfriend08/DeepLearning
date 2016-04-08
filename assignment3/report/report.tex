@@ -198,7 +198,16 @@ where $A$ is the blur operation, b is the known observed blured-signal. The way 
 \begin{equation}
 min_x\{F(x) \equiv {1\over 2}||b-Ax||_2^2 + \lambda||x||_1\}
 \end{equation}
-This is ISTA problem, and as we can see the first term is convex and differentiable, and the second term is convex and simple l1-norm function. Then the ISTA is become one example of proximal gradient descent
+This is ISTA problem, and as we can see the first term is convex and differentiable, and the second term is convex and simple l1-norm function. Then the ISTA is become one example of proximal gradient descent\\
+(c) From the definition of Proximal operator the optimal solution is where ${\partial prox_{h,t}\over \partial z} = 0$, and therefore we will have:
+\begin{equation}
+0 \in z-x+t\partial h(z)
+\end{equation}
+After we rewite the function and replace $z$ by $u$ which is the optimal result from Proximal function:
+\begin{equation}
+{x-u \over t} \in \partial h(u)
+\end{equation}
+which means the calculated result from proximal function will be within the interval proportional to the subgradient of the simple-nonDerentiable function $h(x)$
 
 
 
