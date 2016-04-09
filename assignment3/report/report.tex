@@ -112,11 +112,13 @@ And we can rewrite for only for $\hat y_i$:
 \end{equation}
 Since
 \begin{equation}
-{\partial exp(a_i) \over \partial W_{ij}} = W_{ij}exp(a_i)
+{\partial exp(a_i) \over \partial W_{ij}} = X_jexp(a_i)
+% {\partial exp(a_i) \over \partial W_{ij}} = W_{ij}exp(a_i)
 \end{equation}
 Therefore
 \begin{equation}
-{\partial \hat{y_i} \over \partial W_{ij}} = W_{ij}\hat{y_i}(1-\hat{y_i})
+{\partial \hat{y_i} \over \partial W_{ij}} = X_j\hat{y_i}(1-\hat{y_i})
+% {\partial \hat{y_i} \over \partial W_{ij}} = W_{ij}\hat{y_i}(1-\hat{y_i})
 \end{equation}
 % \begin{equation}
 % \hat{y_i} = {e^{(W_{ij}X_j+b_i)} \over C + e^{(W_{ij}X_j+b_i)} } \textbf{, where $C = \sum_{k\neq j} e^{W_{ik}X_k+b_i}$}
@@ -165,13 +167,13 @@ which the optimal condition is to have the gradient w.r.t $z$ equal to 0:
 \end{equation}
 if function $h(z)=||z||_1$ and $z_i \neq 0$, then:
 \begin{equation}
-\partial h(z) = sign(x)
+\partial h(z) = sign(z)
 \end{equation}
 And therefore the optimal solution $z^\ast$ will be:
 \begin{equation}
 z^\ast = x - t\cdot sign(z^\ast)
 \end{equation}
-Noted that if $z_i^\ast<0$, then $x_i<-\lambda$, and if $z_i^\ast>0$, then $x_i>\lambda$. This implies $|x_i|>\lambda$ and $sign(z_i^\ast) = sign(x_i)$, and we can rewrite formula to:
+Noted that if $z_i^\ast<0$, then $x_i<-t$, and if $z_i^\ast>0$, then $x_i>t$. This implies $|x_i|>t$ and $sign(z_i^\ast) = sign(x_i)$, and we can rewrite formula to:
 \begin{equation}
 z_i^\ast = x_i - t\cdot sign(x_i)
 \end{equation}
