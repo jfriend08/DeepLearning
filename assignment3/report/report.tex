@@ -153,11 +153,48 @@ $\begin{pmatrix}
 
 
 \section{Optimization}
+\paragraph{(a)} say the encoder and decoder is defined as:
+\begin{equation}
+\begin{matrix}
+z = W_1x + b_1 \\[0.4em]
+\tilde{x} = W_2z + b_2
+\end{matrix}
+\end{equation}
+And therefore the reconstruction loss $J$ will be:
+\begin{equation}
+J(W_1, b_1, W_2, b_2) = (\tilde{x}-x)^2 = (W_2(W_1x+b_1)+b_2-x)^2
+\end{equation}
+
+\paragraph{(b)} To have the gradient of reconstruction loss respective to the parameters, we take the derivative of each parameters:
+\begin{equation}
+\begin{matrix}
+{\partial J \over \partial W_1} = W_2x \\[0.4em]
+{\partial J \over \partial W_2} = W_1x + b_1
+\end{matrix}
+\end{equation}
+
+\paragraph{(c)} Say now we are at stage $t$ and would like to compute $W_1^{t+1}$ and $W_2^{t+1}$:
+\begin{equation}
+\begin{matrix}
+W_1^{t+1} = W_1^t - \mu_1^t {\partial J \over \partial W_1^t} = W_1^t - \mu_1^t(W_2x) \\[0.4em]
+W_2^{t+1} = W_2^t - \mu_2^t {\partial J \over \partial W_2^t} = W_2^t - \mu_2^t(W_1x+b_1)
+\end{matrix}
+\end{equation}
+where $\mu_1^t$ and $\mu_2^t$ are the step size at stage t
+
+\paragraph{(d)} The updates during stochastic gradient descent usually involves Move-Forward and Correction stages and this oscillation may delay the efficiency of convergence, and therefore adding a momentum term may make the update toward the good direction as well as with the previous update history considered:
+\begin{equation}
+\begin{matrix}
+W_1^{t+1} = W_1^t - \mu_1^t {\partial J \over \partial W_1^t} + \Delta W_1^t \\[0.4em]
+W_2^{t+1} = W_2^t - \mu_2^t {\partial J \over \partial W_2^t} + \Delta W_2^t
+\end{matrix}
+\end{equation}
+
 \section{Top-k error}
 For image classification, sometime the class is ambiguous, and the loss during is being modified to consider multiple label. The top-k error rate is the fraction of test images for which the correct label is not among the top-k labels considered most probable. The reason why ImageNet using both top-5 and top-1 is due to sometimes only looking at top-1 error cannot be objective enought to evaluate the model because the image itself contains multi-label, and therefore evaluating top-5 error is important too.
 \section{t-SNE}
 \section{Proximal gradient descent}
-(a) Since Proximal operator is defined as:
+\paragraph{(a)} Since Proximal operator is defined as:
 \begin{equation}
 prox_{h,t}(x) = argmin_z{1\over2}||z-x||_2^2 + th(z)
 \end{equation}
@@ -185,7 +222,7 @@ Therefore the solution of Proximal operator will be:
 \begin{equation}
 z_i^\ast = \begin{cases}
     0       & \quad \text{if } |x_i|\leq t\\
-    x_i-t \cdot sign(x_i)  & \quad \text{if } |x_i|>t\\
+    x_i - t \cdot sign(x_i)  & \quad \text{if } |x_i|>t\\
   \end{cases}
 \end{equation}
 which is
@@ -193,7 +230,7 @@ which is
 prox_{h,t}(x) = S_t(x) = (|x|-t)_+\odot sign(x) \quad \text{(element-wise)}
 \end{equation}
 which is a soft-threshold fuction with t as threshold value\\
-(b) In the field of signal processing, the true signal usually will be blurred as followed:
+\paragraph{(b)} In the field of signal processing, the true signal usually will be blurred as followed:
 \begin{equation}
 Ax = b
 \end{equation}
@@ -202,7 +239,7 @@ where $A$ is the blur operation, b is the known observed blured-signal. The way 
 min_x\{F(x) \equiv {1\over 2}||b-Ax||_2^2 + \lambda||x||_1\}
 \end{equation}
 This is ISTA problem, and as we can see the first term is convex and differentiable, and the second term is convex and simple l1-norm function. Then the ISTA is become one example of proximal gradient descent\\
-(c) From the definition of Proximal operator the optimal solution is where ${\partial prox_{h,t}\over \partial z} = 0$, and therefore we will have:
+\paragraph{(c)} From the definition of Proximal operator the optimal solution is where ${\partial prox_{h,t}\over \partial z} = 0$, and therefore we will have:
 \begin{equation}
 0 \in z-x+t\partial h(z)
 \end{equation}
@@ -211,7 +248,7 @@ After we rewite the function and replace $z$ by $u$ which is the optimal result 
 {x-u \over t} \in \partial h(u)
 \end{equation}
 which means the calculated result from proximal function will be within the interval proportional to the subgradient of the simple-nonDerentiable function $h(x)$\\
-(d)From definition of Proximal operator, the optimal solution $x_{k+1}$ will be:
+\paragraph{(d)} From definition of Proximal operator, the optimal solution $x_{k+1}$ will be:
 \begin{equation}
 x_{k+1} = prox_{h,\alpha_k}(x_k - \alpha_k \nabla g(x_k) = x_k - \alpha_k \nabla g(x_k) - \alpha_k \partial h(x_{k+1})
 \end{equation}
