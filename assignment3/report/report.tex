@@ -131,18 +131,51 @@ Finally, we will get the result of ${\partial l\over \partial W_{ij}}$:
 {\partial l\over \partial W_{ij}} = {\partial l \over \partial \hat{y_i}} {\partial \hat{y_i} \over \partial W_{ij}} = -X_jy_i(1- \hat{y_i})
 \end{equation}
 \subsection{What happen when $y_{c_1}=1, \hat{y}_{c_2}=1, c_1 \neq c_2$}
-This means something like $y = [1, 0, 0]^T$ and $\hat{y} = [0,0,1]^T$, and the predict is far different from true lable. This will cause the log part in loss (3) become negative infinity. We may not need to worry this because before one of the class predicted close to 1 and everything else close to 0, it will generate a great positive loss the the class that is miss-predicted trying to make the predict right to true label.
+\paragraph{(a)} This means something like $y = [1, 0, 0]^T$ and $\hat{y} = [0,0,1]^T$, and the predict is far different from true lable. This will cause the log part in loss (3) become negative infinity. We may not need to worry this because before one of the class predicted close to 1 and everything else close to 0, it will generate a great positive loss the the class that is miss-predicted trying to make the predict right to true label.
 \section{Chain rule}
+Without explicitly deriving the formula of $f(x, y)$, can we apply layers of functions to represent function $f$, which is similar to build deep learning architecture.
+\begin{equation}
+\begin{aligned}
+f &= {{x^2+\sigma (y)}\over 3x + y - \sigma(x)} = {a \over b} \\
+\implies {\partial f \over \partial x} &= {\partial a \over \partial x}{1\over b} - {a\over b^2}{\partial b \over \partial x} \\
+\implies {\partial f \over \partial y} &= {\partial a \over \partial y}{1\over b} - {a\over b^2}{\partial b \over \partial y} \\
+\implies {\partial a \over \partial x} &= 2x \\
+\implies {\partial a \over \partial y} &= \sigma(y)(1-\sigma(y)) \\
+\implies {\partial b \over \partial x} &= 3-\sigma(x)(1-\sigma(x)) \\
+\implies {\partial b \over \partial y} &= 1 \\
+\end{aligned}
+\end{equation}
+
+\paragraph{(b)} As $x = 1$ and $y = 0$, then for each of value from the function listed above:
+\begin{equation}
+\begin{aligned}
+a &= 1+ \sigma(0) = 1.5 \\
+b &= 3+ 0+ \sigma(1) = 2.269 \\
+{\partial a \over \partial x} &= 2\cdot 1 = 2 \\
+{\partial a \over \partial y} &= 0.5(1-0.5) = 0.25 \\
+{\partial b \over \partial x} &= 3-0.731(1-0.731) = 2.803\\
+{\partial b \over \partial y} &= 1 \\
+\end{aligned}
+\end{equation}
+Therefore, applying each of the gradient at $(x,y) = (1,0)$ to the chain rule, we will get:
+
+\begin{equation}
+\begin{aligned}
+{\partial f \over \partial x} &= {\partial a \over \partial x}{1\over b} - {a\over b^2}{\partial b \over \partial x} = 2\cdot{1\over2.269} - {1.5\over(2.269)^2}\cdot2.803 = 0.0647 \\
+{\partial f \over \partial y} &= {\partial a \over \partial y}{1\over b} - {a\over b^2}{\partial b \over \partial y} =  0.25\cdot{1\over2.269} - {1.5 \over(2.269)^2}\cdot 1 =  -0.1811\\
+\end{aligned}
+\end{equation}
+
 \section{Variants of pooling}
 \section{Convolution}
-(a) As it is using 3x3 kernal along x and y axis of input, which is 5 and 5 respectively. The output of this layer will be $(5-3+1)\times(5-3+1)$ which is 3x3.\\
-(b) Assuming the kernel operation is point-point multiplication and summation, then the output of this layer is:\\
+\paragraph{(a)} As it is using 3x3 kernal along x and y axis of input, which is 5 and 5 respectively. The output of this layer will be $(5-3+1)\times(5-3+1)$ which is 3x3.\\
+\paragraph{(b)} Assuming the kernel operation is point-point multiplication and summation, then the output of this layer is:\\
 $\begin{pmatrix}
   109 & 92 & 72 \\[0.4em]
   108 & 85 & 74 \\[0.4em]
   110 & 74 & 79
 \end{pmatrix}$ \\
-(c)
+\paragraph{(c)} \\
 $\begin{pmatrix}
   4 & 7 & 10 & 6 & 3 \\[0.4em]
   9 & 17 & 25 & 16 & 8 \\[0.4em]
