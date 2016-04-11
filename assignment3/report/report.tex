@@ -178,6 +178,29 @@ Therefore, applying each of the gradient at $(x,y) = (1,0)$ to the chain rule, w
 \end{equation}
 
 \section{Variants of pooling}
+\paragraph{(a)} The purpose of pooling is to progressively reducing the spatial size to reduce the amount of parametersm and thereforealso to control the issue of overfitting. There are many different varients of pooling for example max-pooling, average pooling, and fractional max-pooling, and they can be found in torch as function $SpatialMaxPooling$, $SpatialAveragePooling$, and $SpatialLPPooling$.\\
+\paragraph{(b)} For $SpatialMaxPooling$ the definition is as followed:
+\begin{equation}
+\begin{matrix}
+x_{out} = \max(x_i^{(in)}) \quad \text{ for signals in pool region}
+\end{matrix}
+\end{equation}
+
+For $SpatialAveragePooling$ the definition is as followed:
+\begin{equation}
+\begin{matrix}
+x_{out} = {1\over n}\displaystyle\sum_i^nx_i^{(in)} \quad \text{ for signals in pool region}
+\end{matrix}
+\end{equation}
+
+For $SpatialLPPooling$ the definition is as followed:
+\begin{equation}
+\begin{matrix}
+x_{out} = {1\over n}(\displaystyle\sum_i^n(x_i^{(in)})^p)^{1\over p} \quad \text{ for signals in pool region}
+\end{matrix}
+\end{equation}
+\paragraph{(c)} Max-pooling is very useful as it helps to eliminate non-maximinal values and reduce the amount of parameter. However, if we just do max-pooling, the performance is limited due to its rapid reduction of spatial size, and the disjoint nature of the pooling region. Therefore, LP-pooling, which is an biologically inspired mehtod, will an moderate method that can reduce the spatial size as well as keeping the signal meaning in the pooling region.
+
 \section{Convolution}
 \paragraph{(a)} As it is using 3x3 kernal along x and y axis of input, which is 5 and 5 respectively. The output of this layer will be $(5-3+1)\times(5-3+1)$ which is 3x3.\\
 \paragraph{(b)} Assuming the kernel operation is point-point multiplication and summation, then the output of this layer is:\\
