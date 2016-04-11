@@ -261,6 +261,13 @@ W_2^{t+1} = W_2^t - \mu_2^t {\partial J \over \partial W_2^t} + \Delta W_2^t
 For image classification, sometime the class is ambiguous, and the loss during is being modified to consider multiple label. The top-k error rate is the fraction of test images for which the correct label is not among the top-k labels considered most probable. The reason why ImageNet using both top-5 and top-1 is due to sometimes only looking at top-1 error cannot be objective enought to evaluate the model because the image itself contains multi-label, and therefore evaluating top-5 error is important too.
 
 \section{t-SNE}
+\paragraph{(a)} Supose we have two-dimensional map that embedded with within a space with much higher dimensionality, and if in this high dimension each data points are mutually equaldistant, and the mapping is not ablt toe faithfully performed if the convergence is simply just based on mutual distance. Therefore, the crowding problem is defined as followed:
+
+\textit{The area of the two-dimensional map that is available to accommodate moderately distant datapoints will not be nearly large enough compared with the area available to accommodate nearby datapoints.}
+
+The approach of t-SNE to alleviate this problem is interesting. It converts distances into probability by Gaussian distribution. Then , in low-dimension space, it uses a probability distribution that has much heavier tails than Gaussian to conver distance to probability. After solving the joint optimization problem, this model provides the conversion that data with small distances in high-dimension space can get converted with much larger distances. Moreover, it eliminates the concerns of unwanted attractive forces between dissimilar points.
+
+There were attempts to solve the crowding problem, for example, by adding a small repulsion force to all springs between data points. However, the optimization of this method is tedious, and also after optimization it happend offently that two parts of cluster get seperated but then there is no force to pull them back together.
 \paragraph{(b)} Derive ${\partial C \over \partial y_i}$\\
 Let's define some variable for convenience:
 \begin{equation}
