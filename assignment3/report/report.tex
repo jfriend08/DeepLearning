@@ -259,7 +259,48 @@ W_2^{t+1} = W_2^t - \mu_2^t {\partial J \over \partial W_2^t} + \Delta W_2^t
 
 \section{Top-k error}
 For image classification, sometime the class is ambiguous, and the loss during is being modified to consider multiple label. The top-k error rate is the fraction of test images for which the correct label is not among the top-k labels considered most probable. The reason why ImageNet using both top-5 and top-1 is due to sometimes only looking at top-1 error cannot be objective enought to evaluate the model because the image itself contains multi-label, and therefore evaluating top-5 error is important too.
+
 \section{t-SNE}
+\paragraph{(b)} Derive ${\partial C \over \partial y_i}$\\
+Let's define some variable for convenience:
+\begin{equation}
+\begin{aligned}
+d_{ij} &= ||y_i-y_j|| \\[0.4em]
+Z &= \displaystyle\sum_{k \neq l} exp(-d_{kl}^2)
+\end{aligned}
+\end{equation}
+As we may notice that if we change $y_i$ plus its symmetric properity, $d_{ij}$ and $d_{ji}$ will be affected for $\forall j$. Therefore the gradient of C respect to $y_i$ is given by:
+\begin{equation}
+\begin{aligned}
+{\partial C \over \partial y_i} &= \displaystyle\sum_{j} ( {\partial C \over \partial d_{ij}} + {\partial C \over \partial d_{ji}} ) (y_i - y_j) \\[0.4em]
+&= 2 \displaystyle\sum_{j} {\partial C \over \partial d_{ij}}(y_i - y_j)
+\end{aligned}
+\end{equation}
+Thus, the next question is to derive ${\partial C \over \partial d_{ij}}$:
+\begin{equation}
+\begin{aligned}
+C = \displaystyle\sum_{i} \sum_{j}(p_{ij}\log p_{ij} - p_{ij}\log q_{ij}) \\[0.4em]
+{\partial C \over \partial d_{ij}} &= - \displaystyle\sum_{k \neq l}p_{kl}{\partial(\log q_{kl})\over \partial d_{ij}} = - \displaystyle\sum_{k \neq l}p_{kl}{\partial(\log q_{kl}Z - \log Z)\over \partial d_{ij}} \\[0.4em]
+&= - \displaystyle\sum_{k \neq l} p_{kl}({1\over q_{ij}Z} {\partial (\exp(-d_{kl}^2)) \over \partial d_{ij} } - {1\over Z}{\partial Z \over \partial d_{ij}} ) \\[0.4em]
+\end{aligned}
+\end{equation}
+Gradient ${\partial (\exp(-d_{kl}^2)) \over \partial d_{ij} }$ is only nonzero when $k = i$ and $l = j$. Therefore we can rewrite the formula above to:
+\begin{equation}
+\begin{aligned}
+{\partial C \over \partial d_{ij}} &= {p_{ij}\over q_{ij}Z}(2 \exp(-d_{ij}^2)) - \displaystyle\sum_{k \neq l} {2\exp (-d_{ij}^2)\over Z}\\[0.4em]
+&= 2p_{ij} - 2q_{ij}
+\end{aligned}
+\end{equation}
+Therefore, the combine to the previous formula we will get:
+\begin{equation}
+\begin{aligned}
+{\partial C \over \partial y_i} &= 2 \displaystyle\sum_{j} {\partial C \over \partial d_{ij}}(y_i - y_j) \\[0.4em]
+&= 4 \displaystyle\sum_{j}(p_{ij}-q_{ij}) (y_i -y_j)
+
+\end{aligned}
+\end{equation}
+
+
 \section{Proximal gradient descent}
 \paragraph{(a)} Since Proximal operator is defined as:
 \begin{equation}
