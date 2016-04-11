@@ -279,7 +279,7 @@ As we may notice that if we change $y_i$ plus its symmetric properity, $d_{ij}$ 
 Thus, the next question is to derive ${\partial C \over \partial d_{ij}}$:
 \begin{equation}
 \begin{aligned}
-C = \displaystyle\sum_{i} \sum_{j}(p_{ij}\log p_{ij} - p_{ij}\log q_{ij}) \\[0.4em]
+C &= \displaystyle\sum_{i} \sum_{j}(p_{ij}\log p_{ij} - p_{ij}\log q_{ij}) \\[0.4em]
 {\partial C \over \partial d_{ij}} &= - \displaystyle\sum_{k \neq l}p_{kl}{\partial(\log q_{kl})\over \partial d_{ij}} = - \displaystyle\sum_{k \neq l}p_{kl}{\partial(\log q_{kl}Z - \log Z)\over \partial d_{ij}} \\[0.4em]
 &= - \displaystyle\sum_{k \neq l} p_{kl}({1\over q_{ij}Z} {\partial (\exp(-d_{kl}^2)) \over \partial d_{ij} } - {1\over Z}{\partial Z \over \partial d_{ij}} ) \\[0.4em]
 \end{aligned}
