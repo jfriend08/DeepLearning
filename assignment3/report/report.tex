@@ -64,7 +64,7 @@
 
 \maketitle
 \section{General Questions}
-(a) Say if the first module is:
+\paragraph{(a)} Say if the first module is:
 \begin{equation}
 max(W_1X)
 \end{equation}
@@ -78,6 +78,17 @@ W_2(W_1X) \to \bar{W}X
 \end{equation}
 which eventually all $W_i$ can become a single module $\bar{W}$
 
+\paragraph{(b)} For dictionary learning using sparse coding:
+\begin{equation}
+\min_{D, \alpha} {1\over n} \displaystyle\sum_{i=1}^n({1\over 2}||x_i-D\alpha||^2 + \lambda||\alpha_i||_1)
+\end{equation}
+Which is a joint minimization problem with respect to dictionary $D$ and $\alpha$\\
+And for autoencoders:
+\begin{equation}
+\min_{W_{de}, W_{en}} {1 \over n} \displaystyle\sum_{i=1}^n||W_{de}\sigma(W_{en}x_i)-x_i||^2 \\
+\end{equation}
+Where $\sigma$ is some non-linear function (e.g. shrinkage). Similar to dictionary learning, autoencoders is also a joint optimization problem respect to encoder and decoder matrix $W_{en}$, $W_{de}$. Indeed we can make the $\alpha$ to become $\sigma(W_{en}x)$ and this will make them very similar. However, there are two main factors making them different: One is autoencoder does not has the term for regulator, and therefore sparsity is not encouraged. Another one is autoencoder uses the model to find the code, while sparse coding approaching it by means of the optimizations.
+
 \section{Softmax regression gradient calculation}
 Given
 \begin{equation}
@@ -89,7 +100,7 @@ where d is the input dimension, k is the number of classes, $\sigma$ is the soft
 \end{equation}
 Which means a given input $x$ will output $y$ with probability of each class
 
-\subsection{Derive ${\partial l\over \partial W_{ij}}$}
+\paragraph{(a)} Derive ${\partial l\over \partial W_{ij}}$\\
 If the given cross-entropy loss defined as followed:
 \begin{equation}
 l(y, \hat{y}) = -\sum_i y_i\log\hat{y_i}
@@ -130,8 +141,8 @@ Finally, we will get the result of ${\partial l\over \partial W_{ij}}$:
 \begin{equation}
 {\partial l\over \partial W_{ij}} = {\partial l \over \partial \hat{y_i}} {\partial \hat{y_i} \over \partial W_{ij}} = -X_jy_i(1- \hat{y_i})
 \end{equation}
-\subsection{What happen when $y_{c_1}=1, \hat{y}_{c_2}=1, c_1 \neq c_2$}
-\paragraph{(a)} This means something like $y = [1, 0, 0]^T$ and $\hat{y} = [0,0,1]^T$, and the predict is far different from true lable. This will cause the log part in loss (3) become negative infinity. We may not need to worry this because before one of the class predicted close to 1 and everything else close to 0, it will generate a great positive loss the the class that is miss-predicted trying to make the predict right to true label.
+\paragraph{(b)} What happen when $y_{c_1}=1, \hat{y}_{c_2}=1, c_1 \neq c_2$\\
+This means something like $y = [1, 0, 0]^T$ and $\hat{y} = [0,0,1]^T$, and the predict is far different from true lable. This will cause the log part in loss (3) become negative infinity. We may not need to worry this because before one of the class predicted close to 1 and everything else close to 0, it will generate a great positive loss the the class that is miss-predicted trying to make the predict right to true label.
 \section{Chain rule}
 Without explicitly deriving the formula of $f(x, y)$, can we apply layers of functions to represent function $f$, which is similar to build deep learning architecture.
 \begin{equation}
