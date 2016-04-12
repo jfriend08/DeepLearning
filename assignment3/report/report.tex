@@ -1,15 +1,15 @@
 \documentclass{article}
-
+\usepackage[final]{nips_2016} % produce camera-ready copy
 % if you need to pass options to natbib, use, e.g.:
-% \PassOptionsToPackage{numbers, compress}{natbib}
+\PassOptionsToPackage{numbers, compress}{natbib}
 % before loading nips_2016
 %
-% to avoid loading the natbib package, add option nonatbib:
+% % to avoid loading the natbib package, add option nonatbib:
 % \usepackage[nonatbib]{nips_2016}
 
-\usepackage{nips_2016}
+% \usepackage{nips_2016}
 
-% to compile a camera-ready version, add the [final] option, e.g.:
+% % to compile a camera-ready version, add the [final] option, e.g.:
 % \usepackage[final]{nips_2016}
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
@@ -37,11 +37,6 @@
   Peter Yun-shao Sung
   \texttt{yss265@nyu.edu} \\
   %% examples of more authors
-  %% \And
-  %% Coauthor \\
-  %% Affiliation \\
-  %% Address \\
-  %% \texttt{email} \\
   %% \AND
   %% Coauthor \\
   %% Affiliation \\
@@ -223,8 +218,8 @@ $\begin{pmatrix}
 \paragraph{(a)} say the encoder and decoder is defined as:
 \begin{equation}
 \begin{align}
-z &= W_1x + b_1 = \hat{W_1}x \\[0.4em]
-\tilde{x} &= W_2\sigma(z) + b_2 = \hat{W_2}\sigma(z)  \quad \text{where $\sigma$ is a non-linear function}
+z &= \hat{W_1}x \\[0.4em]
+\tilde{x} &= \hat{W_2}\sigma(z)  \quad \text{say $\sigma$ is a sigmoid function}
 \end{align}
 \end{equation}
 And therefore the reconstruction loss $J$ will be:
@@ -235,7 +230,8 @@ J(\hat{W_1}, \hat{W_2}) = (\tilde{x}-x)^2 = (\hat{W_2}\sigma(\hat{W_1}x)-x)^2
 \paragraph{(b)} To have the gradient of reconstruction loss respective to the parameters, we take the derivative of each parameters:
 \begin{equation}
 \begin{align}
-{\partial J \over \partial \hat{W_1}} &= 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \hat{W_2}x{\partial \sigma(\hat{W_1}x)\over \partial \hat{W_1}} \\[0.4em]
+{\partial J \over \partial \hat{W_1}} &= 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \hat{W_2}\sigma(\hat{W_1}x)(1-\sigma(\hat{W_1}x))x \\[0.4em]
+% {\partial \sigma(\hat{W_1}x)\over \partial \hat{W_1}} =  \\[0.4em]
 {\partial J \over \partial \hat{W_2}} &= 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \sigma(\hat{W_1}x)
 \end{align}
 \end{equation}
@@ -243,7 +239,7 @@ J(\hat{W_1}, \hat{W_2}) = (\tilde{x}-x)^2 = (\hat{W_2}\sigma(\hat{W_1}x)-x)^2
 \paragraph{(c)} Say now we are at stage $t$ and would like to compute $W_1^{t+1}$ and $W_2^{t+1}$:
 \begin{equation}
 \begin{align}
-\hat{W_1}^{t+1} &= \hat{W_1}^t - \mu_1^t {\partial J \over \partial \hat{W_1}^t} = \hat{W_1}^t - \mu_1^t( 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \hat{W_2}x{\partial \sigma(\hat{W_1}x)\over \partial \hat{W_1}} ) \\[0.4em]
+\hat{W_1}^{t+1} &= \hat{W_1}^t - \mu_1^t {\partial J \over \partial \hat{W_1}^t} = \hat{W_1}^t - \mu_1^t( 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \hat{W_2}\sigma(\hat{W_1}x)(1-\sigma(\hat{W_1}x))x ) \\[0.4em]
 \hat{W_2}^{t+1} &= \hat{W_2}^t - \mu_2^t {\partial J \over \partial \hat{W_2}^t} = \hat{W_2}^t - \mu_2^t( 2(\hat{W_2}\sigma(\hat{W_1}x)-x) )
 \end{align}
 \end{equation}
