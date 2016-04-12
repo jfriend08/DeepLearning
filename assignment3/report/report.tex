@@ -222,38 +222,38 @@ $\begin{pmatrix}
 \section{Optimization}
 \paragraph{(a)} say the encoder and decoder is defined as:
 \begin{equation}
-\begin{matrix}
-z = W_1x + b_1 \\[0.4em]
-\tilde{x} = W_2z + b_2
-\end{matrix}
+\begin{align}
+z &= W_1x + b_1 = \hat{W_1}x \\[0.4em]
+\tilde{x} &= W_2\sigma(z) + b_2 = \hat{W_2}\sigma(z)  \quad \text{where $\sigma$ is a non-linear function}
+\end{align}
 \end{equation}
 And therefore the reconstruction loss $J$ will be:
 \begin{equation}
-J(W_1, b_1, W_2, b_2) = (\tilde{x}-x)^2 = (W_2(W_1x+b_1)+b_2-x)^2
+J(\hat{W_1}, \hat{W_2}) = (\tilde{x}-x)^2 = (\hat{W_2}\sigma(\hat{W_1}x)-x)^2
 \end{equation}
 
 \paragraph{(b)} To have the gradient of reconstruction loss respective to the parameters, we take the derivative of each parameters:
 \begin{equation}
-\begin{matrix}
-{\partial J \over \partial W_1} = W_2x \\[0.4em]
-{\partial J \over \partial W_2} = W_1x + b_1
-\end{matrix}
+\begin{align}
+{\partial J \over \partial \hat{W_1}} &= 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \hat{W_2}x{\partial \sigma(\hat{W_1}x)\over \partial \hat{W_1}} \\[0.4em]
+{\partial J \over \partial \hat{W_2}} &= 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \sigma(\hat{W_1}x)
+\end{align}
 \end{equation}
 
 \paragraph{(c)} Say now we are at stage $t$ and would like to compute $W_1^{t+1}$ and $W_2^{t+1}$:
 \begin{equation}
-\begin{matrix}
-W_1^{t+1} = W_1^t - \mu_1^t {\partial J \over \partial W_1^t} = W_1^t - \mu_1^t(W_2x) \\[0.4em]
-W_2^{t+1} = W_2^t - \mu_2^t {\partial J \over \partial W_2^t} = W_2^t - \mu_2^t(W_1x+b_1)
-\end{matrix}
+\begin{align}
+\hat{W_1}^{t+1} &= \hat{W_1}^t - \mu_1^t {\partial J \over \partial \hat{W_1}^t} = \hat{W_1}^t - \mu_1^t( 2(\hat{W_2}\sigma(\hat{W_1}x)-x) \cdot \hat{W_2}x{\partial \sigma(\hat{W_1}x)\over \partial \hat{W_1}} ) \\[0.4em]
+\hat{W_2}^{t+1} &= \hat{W_2}^t - \mu_2^t {\partial J \over \partial \hat{W_2}^t} = \hat{W_2}^t - \mu_2^t( 2(\hat{W_2}\sigma(\hat{W_1}x)-x) )
+\end{align}
 \end{equation}
 where $\mu_1^t$ and $\mu_2^t$ are the step size at stage t
 
 \paragraph{(d)} The updates during stochastic gradient descent usually involves Move-Forward and Correction stages and this oscillation may delay the efficiency of convergence, and therefore adding a momentum term may make the update toward the good direction as well as with the previous update history considered:
 \begin{equation}
 \begin{matrix}
-W_1^{t+1} = W_1^t - \mu_1^t {\partial J \over \partial W_1^t} + \Delta W_1^t \\[0.4em]
-W_2^{t+1} = W_2^t - \mu_2^t {\partial J \over \partial W_2^t} + \Delta W_2^t
+\hat{W_1}^{t+1} = \hat{W_1}^t - \mu_1^t {\partial J \over \partial \hat{W_1}^t} + \Delta \hat{W_1}^t \\[0.4em]
+\hat{W_2}^{t+1} = \hat{W_2}^t - \mu_2^t {\partial J \over \partial \hat{W_2}^t} + \Delta \hat{W_2}^t
 \end{matrix}
 \end{equation}
 
@@ -261,7 +261,7 @@ W_2^{t+1} = W_2^t - \mu_2^t {\partial J \over \partial W_2^t} + \Delta W_2^t
 For image classification, sometime the class is ambiguous, and the loss during is being modified to consider multiple label. The top-k error rate is the fraction of test images for which the correct label is not among the top-k labels considered most probable. The reason why ImageNet using both top-5 and top-1 is due to sometimes only looking at top-1 error cannot be objective enought to evaluate the model because the image itself contains multi-label, and therefore evaluating top-5 error is important too.
 
 \section{t-SNE}
-\paragraph{(a)} Supose we have two-dimensional map that embedded with within a space with much higher dimensionality, and if in this high dimension each data points are mutually equaldistant, and the mapping is not ablt toe faithfully performed if the convergence is simply just based on mutual distance. Therefore, the crowding problem is defined as followed:
+\paragraph{(a)} Supose we have two-dimensional map that embedded within a space with much higher dimensionality, and if in this high dimension each data points are mutually equaldistant, and the mapping is not able to faithfully performed if the convergence is simply just based on mutual distance. Therefore, the crowding problem is defined as followed:
 
 \textit{The area of the two-dimensional map that is available to accommodate moderately distant datapoints will not be nearly large enough compared with the area available to accommodate nearby datapoints.}
 
