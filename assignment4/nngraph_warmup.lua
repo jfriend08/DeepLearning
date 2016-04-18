@@ -22,5 +22,15 @@ model = nn.gModule({h1,h2,h3},{madd})
 x = torch.rand(4)
 y = torch.rand(5)
 z = torch.rand(2)
+gradient = torch.ones(2)
+
+-- Forward propagate, output in size 2x2
 print (model:forward({x,y,z}))
+
+-- Backward propagate
+res = model:backward({x,y,z},gradient)
+print(res)
+print(res[1])
+print(res[2])
+print(res[3])
 
