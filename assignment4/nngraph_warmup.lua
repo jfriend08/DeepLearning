@@ -1,49 +1,26 @@
 nn = require 'nn'
 require 'nngraph'
 
--- l1 = nn.Linear(4,2)()
--- a = nn.Tanh()(l1)
--- -- b = nn.Identity()()
--- l2 = nn.Linear(4,2)()
--- b = nn.Tanh()(l2)
 
--- x = nn.CAddTable()({a,b})
--- m = nn.gModule({a,b},{x})
+h1     = nn.Linear(4,2)()
+h1_add = nn.Add(1)(h1)
+hh1    = nn.Tanh()(h1_add)
+hhh1   = nn.Square()(hh1)
 
+h2     = nn.Linear(5,2)()
+h2_add = nn.Add(1)(h2)
+hh2    = nn.Sigmoid()(h2_add)
+hhh2   = nn.Square()(hh2)
 
--- t1 = torch.Tensor{1,1,1,1}
--- t2 = torch.Tensor{2,2,2,2}
+h3     = nn.Identity()()
 
--- print (m:forward({t1,t2}))
+mmul   = nn.CMulTable()({hhh1, hhh2})
+madd   = nn.CAddTable()({mmul, h3})
 
-
--- h1 = nn.Linear(20, 10)()
--- h2 = nn.Linear(10, 1)(  nn.Tanh()(  nn.Linear(10, 10)( nn.Tanh()(h1) )  )   )
--- mlp = nn.gModule({h1}, {h2})
-
--- x = torch.rand(20)
--- -- print(x)
--- print (mlp:forward(x))
-
-
-h1 = nn.Linear(20, 20)()
-h2 = nn.Linear(20, 1)(h1)
-model = nn.gModule({h1},{h2})
-x = torch.rand(20)
-print (model:forward(x))
-
-
-
-h1 = nn.Linear(4,2)()
-hh1 = nn.Tanh()(h1)
-
-h2 = nn.Linear(5,2)()
-hh2 = nn.Sigmoid()(h2)
-
-mmul = nn.CMulTable()({hh1, hh2})
-
-model = nn.gModule({h1,h2},{mmul})
+model = nn.gModule({h1,h2,h3},{madd})
 
 x = torch.rand(4)
 y = torch.rand(5)
-print (model:forward({x,y}))
+z = torch.rand(2)
+print (model:forward({x,y,z}))
+
