@@ -165,6 +165,9 @@ end
 
 function bp(state)
     -- start on a clean slate. Backprop over time for params.seq_length.
+    print('start bp.')
+    print(state)
+    print('state.pos: ' .. state.pos)
     paramdx:zero()
     reset_ds()
     for i = params.seq_length, 1, -1 do
@@ -240,6 +243,7 @@ end
 state_train = {data=transfer_data(ptb.traindataset(params.batch_size))}
 state_valid =  {data=transfer_data(ptb.validdataset(params.batch_size))}
 state_test =  {data=transfer_data(ptb.testdataset(params.batch_size))}
+print('ptb.vocabRev_map', ptb.vocabRev_map)
 
 print("Network parameters:")
 print(params)
@@ -258,7 +262,8 @@ print("Starting training.")
 words_per_step = params.seq_length * params.batch_size
 epoch_size = torch.floor(state_train.data:size(1) / params.seq_length)
 
-while epoch < params.max_max_epoch do
+-- while epoch < params.max_max_epoch do
+while epoch < 1 do
 
     -- take one step forward
     perp = fp(state_train)
@@ -290,10 +295,15 @@ while epoch < params.max_max_epoch do
     -- run when epoch done
     if step % epoch_size == 0 then
         run_valid()
+
+        -- --peter: shoud we save model somewhere?
+        -- torch.save(filename, model:get(3))
+
         if epoch > params.max_epoch then
             params.lr = params.lr / params.decay
         end
     end
 end
+print("Done max_epoch, run_test()")
 run_test()
 print("Training is over.")
