@@ -165,9 +165,6 @@ end
 
 function bp(state)
     -- start on a clean slate. Backprop over time for params.seq_length.
-    print('start bp.')
-    print(state)
-    print('state.pos: ' .. state.pos)
     paramdx:zero()
     reset_ds()
     for i = params.seq_length, 1, -1 do
@@ -227,6 +224,12 @@ function run_test()
     for i = 1, (len - 1) do
         local x = state_test.data[i]
         local y = state_test.data[i + 1]
+        -- print('y:')
+        -- print(y)
+        -- print(y:size()[1])
+        -- for i = 1, y:size()[1] do
+        --     print(ptb.vocabRev_map[y[i]])
+        -- end
         perp_tmp, model.s[1] = unpack(model.rnns[1]:forward({x, y, model.s[0]}))
         perp = perp + perp_tmp[1]
         g_replace_table(model.s[0], model.s[1])
@@ -243,7 +246,7 @@ end
 state_train = {data=transfer_data(ptb.traindataset(params.batch_size))}
 state_valid =  {data=transfer_data(ptb.validdataset(params.batch_size))}
 state_test =  {data=transfer_data(ptb.testdataset(params.batch_size))}
-print('ptb.vocabRev_map', ptb.vocabRev_map)
+-- print('ptb.vocabRev_map', ptb.vocabRev_map) -- this is my reverse vocab_map
 
 print("Network parameters:")
 print(params)
@@ -262,8 +265,8 @@ print("Starting training.")
 words_per_step = params.seq_length * params.batch_size
 epoch_size = torch.floor(state_train.data:size(1) / params.seq_length)
 
--- while epoch < params.max_max_epoch do
-while epoch < 1 do
+while epoch < params.max_max_epoch do
+-- while epoch < 1 do
 
     -- take one step forward
     perp = fp(state_train)
@@ -279,6 +282,7 @@ while epoch < 1 do
     -- words_per_step covered in one step
     total_cases = total_cases + params.seq_length * params.batch_size
     epoch = step / epoch_size
+    epoch = epoch_size / epoch_size
     
     -- display details at some interval
     if step % torch.round(epoch_size / 10) == 10 then
@@ -291,14 +295,14 @@ while epoch < 1 do
              ', lr = ' ..  g_f3(params.lr) ..
              ', since beginning = ' .. since_beginning .. ' mins.')
     end
-    
+
     -- run when epoch done
     if step % epoch_size == 0 then
         run_valid()
-
-        -- --peter: shoud we save model somewhere?
-        -- torch.save(filename, model:get(3))
-
+        --peter: shoud we save model somewhere?
+        local filename = 'model_' .. step ..'.net'
+        print("Saving model at step: " .. step)
+        torch.save(filename, model)
         if epoch > params.max_epoch then
             params.lr = params.lr / params.decay
         end
