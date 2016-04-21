@@ -152,6 +152,10 @@ function fp(state)
     for i = 1, params.seq_length do
         local x = state.data[state.pos]
         local y = state.data[state.pos + 1]
+        for i = 1, y:size()[1] do
+            print('x->' .. ptb.vocabRev_map[x[i]])
+            print('y->' .. ptb.vocabRev_map[y[i]])
+        end
         local s = model.s[i - 1]
         model.err[i], model.s[i], model.pred[i] = unpack(model.rnns[i]:forward({x, y, s}))
         state.pos = state.pos + 1
@@ -229,9 +233,10 @@ function run_test()
         -- print('y:')
         -- print(y)
         -- print(y:size()[1])
-        -- for i = 1, y:size()[1] do
-        --     print(ptb.vocabRev_map[y[i]])
-        -- end
+        for i = 1, y:size()[1] do
+            print(ptb.vocabRev_map[x[i]])
+            print(ptb.vocabRev_map[y[i]])
+        end
         perp_tmp, model.s[1] = unpack(model.rnns[1]:forward({x, y, model.s[0]}))
         perp = perp + perp_tmp[1]
         g_replace_table(model.s[0], model.s[1])
