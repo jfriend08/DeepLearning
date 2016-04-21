@@ -106,6 +106,7 @@ function setup()
     paramx, paramdx = core_network:getParameters()
     model.s = {}
     model.ds = {}
+    model.pred = {}
     model.start_s = {}
     for j = 0, params.seq_length do
         model.s[j] = {}
@@ -152,7 +153,7 @@ function fp(state)
         local x = state.data[state.pos]
         local y = state.data[state.pos + 1]
         local s = model.s[i - 1]
-        model.err[i], model.s[i], pred = unpack(model.rnns[i]:forward({x, y, s}))
+        model.err[i], model.s[i], model.pred[i] = unpack(model.rnns[i]:forward({x, y, s}))
         state.pos = state.pos + 1
     end
     
@@ -301,7 +302,7 @@ while epoch < params.max_max_epoch do
     if step % epoch_size == 0 then
         run_valid()
         --peter: shoud we save model somewhere?
-        local filename = 'model_' .. step ..'.net'
+        local filename = './model/model_' .. step ..'.net'
         print("Saving model at step: " .. step)
         torch.save(filename, model)
         if epoch > params.max_epoch then
