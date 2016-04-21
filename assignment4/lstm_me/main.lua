@@ -176,7 +176,7 @@ function bp(state)
         local s = model.s[i - 1]
         -- Why 1?
         local derr = transfer_data(torch.ones(1))
-        local dpred = transfer_data(torch.ones(20,10000))
+        local dpred = transfer_data(torch.Tensor(20,10000):zero())
         -- tmp stores the ds
         local tmp = model.rnns[i]:backward({x, y, s},
                                            {derr, model.ds, dpred})[3]
