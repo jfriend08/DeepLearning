@@ -49,17 +49,26 @@ function reset_state(state)
 end
 
 function runPredict(line)
-    reset_state(state_test)
-    g_disable_dropout(model.rnns)
 
+    g_disable_dropout(model.rnns)
+    local guessLen = line[1]
     local len = #line-1
     local perp = 0
     local pre_word
+    local output = ''
 
     print('Input length is: ' .. len)
 
-    g_replace_table(model.s[0], model.start_s)
+    -- g_replace_table(model.s[0], model.start_s)
     for i = 2, #line-1 do
+      if i == 2 then
+        output = line[i]
+      else
+        output = output .. ' ' .. line[i]
+      end
+
+      print('i: ' .. i .. ' output: ' .. output)
+
       local x = torch.Tensor{ptb.vocab_map[line[i]]}
       local y = torch.Tensor{ptb.vocab_map[line[i+1]]}
       x = x:expand(params.batch_size)
@@ -74,8 +83,29 @@ function runPredict(line)
     end
     print("Test set perplexity : " .. g_f3(torch.exp(perp / (len - 1))))
     print('Prediction: ' .. pre_word)
+    print('Current out: ' .. output)
 
+    prev_word = line[len+1]
+
+    for i = 1, guessLen do
+      print ("HI!!" .. i)
+      output = output .. ' ' .. prev_word
+      local x = torch.Tensor{ptb.vocab_map[prev_word]}
+      local y = torch.Tensor{ptb.vocab_map[prev_word]}
+      x = x:expand(params.batch_size)
+      y = y:expand(params.batch_size)
+
+      perp_tmp, model.s[1], pred = unpack(model.rnns[1]:forward({x, y, model.s[0]}))
+      y, i = torch.max(pred[1], 1)
+      prev_word = ptb.vocabRev_map[i[1]]
+      print('Prediction: ' .. prev_word)
+      perp = perp + perp_tmp[1]
+      g_replace_table(model.s[0], model.s[1])
+    end
     g_enable_dropout(model.rnns)
+
+    output = output .. ' ' .. prev_word
+    return output
 end
 
 -- get data in batches
@@ -100,7 +130,7 @@ while true do
       print("Failed, try again")
     end
   else
-    runPredict(line)
+    print(runPredict(line))
     -- local prev_s = transfer_data(torch.zeros(params.batch_size, params.rnn_size))
     -- local prev_word
     -- for i = 2, #line-1 do
