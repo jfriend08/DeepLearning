@@ -77,7 +77,7 @@ function create_network()
     local y                  = nn.Identity()()
     local prev_s             = nn.Identity()()
     local i                  = {[0] = nn.LookupTable(params.vocab_size,
-                                                    params.rnn_size)(x)}
+                                                    params.rnn_size)(x)} --peter: i contains all the modules
     local next_s             = {}
     local split              = {prev_s:split(2 * params.layers)}
     for layer_idx = 1, params.layers do

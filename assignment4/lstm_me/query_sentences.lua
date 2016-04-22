@@ -54,57 +54,60 @@ function runPredict(line)
     local guessLen = line[1]
     local len = #line-1
     local perp = 0
-    local pre_word
+    local prev_word
     local output = ''
+    local layerIdx = 1
 
     print('Input length is: ' .. len)
 
-    -- g_replace_table(model.s[0], model.start_s)
-    for i = 2, #line-1 do
+    g_replace_table(model.s[0], model.start_s)
+    for i = 2, #line do
       if i == 2 then
         output = line[i]
       else
         output = output .. ' ' .. line[i]
       end
 
-      print('i: ' .. i .. ' output: ' .. output)
+      if ptb.vocab_map[line[i]] == nil then
+        return 'word not in vocabulary list'
+      end
 
       local x = torch.Tensor{ptb.vocab_map[line[i]]}
-      local y = torch.Tensor{ptb.vocab_map[line[i+1]]}
+      -- local y = torch.Tensor{ptb.vocab_map[line[i+1]]}
+      local y = torch.Tensor{1}
       x = x:expand(params.batch_size)
       y = y:expand(params.batch_size)
 
-      perp_tmp, model.s[1], pred = unpack(model.rnns[1]:forward({x, y, model.s[0]}))
-      y, i = torch.max(pred[1], 1)
-      pre_word = ptb.vocabRev_map[i[1]]
+      perp_tmp, model.s[i-1], pred = unpack(model.rnns[i-1]:forward({x, y, model.s[i-2]}))
 
-      perp = perp + perp_tmp[1]
-      g_replace_table(model.s[0], model.s[1])
+      y, idx = torch.max(pred[1], 1)
+      prev_word = ptb.vocabRev_map[idx[1]]
+
+      -- perp = perp + perp_tmp[1]
+      g_replace_table(model.s[i-2], model.s[i-1])
+      layerIdx = i
+      print("layerIdx: " .. layerIdx)
     end
-    print("Test set perplexity : " .. g_f3(torch.exp(perp / (len - 1))))
-    print('Prediction: ' .. pre_word)
-    print('Current out: ' .. output)
-
-    prev_word = line[len+1]
 
     for i = 1, guessLen do
-      print ("HI!!" .. i)
+      print("Here layerIdx: " .. layerIdx)
       output = output .. ' ' .. prev_word
       local x = torch.Tensor{ptb.vocab_map[prev_word]}
       local y = torch.Tensor{ptb.vocab_map[prev_word]}
       x = x:expand(params.batch_size)
       y = y:expand(params.batch_size)
 
-      perp_tmp, model.s[1], pred = unpack(model.rnns[1]:forward({x, y, model.s[0]}))
-      y, i = torch.max(pred[1], 1)
-      prev_word = ptb.vocabRev_map[i[1]]
-      print('Prediction: ' .. prev_word)
-      perp = perp + perp_tmp[1]
-      g_replace_table(model.s[0], model.s[1])
-    end
-    g_enable_dropout(model.rnns)
+      perp_tmp, model.s[layerIdx], pred = unpack(model.rnns[layerIdx]:forward({x, y, model.s[layerIdx-1]}))
 
-    output = output .. ' ' .. prev_word
+      y, idx = torch.max(pred[1], 1)
+      prev_word = ptb.vocabRev_map[idx[1]]
+
+      -- perp = perp + perp_tmp[1]
+      g_replace_table(model.s[layerIdx-1], model.s[layerIdx])
+      layerIdx = layerIdx + 1
+    end
+
+    g_enable_dropout(model.rnns)
     return output
 end
 
@@ -130,19 +133,9 @@ while true do
       print("Failed, try again")
     end
   else
-    print(runPredict(line))
-    -- local prev_s = transfer_data(torch.zeros(params.batch_size, params.rnn_size))
-    -- local prev_word
-    -- for i = 2, #line-1 do
-    --   print(line[i])
-    --   perp_tmp, model.s[1], pred = unpack(model.rnns[i]:forward({ptb.vocab_map[line[i]], ptb.vocab_map[line[i+1]], model.s[0]}))
+    local line = runPredict(line)
+    print(line)
 
-    --   -- local embedding = protos.embed:forward(prev_char)
-    --   -- local next_c, next_h = unpack(protos.lstm:forward{embedding, prev_c, prev_h})
-
-    --   -- prev_c:copy(next_c) -- TODO: this shouldn't be needed... check if we can just use an assignment?
-    --   -- prev_h:copy(next_h)
-    -- end
     -- io.write('\n')
   end
 end
