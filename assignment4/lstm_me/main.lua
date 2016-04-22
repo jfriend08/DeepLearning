@@ -152,10 +152,6 @@ function fp(state)
     for i = 1, params.seq_length do
         local x = state.data[state.pos]
         local y = state.data[state.pos + 1]
-        for i = 1, y:size()[1] do
-            print('x->' .. ptb.vocabRev_map[x[i]])
-            print('y->' .. ptb.vocabRev_map[y[i]])
-        end
         local s = model.s[i - 1]
         model.err[i], model.s[i], model.pred[i] = unpack(model.rnns[i]:forward({x, y, s}))
         state.pos = state.pos + 1
@@ -180,7 +176,7 @@ function bp(state)
         local s = model.s[i - 1]
         -- Why 1?
         local derr = transfer_data(torch.ones(1))
-        local dpred = transfer_data(torch.Tensor(20,10000):zero())
+        local dpred = transfer_data(torch.Tensor(params.batch_size, params.vocab_size):zero())
         -- tmp stores the ds
         local tmp = model.rnns[i]:backward({x, y, s},
                                            {derr, model.ds, dpred})[3]
