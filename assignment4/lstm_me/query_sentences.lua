@@ -106,7 +106,6 @@ function runPredict(line)
       g_replace_table(model.s[layerIdx-1], model.s[layerIdx])
       layerIdx = layerIdx + 1
     end
-
     g_enable_dropout(model.rnns)
     return output
 end
