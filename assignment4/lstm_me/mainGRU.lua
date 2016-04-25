@@ -124,11 +124,15 @@ function create_network()
                                                     params.rnn_size)(x)} --peter: i contains all the modules
     local next_s             = {}
     local split              = {prev_s:split(2 * params.layers)}
+
     for layer_idx = 1, params.layers do
-        local prev_h         = split[layer_idx]
+        local prev_c         = split[2 * layer_idx - 1]
+        local prev_h         = split[2 * layer_idx]
         local dropped        = nn.Dropout(params.dropout)(i[layer_idx - 1])
         local next_h = gru(dropped, prev_h)
+        local next_c = prev_c
         table.insert(next_s, next_h)
+        table.insert(next_s, next_c)
         i[layer_idx] = next_h
     end
     local h2y                = nn.Linear(params.rnn_size, params.vocab_size)
