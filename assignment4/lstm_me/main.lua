@@ -21,21 +21,39 @@ require('base')
 ptb = require('data')
 
 -- Trains 1 epoch and gives validation set ~182 perplexity (CPU).
-local params = {
-                batch_size=20, -- minibatch
-                seq_length=20, -- unroll length
-                layers=2,
-                decay=2,
-                rnn_size=200, -- hidden unit size
-                dropout=0.95,
-                init_weight=0.20, -- random weight initialization limits
-                lr=1, --learning rate
-                vocab_size=10000, -- limit on the vocabulary size
-                max_epoch=4,  -- when to start decaying learning rate
-                max_max_epoch=13, -- final epoch
-                max_grad_norm=5, -- clip when gradients exceed this norm value
-                filePrefix="modelDrop_95_"
-               }
+params = lapp[[
+   --batch_size                     (default 20)
+   --seq_length                     (default 20)
+   --layers                         (default 2)
+   --decay                          (default 2)
+   --rnn_size                       (default 200)
+   --dropout                        (default 0)
+   --init_weight                    (default 0.2)
+   --lr                             (default 1)
+   --vocab_size                     (default 10000)
+   --max_epoch                      (default 4)
+   --max_max_epoch                  (default 13)
+   --max_grad_norm                  (default 5)
+   --filePrefix                     (default "modelLayer_test_")
+]]
+
+-- print(params)
+
+-- local params = {
+--                 batch_size=20, -- minibatch
+--                 seq_length=20, -- unroll length
+--                 layers=2,
+--                 decay=2,
+--                 rnn_size=200, -- hidden unit size
+--                 dropout=0,
+--                 init_weight=0.20, -- random weight initialization limits
+--                 lr=1, --learning rate
+--                 vocab_size=10000, -- limit on the vocabulary size
+--                 max_epoch=4,  -- when to start decaying learning rate
+--                 max_max_epoch=13, -- final epoch
+--                 max_grad_norm=5, -- clip when gradients exceed this norm value
+--                 filePrefix="modelLayer_10_"
+--                }
 
 function transfer_data(x)
     if gpu then
