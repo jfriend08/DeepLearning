@@ -91,6 +91,30 @@ local function lstm(x, prev_c, prev_h)
     return next_c, next_h
 end
 
+local function gru(x, prevh)
+    local i2h   = nn.Linear(params.rnn_size, 3 * params.rnn_size)(x)
+    local h2h   = nn.Linear(params.rnn_size, 3 * params.rnn_size)(prevh)
+    local gates = nn.CAddTable()({
+        nn.Narrow(2, 1, 2 * params.rnn_size)(i2h),
+        nn.Narrow(2, 1, 2 * params.rnn_size)(h2h),
+    })
+    gates = nn.SplitTable(2)(nn.Reshape(2, params.rnn_size)(gates))
+    local resetgate  = nn.Sigmoid()(nn.SelectTable(1)(gates))
+    local updategate = nn.Sigmoid()(nn.SelectTable(2)(gates))
+    local output = nn.Tanh()(nn.CAddTable()({
+        nn.Narrow(2, 2 * params.rnn_size+1, params.rnn_size)(i2h),
+        nn.CMulTable()({resetgate,
+        nn.Narrow(2, 2 * params.rnn_size+1, params.rnn_size)(h2h),})
+    }))
+    local nexth = nn.CAddTable()({
+        prevh,
+        nn.CMulTable()({
+            updategate,
+            nn.CSubTable()({output, prevh,}),}),
+    })
+    return nexth
+end
+
 
 function create_network()
     local x                  = nn.Identity()()
@@ -101,11 +125,9 @@ function create_network()
     local next_s             = {}
     local split              = {prev_s:split(2 * params.layers)}
     for layer_idx = 1, params.layers do
-        local prev_c         = split[2 * layer_idx - 1]
-        local prev_h         = split[2 * layer_idx]
+        local prev_h         = split[layer_idx]
         local dropped        = nn.Dropout(params.dropout)(i[layer_idx - 1])
-        local next_c, next_h = lstm(dropped, prev_c, prev_h)
-        table.insert(next_s, next_c)
+        local next_h = gru(dropped, prev_h)
         table.insert(next_s, next_h)
         i[layer_idx] = next_h
     end
@@ -323,7 +345,7 @@ while epoch < params.max_max_epoch do
     if step % epoch_size == 0 then
         run_valid()
         --peter: shoud we save model somewhere?
-        local filename = './model/' .. params.filePrefix .. step ..'.net'
+        local filename = './model/' .. filePrefix .. step ..'.net'
         print("Saving model at step: " .. step)
         torch.save(filename, model)
         if epoch > params.max_epoch then

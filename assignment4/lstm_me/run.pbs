@@ -14,5 +14,5 @@
 
 cd /scratch/yss265/DeepLearning/assignment4/lstm_me
 module load torch
-th main.lua
+th main.lua --dropout $drop --filePrefix $name --layers $layer
 exit 0;
