@@ -2,11 +2,11 @@
 
 #PBS -V
 #PBS -S /bin/bash
-#PBS -N LSTM
+#PBS -N LSTM_drop95
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=10:00:00
 #PBS -M yss265@nuy.edu
-#PBS -l mem=14GB
+#PBS -l mem=8GB
 #PBS -q s48
 #PBS -m bea
 #PBS -e localhost:${PBS_O_WORKDIR}/log/${PBS_JOBNAME}.e${PBS_JOBID}

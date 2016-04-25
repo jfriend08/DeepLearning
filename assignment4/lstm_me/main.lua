@@ -27,13 +27,14 @@ local params = {
                 layers=2,
                 decay=2,
                 rnn_size=200, -- hidden unit size
-                dropout=0, 
-                init_weight=0.1, -- random weight initialization limits
+                dropout=0.95,
+                init_weight=0.20, -- random weight initialization limits
                 lr=1, --learning rate
                 vocab_size=10000, -- limit on the vocabulary size
                 max_epoch=4,  -- when to start decaying learning rate
                 max_max_epoch=13, -- final epoch
-                max_grad_norm=5 -- clip when gradients exceed this norm value
+                max_grad_norm=5, -- clip when gradients exceed this norm value
+                filePrefix="modelDrop_95_"
                }
 
 function transfer_data(x)
@@ -303,7 +304,7 @@ while epoch < params.max_max_epoch do
     if step % epoch_size == 0 then
         run_valid()
         --peter: shoud we save model somewhere?
-        local filename = './model/model_' .. step ..'.net'
+        local filename = './model/' .. filePrefix .. step ..'.net'
         print("Saving model at step: " .. step)
         torch.save(filename, model)
         if epoch > params.max_epoch then

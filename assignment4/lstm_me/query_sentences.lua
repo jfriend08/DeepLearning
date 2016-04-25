@@ -134,7 +134,6 @@ while true do
   else
     local line = runPredict(line)
     print(line)
-
-    -- io.write('\n')
+    io.write('\n')
   end
 end
