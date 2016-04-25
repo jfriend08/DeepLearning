@@ -2,11 +2,11 @@
 
 #PBS -V
 #PBS -S /bin/bash
-#PBS -N LSTM_Layer10
+#PBS -N GRU
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=10:00:00
+#PBS -l walltime=15:00:00
 #PBS -M yss265@nuy.edu
-#PBS -l mem=8GB
+#PBS -l mem=10GB
 #PBS -q s48
 #PBS -m bea
 #PBS -e localhost:${PBS_O_WORKDIR}/log/${PBS_JOBNAME}.e${PBS_JOBID}
@@ -14,5 +14,7 @@
 
 cd /scratch/yss265/DeepLearning/assignment4/lstm_me
 module load torch
-th main.lua --dropout $drop --filePrefix $name --layers $layer
+th mainGRU.lua --filePrefix GRU_
 exit 0;
+# th main.lua --dropout $drop --filePrefix $name --layers $layer
+# exit 0;
