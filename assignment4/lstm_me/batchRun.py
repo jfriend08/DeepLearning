@@ -3,10 +3,10 @@ import numpy as np
 
 
 job = 's48'
-time = "10:00:00"
+time = "15:00:00"
 ram = "8GB"
 l_cmd = "walltime=%s,mem=%s"%(time, ram)
-for i in xrange(2,6):
+for i in xrange(1,6):
   d = 0
   layer = 2*i
   jobName = 'modelLayer' + str(layer)

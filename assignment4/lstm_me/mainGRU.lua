@@ -349,7 +349,7 @@ while epoch < params.max_max_epoch do
     if step % epoch_size == 0 then
         run_valid()
         --peter: shoud we save model somewhere?
-        local filename = './model/' .. filePrefix .. step ..'.net'
+        local filename = './model/' .. params.filePrefix .. step ..'.net'
         print("Saving model at step: " .. step)
         torch.save(filename, model)
         if epoch > params.max_epoch then

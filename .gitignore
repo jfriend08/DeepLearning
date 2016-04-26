@@ -12,3 +12,4 @@ model*.net
 *.t7
 *.t7b
 report.log
+*net
