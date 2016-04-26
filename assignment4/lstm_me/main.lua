@@ -207,9 +207,8 @@ function bp(state)
     
     -- undo changes due to changing position in bp
     state.pos = state.pos + params.seq_length
-    
-    -- gradient clipping
-    if softClip then
+
+    if params.softClip then
         model.norm_dw = paramdx:norm()
         if model.norm_dw > params.max_grad_norm then
             local shrink_factor = params.max_grad_norm / model.norm_dw
@@ -325,13 +324,15 @@ while epoch < params.max_max_epoch do
              ', since beginning = ' .. since_beginning .. ' mins.')
     end
 
-    -- run when epoch done
-    if step % epoch_size == 0 then
-        run_valid()
-        --peter: shoud we save model somewhere?
+    if step % epoch_size * 2 == 0 then
         local filename = './model/' .. params.filePrefix .. step ..'.net'
         print("Saving model at step: " .. step)
         torch.save(filename, model)
+    end
+
+    -- run when epoch done
+    if step % epoch_size == 0 then
+        run_valid()
         if epoch > params.max_epoch then
             params.lr = params.lr / params.decay
         end

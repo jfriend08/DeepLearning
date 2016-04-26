@@ -4,7 +4,7 @@
 #PBS -S /bin/bash
 #PBS -N GRU
 #PBS -l nodes=1:ppn=1
-#PBS -l walltime=15:00:00
+#PBS -l walltime=20:00:00
 #PBS -M yss265@nuy.edu
 #PBS -l mem=10GB
 #PBS -q s48
@@ -14,7 +14,7 @@
 
 cd /scratch/yss265/DeepLearning/assignment4/lstm_me
 module load torch
-th mainGRU.lua --filePrefix GRU_
-exit 0;
-# th main.lua --dropout $drop --filePrefix $name --layers $layer
+# th mainGRU.lua --filePrefix GRU40_ --max_max_epoch 40
 # exit 0;
+th main.lua --dropout $drop --filePrefix $name --layers $layer --max_max_epoch 40 --softClip $isSoft --max_grad_norm $maxNorm
+exit 0;

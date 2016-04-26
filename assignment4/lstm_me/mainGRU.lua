@@ -34,7 +34,7 @@ params = lapp[[
    --max_epoch                      (default 4)
    --max_max_epoch                  (default 13)
    --max_grad_norm                  (default 5)
-   --filePrefix                     (default "modelLayer_test_")
+   --filePrefix                     (default "model_test_")
 ]]
 
 -- print(params)
@@ -348,7 +348,6 @@ while epoch < params.max_max_epoch do
     -- run when epoch done
     if step % epoch_size == 0 then
         run_valid()
-        --peter: shoud we save model somewhere?
         local filename = './model/' .. params.filePrefix .. step ..'.net'
         print("Saving model at step: " .. step)
         torch.save(filename, model)
