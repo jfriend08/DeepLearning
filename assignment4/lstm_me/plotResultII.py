@@ -15,6 +15,7 @@ parser.add_argument("namePrefix", help="file name prefix")
 
 args = parser.parse_args()
 mypath = args.inputDir
+namePrefix = args.namePrefix
 # selected_nSplit = args.selected_nSplit
 
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f.find(".o")!= -1 ]
@@ -49,7 +50,7 @@ plt.legend(legend, loc='upper right')
 plt.title('Perplexity per Steps -- Training')
 plt.xlabel("Steps")
 plt.ylabel("Perplexity")
-plt.savefig('./trainDropTest.png')
+plt.savefig('./'+namePrefix+'_train'+'.png')
 
 plt.figure(figsize=(12,12))
 legend = []
@@ -62,4 +63,4 @@ plt.legend(legend, loc='upper right')
 plt.title('Perplexity per Steps -- Validation')
 plt.xlabel("Steps")
 plt.ylabel("Perplexity")
-plt.savefig('./valDropTest.png')
+plt.savefig('./'+namePrefix+'_val'+'.png')

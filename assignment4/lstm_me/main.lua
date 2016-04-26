@@ -35,6 +35,7 @@ params = lapp[[
    --max_max_epoch                  (default 13)
    --max_grad_norm                  (default 5)
    --filePrefix                     (default "modelLayer_test_")
+   --softClip                       (default "true")
 ]]
 
 -- print(params)
@@ -208,10 +209,15 @@ function bp(state)
     state.pos = state.pos + params.seq_length
     
     -- gradient clipping
-    model.norm_dw = paramdx:norm()
-    if model.norm_dw > params.max_grad_norm then
-        local shrink_factor = params.max_grad_norm / model.norm_dw
-        paramdx:mul(shrink_factor)
+    if softClip then
+        model.norm_dw = paramdx:norm()
+        if model.norm_dw > params.max_grad_norm then
+            local shrink_factor = params.max_grad_norm / model.norm_dw
+            paramdx:mul(shrink_factor)
+        end
+    else
+        paramdx:apply(function(x) if x > params.max_grad_norm then return params.max_grad_norm; end end)
+        model.norm_dw = paramdx:norm()
     end
     
     -- gradient descent step
