@@ -22,7 +22,7 @@
 \usepackage{microtype}      % microtypography
 \usepackage{amsmath}
 \usepackage{mathtools}
-\title{Deep Learning Assignment 3}
+\title{Deep Learning Assignment 4}
 
 % The \author macro works with any number of authors. There are two
 % commands used to separate the names and addresses of multiple
@@ -71,6 +71,9 @@ The initial model is based on lstm as building block, with 2 layers and 20 seque
 \subsection{Learning Techniques}
 The two main learning techniques were the dropout and gradient clip. Dropout method was applied between each of lstm module and the final output. The inital module didnot used the dropout, and therefore we can observed that the perplexity of training improved well but not for the validation. This implies the concerns of overfitting and dropout might be a good option to improve.\\
 Gradient clipping might be important method during the learning process too. Soft-clipping was initially applied to the model, which it observes the L2 norm of gradient and every gradient will multiply the portions it overpassed if the norm is higher than the threshold. The other method I used during this assignment is hard clipping, which we only cut the gradiend for only the one that pass threshold, instead of the every gradients. The inspiration is mainly from the curiousity of whether soft clipping downgrade the learning process for other gradient.
+
+\subsection{Training Procedure}
+Data was preprocessed in the shape of (lines,batch\_size), which is basically to traing a batch size of words. During each forward or backward propagation, line $i$ and $i+1$ is the corresponding current and next word. When feed in network, the $next\_h$ is the output from the lstm module which is in the shape of (batch\_size, vocab\_size), and further calculates the prediction of each word along the batch\_size axis by LogSoftMax. The perplexity is the accumulated error calculated by ClassNLLCriterion, and we are optimizing the perplexity error metric.
 
 
 \section{Softmax regression gradient calculation}

@@ -10,10 +10,12 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("inputDir", help="input results directory")
+parser.add_argument("prefix", help="output filename prefix")
 # parser.add_argument("selected_nSplit", help="select n_split so can generate 3dim figure")
 
 args = parser.parse_args()
 mypath = args.inputDir
+prefix = args.prefix
 # selected_nSplit = args.selected_nSplit
 
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f.find(".o")!= -1 ]
@@ -45,7 +47,7 @@ for idx, k in enumerate(sorted(allTable.keys())):
   plt.plot(range(len(arr)), arr)
   ylim((0,0.025))
   plt.title(k)
-plt.savefig('./trainDrop.png')
+plt.savefig('./'+prefix+'_train.png')
 
 plt.figure(figsize=(20, 30))
 for idx, k in enumerate(sorted(allTable.keys())):
@@ -54,4 +56,4 @@ for idx, k in enumerate(sorted(allTable.keys())):
   plt.plot(range(len(arr)), arr)
   ylim((0,0.01))
   plt.title(k)
-plt.savefig('./valDrop.png')
+plt.savefig('./'+prefix+'_val.png')

@@ -46,7 +46,7 @@ for idx, k in enumerate(sorted(allTable.keys())):
   plt.plot(range(len(arr)), arr, style[idx%len(style)])
   ylim((0,1000))
   legend += [k]
-plt.legend(legend, loc='upper right')
+plt.legend(legend, loc=1)
 plt.title('Perplexity per Steps -- Training')
 plt.xlabel("Steps")
 plt.ylabel("Perplexity")
@@ -59,7 +59,7 @@ for idx, k in enumerate(sorted(allTable.keys())):
   plt.plot(range(len(arr)), arr, style[idx%len(style)])
   ylim((0,1000))
   legend += [k]
-plt.legend(legend, loc='upper right')
+plt.legend(legend, loc=1)
 plt.title('Perplexity per Steps -- Validation')
 plt.xlabel("Steps")
 plt.ylabel("Perplexity")
