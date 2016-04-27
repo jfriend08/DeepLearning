@@ -6,10 +6,10 @@ job = 's48'
 time = "20:00:00"
 ram = "8GB"
 l_cmd = "walltime=%s,mem=%s"%(time, ram)
-for idx in xrange(2,5):
-  for layer in [2,3,4]:
-    for isSoft in ['true', 'false']:
-      for maxNorm in xrange(5,21,5):
+for idx in xrange(6,11):
+  for layer in [2]:
+    for isSoft in ['true']:
+      for maxNorm in xrange(5,6):
         d = idx*0.05
   # layer = 2*i
         jobName = map(str,[d,layer,isSoft,maxNorm])

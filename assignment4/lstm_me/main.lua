@@ -36,6 +36,7 @@ params = lapp[[
    --max_grad_norm                  (default 5)
    --filePrefix                     (default "modelLayer_test_")
    --softClip                       (default "true")
+   --coolDown                       (default "false")
 ]]
 
 -- print(params)
@@ -335,6 +336,10 @@ while epoch < params.max_max_epoch do
         run_valid()
         if epoch > params.max_epoch then
             params.lr = params.lr / params.decay
+        end
+        if params.coolDown then
+            params.dropout = 0.5 * (epoch / params.max_max_epoch)^2.5
+            print("dropout Update to: " .. params.dropout)
         end
     end
 end
