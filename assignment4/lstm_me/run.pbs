@@ -2,7 +2,7 @@
 
 #PBS -V
 #PBS -S /bin/bash
-#PBS -N LSTM_CoolDown
+#PBS -N LSTM_RevCoolDown
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=24:00:00
 #PBS -M yss265@nuy.edu
@@ -20,5 +20,5 @@ module load torch
 # th main.lua --dropout $drop --filePrefix $name --layers $layer --max_max_epoch 40 --softClip $isSoft --max_grad_norm $maxNorm
 # exit 0;
 
-th main.lua --dropout 0.5 --filePrefix LSTM_CoolDown --max_max_epoch 50 --coolDown true
+th main.lua  --filePrefix LSTM_RevCoolDown --max_max_epoch 50 --coolDown true --dropout 0.5
 exit 0;

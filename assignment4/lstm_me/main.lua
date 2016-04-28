@@ -311,7 +311,6 @@ while epoch < params.max_max_epoch do
     -- words_per_step covered in one step
     total_cases = total_cases + params.seq_length * params.batch_size
     epoch = step / epoch_size
-    epoch = epoch_size / epoch_size
     
     -- display details at some interval
     if step % torch.round(epoch_size / 10) == 10 then
@@ -338,7 +337,8 @@ while epoch < params.max_max_epoch do
             params.lr = params.lr / params.decay
         end
         if params.coolDown then
-            params.dropout = 0.5 * (epoch / params.max_max_epoch)^2.5
+            params.dropout = 0.5 - (0.5 * (step / params.max_max_epoch)^2.5)
+            print("epoch: " .. epoch .. " params.max_max_epoch: " .. params.max_max_epoch)
             print("dropout Update to: " .. params.dropout)
         end
     end
