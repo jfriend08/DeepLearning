@@ -2,7 +2,7 @@
 
 #PBS -V
 #PBS -S /bin/bash
-#PBS -N LSTM_RevCoolDown
+#PBS -N LSTM_1L_300node_50drop
 #PBS -l nodes=1:ppn=1
 #PBS -l walltime=24:00:00
 #PBS -M yss265@nuy.edu
@@ -17,8 +17,8 @@ module load torch
 # th mainGRU.lua --filePrefix GRU40_ --max_max_epoch 40
 # exit 0;
 
-# th main.lua --dropout $drop --filePrefix $name --layers $layer --max_max_epoch 40 --softClip $isSoft --max_grad_norm $maxNorm
-# exit 0;
-
-th main.lua  --filePrefix LSTM_RevCoolDown --max_max_epoch 50 --coolDown true --dropout 0.5
+th main.lua --dropout $drop --filePrefix $name --layers $layer --max_max_epoch 50 --softClip $isSoft --max_grad_norm $maxNorm --rnn_size $rnn
 exit 0;
+
+# th main.lua  --filePrefix LSTM_1L_300node_50drop --max_max_epoch 50 --rnn_size 300 --dropout 0.5 --layers 1
+# exit 0;

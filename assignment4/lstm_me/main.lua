@@ -209,7 +209,7 @@ function bp(state)
     -- undo changes due to changing position in bp
     state.pos = state.pos + params.seq_length
 
-    if params.softClip then
+    if params.softClip == "true" then
         model.norm_dw = paramdx:norm()
         if model.norm_dw > params.max_grad_norm then
             local shrink_factor = params.max_grad_norm / model.norm_dw
@@ -311,7 +311,7 @@ while epoch < params.max_max_epoch do
     -- words_per_step covered in one step
     total_cases = total_cases + params.seq_length * params.batch_size
     epoch = step / epoch_size
-    
+
     -- display details at some interval
     if step % torch.round(epoch_size / 10) == 10 then
         wps = torch.floor(total_cases / torch.toc(start_time))
@@ -324,8 +324,8 @@ while epoch < params.max_max_epoch do
              ', since beginning = ' .. since_beginning .. ' mins.')
     end
 
-    if step % epoch_size * 2 == 0 then
-        local filename = './model/' .. params.filePrefix .. step ..'.net'
+    if step % epoch_size * 5 == 0 then
+        local filename = './model/hyperPara2/' .. params.filePrefix .. step ..'.net'
         print("Saving model at step: " .. step)
         torch.save(filename, model)
     end
@@ -336,13 +336,22 @@ while epoch < params.max_max_epoch do
         if epoch > params.max_epoch then
             params.lr = params.lr / params.decay
         end
-        if params.coolDown then
-            params.dropout = 0.5 - (0.5 * (step / params.max_max_epoch)^2.5)
+        if params.coolDown == "true" then
+            print("coolDown")
+            params.dropout = 0.5 - (0.5 * (epoch / params.max_max_epoch)^2.5)
             print("epoch: " .. epoch .. " params.max_max_epoch: " .. params.max_max_epoch)
             print("dropout Update to: " .. params.dropout)
         end
+
     end
 end
 print("Done max_epoch, run_test()")
+
+local filename = './model/hyperPara2/' .. params.filePrefix .. step ..'final.net'
+print("Saving model at step: " .. step)
+torch.save(filename, model)
+
 run_test()
 print("Training is over.")
+
+
