@@ -9,7 +9,7 @@ l_cmd = "walltime=%s,mem=%s"%(time, ram)
 for i in xrange(3):
   for layer in [1,2]:
     for isSoft in ['true', 'false']:
-      for maxNorm in xrange(5):
+      for maxNorm in [5]:
         for rnn in xrange(200, 300, 25):
           drop = 0.4 + i * 0.05
           jobName = map(str,[drop,layer,isSoft,maxNorm,rnn])

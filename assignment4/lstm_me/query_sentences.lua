@@ -115,7 +115,7 @@ state_train = {data=transfer_data(ptb.traindataset(params.batch_size))}
 state_valid =  {data=transfer_data(ptb.validdataset(params.batch_size))}
 state_test =  {data=transfer_data(ptb.testdataset(params.batch_size))}
 
-model = torch.load('./model/model_34845.net')
+model = torch.load('./model/DropModel/modelDrop0.2_34845.net')
 
 while true do
   print("Query: len word1 word2 etc")

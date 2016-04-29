@@ -18,7 +18,8 @@ mypath = args.inputDir
 namePrefix = args.namePrefix
 # selected_nSplit = args.selected_nSplit
 
-onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f.find(".o")!= -1 ]
+onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and re.match(r'(.*)\.o(.*)', f, re.M) ]
+# onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f)) and f.find(".o")!= -1 ]
 print onlyfiles
 
 allTable = {}

@@ -2,15 +2,15 @@ require('nngraph')
 require('base')
 ptb = require('data')
 
-model = torch.load('./model/DropModel/modelDrop0.2_34845.net')
+
 
 local params = {
                 batch_size=20, -- minibatch
                 seq_length=20, -- unroll length
-                layers=2,
+                layers=1,
                 decay=2,
                 rnn_size=200, -- hidden unit size
-                dropout=0, 
+                dropout=0,
                 init_weight=0.1, -- random weight initialization limits
                 lr=1, --learning rate
                 vocab_size=10000, -- limit on the vocabulary size
@@ -36,7 +36,6 @@ function reset_state(state)
     end
 end
 
-
 function run_test()
     reset_state(state_test)
     g_disable_dropout(model.rnns)
@@ -56,10 +55,24 @@ function run_test()
     g_enable_dropout(model.rnns)
 end
 
+-- download dataset
+if not paths.dirp('mymodel') then
+    os.execute('mkdir mymodel')
+    local www = {
+    model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_200_95243.net'
+    }
+    os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_200_95243.net ./mymodel/')
+end
+
+print('Load model ...')
+model = torch.load('./mymodel/0.4_1_true_5_200_95243.net')
+
+print('Load test set ...')
 state_train = {data=transfer_data(ptb.traindataset(params.batch_size))}
 state_valid =  {data=transfer_data(ptb.validdataset(params.batch_size))}
 state_test =  {data=transfer_data(ptb.testdataset(params.batch_size))}
-print(state_train.data:size())
-print(state_valid.data:size())
-print(state_test.data:size())
--- run_test()
+
+print('Running test ...')
+run_test()
+
+print('Done')
