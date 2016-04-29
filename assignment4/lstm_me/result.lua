@@ -55,7 +55,7 @@ function run_test()
     g_enable_dropout(model.rnns)
 end
 
--- download dataset
+-- download model
 if not paths.dirp('mymodel') then
     os.execute('mkdir mymodel')
     local www = {

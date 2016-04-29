@@ -87,7 +87,8 @@ function runPredict(line)
       perp_tmp, model.s[i-1], pred = unpack(model.rnns[i-1]:forward({x, y, model.s[i-2]}))
 
       -- find max prediction score and convert it
-      y, idx = torch.max(pred[1], 1)
+      -- here I mainly implement it by multinomial, trying to skip meaningless words
+      -- y, idx = torch.max(pred[1], 1)
       y2 = torch.multinomial(pred[1]:exp(), 10)
       for i = 1, y2:size()[1] do
         if ptb.vocabRev_map[y2[i]]~="<unk>" and ptb.vocabRev_map[y2[i]]~="<eos>" then
@@ -119,6 +120,7 @@ function runPredict(line)
       -- output state will be used to next rnn sequence
       perp_tmp, model.s[layerIdx], pred = unpack(model.rnns[layerIdx]:forward({x, y, model.s[layerIdx-1]}))
 
+      -- here I mainly implement it by multinomial, trying to skip meaningless words
       -- y, idx = torch.max(pred[1], 1)
       y2 = torch.multinomial(pred[1]:exp(), 10)
       for i = 1, y2:size()[1] do
@@ -135,6 +137,15 @@ function runPredict(line)
     end
     g_enable_dropout(model.rnns)
     return output
+end
+
+-- download model
+if not paths.dirp('mymodel') then
+    os.execute('mkdir mymodel')
+    local www = {
+    model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_275_97566.net'
+    }
+    os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_275_97566.net ./mymodel/')
 end
 
 -- get data in batches
