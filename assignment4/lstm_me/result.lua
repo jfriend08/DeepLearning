@@ -59,13 +59,13 @@ end
 if not paths.dirp('mymodel') then
     os.execute('mkdir mymodel')
     local www = {
-    model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_200_95243.net'
+    model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_275_97566.net'
     }
-    os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_200_95243.net ./mymodel/')
+    os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_275_97566.net ./mymodel/')
 end
 
 print('Load model ...')
-model = torch.load('./mymodel/0.4_1_true_5_200_95243.net')
+model = torch.load('./mymodel/0.4_1_true_5_275_97566.net')
 
 print('Load test set ...')
 state_train = {data=transfer_data(ptb.traindataset(params.batch_size))}
