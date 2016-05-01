@@ -55,17 +55,19 @@ function run_test()
     g_enable_dropout(model.rnns)
 end
 
--- download model
-if not paths.dirp('mymodel') then
-    os.execute('mkdir mymodel')
-    local www = {
-    model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_275_97566.net'
-    }
-    os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_275_97566.net ./mymodel/')
-end
+-- -- download model
+-- if not paths.dirp('mymodel') then
+--     os.execute('mkdir mymodel')
+--     local www = {
+--     model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_275_97566.net'
+--     }
+--     os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_275_97566.net ./mymodel/')
+-- end
 
-print('Load model ...')
-model = torch.load('./mymodel/0.4_1_true_5_275_97566.net')
+-- print('Load model ...')
+-- model = torch.load('./mymodel/0.4_1_true_5_275_97566.net')
+
+model = torch.load('/scratch/yss265/DeepLearning/assignment4/lstm_me/model/hyperPara2/0.45_1_true_5_275_111504.net')
 
 print('Load test set ...')
 state_train = {data=transfer_data(ptb.traindataset(params.batch_size))}
