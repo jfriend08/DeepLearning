@@ -61,7 +61,7 @@
 \section{Warmup}
 \begin{figure}[h]
 \centering
-\includegraphics[width=30mm]{../q2/q2.png}
+\includegraphics[width=70mm]{../q2/q2.png}
   \caption{GRU cell unit}
 \end{figure}
 
@@ -85,18 +85,9 @@ Data was preprocessed in the shape of (lines,batch\_size), which is basically to
 \section{Improvement}
 The baseline perplexity is about 150, and here are the mothods I tryied to improve the prediction:
 \begin{enumerate}
-   \item Clipping methods
-   \begin{itemize}
-     \item The clipping method is hard clip as mentioned above, only cut the one that pass max gradient norm
-   \end{itemize}
-   \item GRUs
-   \begin{itemize}
-     \item As it is a simpler method than lstm, here I include it for comparison as well
-   \end{itemize}
-   \item Hyperparameters
-   \begin{itemize}
-     \item Includes: dropout rate, number of layers, soft/hard-clip, max gradient norm, and number of rnn units
-   \end{itemize}
+   \item Clipping methods: The clipping method is hard clip as mentioned above, only cut the one that pass max gradient norm
+   \item GRUs: As it is a simpler method than lstm, here I include it for comparison as well
+   \item Hyperparameters: Including dropout rate, number of layers, soft/hard-clip, max gradient norm, and number of rnn units
 \end{enumerate}
 \section{Results}
 The first test is about dropping rate. As we can noticed, if it's too high then we cannot lower the perplexity any further, but if it's too low, it is effective to improve the perplexity on training set but not for the test set, which is the concern for overfitting. Therefore, seems the dropout rate at the range between 40\% to 50\% can improve the overfitting issue as well as generate comparable result.
@@ -104,26 +95,58 @@ The first test is about dropping rate. As we can noticed, if it's too high then 
 \centering
 \begin{subfigure}
   \begin{tabular}{cccc}
-  \subfloat{\includegraphics[width = 30mm]{../lstm_me/fig/Drop_train.png}}&
-  \subfloat{\includegraphics[width = 30mm]{../lstm_me/fig/Drop_val.png}}&
+  {\includegraphics[width = 30mm]{../lstm_me/fig/Drop_train.png}}&
+  {\includegraphics[width = 30mm]{../lstm_me/fig/Drop_val.png}}
   \end{tabular}
 \end{subfigure}
 \caption{Parameter for dropout rate. Left is for training set. Right is for validation set}
 \end{figure}
-Second test is about the max gradient norm and its effect on soft or hard clip. There is a trend that the higher the value the later the perplexity goes down. Also one thing interesting is that, the value I tested is higher than default(5), and the perplexity on validation set slightly goes high while the training set is still goes down, which means max gradient norm may make the overfitting worse.
+
+Second test is about the max gradient norm and its effect on soft or hard clip. There is a trend that the higher the value the later the perplexity goes down. Also the value I tested is higher than default(5), and seems higher value will cause more overfitting. Moreover, I tested the clipping methods on the dropout between 40\% to 50\%, which is the ideal range as mentioned ealier, seems hard clip have no way to further improve the perplexity any further.
 \begin{figure}[h]
 \centering
 \begin{subfigure}
   \begin{tabular}{cccc}
-  \subfloat{\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_train.png}}&
-  \subfloat{\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_val.png}}&
+  {\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_train.png}}&
+  {\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_val.png}}&
+  {\includegraphics[width = 30mm]{../lstm_me/fig/dropout_clip_train.png}}&
+  {\includegraphics[width = 30mm]{../lstm_me/fig/dropout_clip_val.png}}
   \end{tabular}
 \end{subfigure}
-\caption{Parameter for max gradient norm. Left is for training set. Right is for validation set}
+\caption{ First and Second are taining and validation with different max gradient norm. Third and fourth are taining and validation with fixed max gradient norm but different dropout and clipping method (true for soft, false for hard clip)}
 \end{figure}
+
+Lastly, there are two experiments I like to test, one is number of layers, and the other is number of cnn units. Each layer should compose multiple number of cnn units, and I was wondering what will produce better result if I increase the layer or cnn units. First I did the test for layer ranging from 3 to 10, and actually the result was not as good as 2 layer (data not shown), potentially might due to increasing number of layer also increase much more weightings need to train. Then, instereatingly when testing the combination of 1 or 2 layer with different number of cnn units, I got a better result for using only 1 layer with about 275 cnn units.
+
+\begin{table}[h]
+\begin{center}
+    \begin{tabular}{| c | c | c | c | c |}
+    \hline
+    Dropout & Layers & CNN units & Train Perplexity & Test Perplexity\\ \hline
+    0.4 & 2 & 275 & 90.252 & 102.006 \\ \hline
+    0.4 & 1 & 275 & 79.675 & 97.159 \\ \hline
+    0.45 & 2 & 275 & 102.319 & 108.778 \\ \hline
+    0.45 & 1 & 275 & 89.991 & 99.737 \\ \hline
+    0.5 & 2 & 275 & 113.673 & 113.754 \\ \hline
+    0.5 & 1 & 275 & 101.622 & 108.197 \\ \hline
+    \end{tabular}
+\end{center}
+\caption{The training and test accuracy of kmeans implementation based on reference paper}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}
+  \begin{tabular}{cccc}
+  {\includegraphics[width = 50mm]{../lstm_me/fig/alltest_onlySoft_train.png}}&
+  {\includegraphics[width = 50mm]{../lstm_me/fig/alltest_onlySoft_val.png}}
+  \end{tabular}
+\end{subfigure}
+\caption{Parameter for dropout, layers, and cnn units. Left is for training set. Right is for validation set}
+\end{figure}
+
+
 \end{document}
-
-
 
 
 
