@@ -116,7 +116,7 @@ Second test is about the max gradient norm and its effect on soft or hard clip. 
 \caption{ First and Second are taining and validation with different max gradient norm. Third and fourth are taining and validation with fixed max gradient norm but different dropout and clipping method (true for soft, false for hard clip)}
 \end{figure}
 
-Lastly, there are two experiments I like to test, one is number of layers, and the other is number of cnn units. Each layer should compose multiple number of cnn units, and I was wondering what will produce better result if I increase the layer or cnn units. First I did the test for layer ranging from 3 to 10, and actually the result was not as good as 2 layer (data not shown), potentially might due to increasing number of layer also increase much more weightings need to train. Then, instereatingly when testing the combination of 1 or 2 layer with different number of cnn units, I got a better result for using only 1 layer with about 275 cnn units.
+Lastly, there are two experiments I like to test, one is number of layers, and the other is number of cnn units. Each layer should compose multiple number of cnn units, and I was wondering what will produce better result if I increase the layer or cnn units. First I did the test for layer ranging from 3 to 10, and actually the result was not as good as 2 layer (data not shown), potentially might due to increasing number of layer also increase much more weightings need to train. Then, instereatingly when testing the combination of 1 or 2 layer with different number of cnn units, I got a better result for using only 1 layer with about 275 cnn units, and the best perplexity I got is 97.159.
 
 \begin{table}[h]
 \begin{center}
