@@ -140,13 +140,12 @@ function runPredict(line)
 end
 
 -- download model
--- download model
 if not paths.dirp('mymodel') then
     os.execute('mkdir mymodel')
     local www = {
-    model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_275_116150final.net'
+    model = 'http://www.cs.nyu.edu/~yss265/0.45_1_true_5_512_30_23235.net'
     }
-    os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_275_116150final.net ./mymodel/')
+    os.execute('wget ' .. www.model .. '; '.. 'mv 0.45_1_true_5_512_30_23235.net ./mymodel/')
 end
 
 -- get data in batches
@@ -156,7 +155,7 @@ state_valid =  {data=transfer_data(ptb.validdataset(params.batch_size))}
 state_test =  {data=transfer_data(ptb.testdataset(params.batch_size))}
 
 print('Load model ...')
-model = torch.load('./mymodel/0.4_1_true_5_275_116150final.net')
+model = torch.load('./mymodel/0.45_1_true_5_512_30_23235.net')
 
 while true do
   print("Query: len word1 word2 etc")

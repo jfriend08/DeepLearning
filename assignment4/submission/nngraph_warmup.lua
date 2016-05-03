@@ -2,16 +2,16 @@ nn = require 'nn'
 require 'nngraph'
 
 --First part for tanh
-h1     = nn.Linear(4,2)()
-h1_add = nn.Add(1)(h1)
-hh1    = nn.Tanh()(h1_add)
-hhh1   = nn.Square()(hh1)
+h1     = nn.Linear(4,2)() --Wx
+h1_add = nn.Add(1)(h1) --Wx+b1
+hh1    = nn.Tanh()(h1_add) --tanh(Wx+b1)
+hhh1   = nn.Square()(hh1) --tanh(Wx+b1)^2
 
 --Second part for sigmold
-h2     = nn.Linear(5,2)()
-h2_add = nn.Add(1)(h2)
-hh2    = nn.Sigmoid()(h2_add)
-hhh2   = nn.Square()(hh2)
+h2     = nn.Linear(5,2)() --Wy
+h2_add = nn.Add(1)(h2) --Wy+b2
+hh2    = nn.Sigmoid()(h2_add) --tanh(Wy+b2)
+hhh2   = nn.Square()(hh2) --tanh(Wy+b2)^2
 
 --Third part for adding input z
 h3     = nn.Identity()()

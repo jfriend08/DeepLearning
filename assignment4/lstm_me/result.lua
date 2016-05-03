@@ -59,13 +59,13 @@ end
 if not paths.dirp('mymodel') then
     os.execute('mkdir mymodel')
     local www = {
-    model = 'http://www.cs.nyu.edu/~yss265/0.4_1_true_5_275_116150final.net'
+    model = 'http://www.cs.nyu.edu/~yss265/0.45_1_true_5_512_30_23235.net'
     }
-    os.execute('wget ' .. www.model .. '; '.. 'mv 0.4_1_true_5_275_116150final.net ./mymodel/')
+    os.execute('wget ' .. www.model .. '; '.. 'mv 0.45_1_true_5_512_30_23235.net ./mymodel/')
 end
 
 print('Load model ...')
-model = torch.load('./mymodel/0.4_1_true_5_275_116150final.net')
+model = torch.load('./mymodel/0.45_1_true_5_512_30_23235.net')
 
 -- model = torch.load('/scratch/yss265/DeepLearning/assignment4/lstm_me/model/hyperPara2/0.4_1_true_5_275_116150final.net')
 

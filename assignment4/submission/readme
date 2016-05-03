@@ -1,0 +1,10 @@
+# To start running warmup
+th nngraph_warmup.lua
+
+# To start running result
+## Model file should download automatically
+th result.lua
+
+# To start running query_sentences
+## Model file should download automatically
+th query_sentences.lua

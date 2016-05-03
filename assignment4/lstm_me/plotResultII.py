@@ -38,8 +38,8 @@ for eachfile in onlyfiles:
       val = re.split('\s+:\s+', line)[1]
       allTable[nameSplit[0]]['val'] += [val]
 
-style = ['-.','--', '+', '.', ':']
-plt.figure(figsize=(12, 12))
+style = [ '.', '-.','--', '+', ':']
+plt.figure(figsize=(7, 6))
 legend = []
 for idx, k in enumerate(sorted(allTable.keys())):
   arr = map(lambda x:float(x), allTable[k]["train"])
@@ -53,7 +53,7 @@ plt.xlabel("Steps")
 plt.ylabel("Perplexity")
 plt.savefig('./'+namePrefix+'_train'+'.png')
 
-plt.figure(figsize=(12,12))
+plt.figure(figsize=(7,6))
 legend = []
 for idx, k in enumerate(sorted(allTable.keys())):
   arr = map(lambda x: float(x), allTable[k]["val"])

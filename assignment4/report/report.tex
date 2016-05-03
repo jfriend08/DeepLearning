@@ -67,7 +67,7 @@
 
 \section{Approaches to RNN}
 \subsection{Architecture}
-The initial model is based on lstm as building block, with 2 layers and 20 sequence length. Layers are horizontally considering the current given input (or word) and the states passed from previous sequence. Sequence is the stack of multiple layers, and is used for vertically passing states to the next layers. This way, model can not only predict the next word based on current word (horizontal), but the predictions can be altered based on the sequence of previous words (vertical). Regarding to each lstm layer, there are number of rnn\_size lstm unit, and each of the unit perform the operation shown as figure 1.
+The initial model is based on lstm as building block, with 2 layers and 20 sequence length. Layers are horizontally considering the current given input (or word) and the states passed from previous sequence. Sequence is the stack of multiple layers, and is used for vertically passing states to the next layers. This way, model can not only predict the next word based on current word (horizontal), but the predictions can be altered based on the sequence of previous words (vertical). Regarding to each lstm layer, there are number of rnn\_size lstm unit, and each of the unit perform the operation shown as figure 2.
 
 \begin{figure}[h]
 \centering
@@ -87,7 +87,7 @@ The baseline perplexity is about 150, and here are the mothods I tryied to impro
 \begin{enumerate}
    \item Clipping methods: The clipping method is hard clip as mentioned above, only cut the one that pass max gradient norm
    \item GRUs: As it is a simpler method than lstm, here I include it for comparison as well
-   \item Hyperparameters: Including dropout rate, number of layers, soft/hard-clip, max gradient norm, and number of rnn units
+   \item Hyperparameters: Including dropout rate, number of layers, soft/hard-clip, max gradient norm, number of sequence and rnn units
 \end{enumerate}
 \section{Results}
 The first test is about dropping rate. As we can noticed, if it's too high then we cannot lower the perplexity any further, but if it's too low, it is effective to improve the perplexity on training set but not for the test set, which is the concern for overfitting. Therefore, seems the dropout rate at the range between 40\% to 50\% can improve the overfitting issue as well as generate comparable result.
@@ -103,46 +103,63 @@ The first test is about dropping rate. As we can noticed, if it's too high then 
 \end{figure}
 
 Second test is about the max gradient norm and its effect on soft or hard clip. There is a trend that the higher the value the later the perplexity goes down. Also the value I tested is higher than default(5), and seems higher value will cause more overfitting. Moreover, I tested the clipping methods on the dropout between 40\% to 50\%, which is the ideal range as mentioned ealier, seems hard clip have no way to further improve the perplexity any further.
+
+The third test is implementing GRU as the unit cell. It is a simpler unit than lstm, and as using the default setting (20 seq\_length, 200 rnn\_size, 0 dropout, 2 layers), it can generate similar perplexity wich is around 200, but the overfittng seems more serious than lstm as unit cell. In lstm, the overfitting issue is the perplexity for training is keep lowering down while validation is just maintain in same level. However, in gru, perplexity for training is keep lowering down but validation is slightly going up which is bad. Probably having few more gates is necessary to maintain the state, and at least won't get worser perplexity when overfitting.
 \begin{figure}[h]
 \centering
 \begin{subfigure}
   \begin{tabular}{cccc}
-  {\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_train.png}}&
-  {\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_val.png}}&
-  {\includegraphics[width = 30mm]{../lstm_me/fig/dropout_clip_train.png}}&
-  {\includegraphics[width = 30mm]{../lstm_me/fig/dropout_clip_val.png}}
+  {\includegraphics[width = 30mm]{../lstm_me/fig/GRU_train.png}}&
+  {\includegraphics[width = 30mm]{../lstm_me/fig/GRU_val.png}}
   \end{tabular}
 \end{subfigure}
-\caption{ First and Second are taining and validation with different max gradient norm. Third and fourth are taining and validation with fixed max gradient norm but different dropout and clipping method (true for soft, false for hard clip)}
+\caption{Model with GRU implemented. Left is for training set. Right is for validation set}
 \end{figure}
 
-Lastly, there are two experiments I like to test, one is number of layers, and the other is number of cnn units. Each layer should compose multiple number of cnn units, and I was wondering what will produce better result if I increase the layer or cnn units. First I did the test for layer ranging from 3 to 10, and actually the result was not as good as 2 layer (data not shown), potentially might due to increasing number of layer also increase much more weightings need to train. Then, instereatingly when testing the combination of 1 or 2 layer with different number of cnn units, I got a better result for using only 1 layer with about 275 cnn units, and the best perplexity I got is 97.159.
+% \begin{figure}[h]
+% \centering
+% \begin{subfigure}
+%   \begin{tabular}{cccc}
+%   {\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_train.png}}&
+%   {\includegraphics[width = 30mm]{../lstm_me/fig/MaxNorm_val.png}}&
+%   {\includegraphics[width = 30mm]{../lstm_me/fig/dropout_clip_train.png}}&
+%   {\includegraphics[width = 30mm]{../lstm_me/fig/dropout_clip_val.png}}
+%   \end{tabular}
+% \end{subfigure}
+% \caption{ First and Second are taining and validation with different max gradient norm. Third and fourth are taining and validation with fixed max gradient norm but different dropout and clipping method (true for soft, false for hard clip)}
+% \end{figure}
+
+Lastly, there are three parameters I think fall within the same idea that I would like to test, which are number of layers, number of rnn, and seq length. Each layer is the set of rnns, and seq length is the distant that I like to back propagate. They are all related to how am I going to hold the states and how to update it. Seems it gets harder to train when layer number increased (3 to 10 layers), and the perlexity is nothing better than baseline. The idea for more layer is to have more things to hold state, and therefore, in the other way around, I also did the test to decrease the number of layers but increase the rnn units. Surprisingly, the result is quite improved. The perplexity is improved from 120 baseline to 97 (0.4 dropout, 1 layer, 275 rnn, 20 seq length). Furthermore, as combining more rnn with higher seq length, the perplexity can goes down even further to 92, and, most importantly, the speed to reach this result can be around 13 epoch, while the previous is about 40 epoch. Althought it's not directly correspoing to actually time because it has higher rnn unit and seq to train, but the epoch difference is quite impressive.
+% Lastly, there are two experiments I like to test, one is number of layers, and the other is number of rnn units. Each layer should compose multiple number of rnn units, and I was wondering what will produce better result if I increase the layer or rnn units. First I did the test for layer ranging from 3 to 10, and actually the result was not as good as 2 layer (data not shown), potentially might due to increasing number of layer also increase much more weightings need to train. Then, instereatingly when testing the combination of 1 or 2 layer with different number of rnn units, I got a better result for using only 1 layer with about 275 rnn units, and the best perplexity I got is 97.159.
 
 \begin{table}[h]
 \begin{center}
-    \begin{tabular}{| c | c | c | c | c |}
+    \begin{tabular}{| c | c | c | c | c | c |}
     \hline
-    Dropout & Layers & CNN units & Train Perplexity & Test Perplexity\\ \hline
-    0.4 & 2 & 275 & 90.252 & 102.006 \\ \hline
-    0.4 & 1 & 275 & 79.675 & 97.159 \\ \hline
-    0.45 & 2 & 275 & 102.319 & 108.778 \\ \hline
-    0.45 & 1 & 275 & 89.991 & 99.737 \\ \hline
-    0.5 & 2 & 275 & 113.673 & 113.754 \\ \hline
-    0.5 & 1 & 275 & 101.622 & 108.197 \\ \hline
+    Dropout & Layers & RNN units & seq\_length & Train Perplexity & Test Perplexity\\ \hline
+    0.4 & 2 & 275 & 20 & 90.252 & 102.006 \\ \hline
+    0.4 & 1 & 275 & 20 & 79.675 & 97.159 \\ \hline
+    0.45 & 2 & 275 & 20 & 102.319 & 108.778 \\ \hline
+    0.45 & 1 & 275 & 20 & 89.991 & 99.737 \\ \hline
+    0.5 & 2 & 275 & 20 & 113.673 & 113.754 \\ \hline
+    0.5 & 1 & 275 & 20 & 101.622 & 108.197 \\ \hline
+    0.45 & 1 & 512 & 20 & 77.456 & 98.508 \\ \hline
+    0.45 & 1 & 512 & 25 & 66.299 & 92.766 \\ \hline
+    0.45 & 1 & 512 & 30 & 67.488 & 91.127 \\ \hline
     \end{tabular}
 \end{center}
-\caption{The training and test accuracy of kmeans implementation based on reference paper}
+\caption{Experiments on parameters and the perplexity}
 \end{table}
 
 \begin{figure}[h]
 \centering
 \begin{subfigure}
   \begin{tabular}{cccc}
-  {\includegraphics[width = 50mm]{../lstm_me/fig/alltest_onlySoft_train.png}}&
-  {\includegraphics[width = 50mm]{../lstm_me/fig/alltest_onlySoft_val.png}}
+  {\includegraphics[width = 50mm]{../lstm_me/fig/goodlog_train.png}}&
+  {\includegraphics[width = 50mm]{../lstm_me/fig/goodlog_val.png}}
   \end{tabular}
 \end{subfigure}
-\caption{Parameter for dropout, layers, and cnn units. Left is for training set. Right is for validation set}
+\caption{Parameter for dropout, layers, and rnn units. Left is for training set. Right is for validation set}
 \end{figure}
 
 

@@ -17,7 +17,7 @@ module load torch
 # th mainGRU.lua --filePrefix GRU40_ --max_max_epoch 40
 # exit 0;
 
-th main.lua --dropout $drop --filePrefix $name --layers $layer --max_max_epoch 50 --softClip $isSoft --max_grad_norm $maxNorm --rnn_size $rnn
+th main.lua --dropout $drop --filePrefix $name --layers $layer --max_max_epoch 50 --softClip $isSoft --max_grad_norm $maxNorm --rnn_size $rnn --seq_length $seq
 exit 0;
 
 # th main.lua  --filePrefix LSTM_1L_300node_50drop --max_max_epoch 50 --rnn_size 300 --dropout 0.5 --layers 1
